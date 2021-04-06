@@ -1,20 +1,21 @@
 package com.aderenchuk.brest.model;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TourTest {
 
     @Test
     public void getDirectionConstructor() {
         Tour tour = new Tour("Brest-Moscow");
-        Assertions.assertEquals("Brest-Moscow", tour.getDirection());
+        Assert.assertEquals("Brest-Moscow", tour.getDirection());
     }
 
-    public void setDirectionSetter() {
+    @Test
+    public void getDirectionSetter() {
         Tour tour = new Tour();
         tour.setDirection("Brest-Moscow");
-        Assertions.assertEquals("Brest-Moscow", tour.getDirection());
+        Assert.assertEquals("Brest-Moscow", tour.getDirection());
     }
 }
