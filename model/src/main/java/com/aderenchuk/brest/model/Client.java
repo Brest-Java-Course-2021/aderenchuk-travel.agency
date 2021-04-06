@@ -1,4 +1,5 @@
-import java.time.LocalDate;
+package com.aderenchuk.brest.model;
+
 import java.util.Objects;
 
 public class Client {
@@ -59,7 +60,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
+        return "com.aderenchuk.brest.model.Client{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", tourId=" + tourId +

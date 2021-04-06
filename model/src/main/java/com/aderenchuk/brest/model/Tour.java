@@ -1,3 +1,5 @@
+package com.aderenchuk.brest.model;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -12,10 +14,8 @@ public class Tour {
     public Tour() {
     }
 
-    public Tour(Integer tourId, String direction, LocalDate dateTour) {
-        this.tourId = tourId;
+    public Tour(String direction) {
         this.direction = direction;
-        this.dateTour = dateTour;
     }
 
     public Integer getTourId() {
@@ -57,7 +57,7 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "Tour{" +
+        return "com.aderenchuk.brest.model.Tour{" +
                 "tourId=" + tourId +
                 ", direction='" + direction + '\'' +
                 ", dateTour=" + dateTour +
