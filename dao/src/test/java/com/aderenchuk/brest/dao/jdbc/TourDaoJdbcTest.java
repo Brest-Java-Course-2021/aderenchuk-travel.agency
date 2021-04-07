@@ -5,6 +5,8 @@ import com.aderenchuk.brest.model.Tour;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
@@ -55,6 +57,6 @@ public class TourDaoJdbcTest {
 
         List<Tour> realTour = tourDao.findAll();
         Assert.assertEquals(tours.size() + 1,realTour.size());
-
     }
+
 }
