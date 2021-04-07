@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,5 +24,37 @@ public class TourDaoJdbcTest {
         List<Tour> tours = tourDao.findAll();
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
+    }
+
+    @Test
+    public void findByIdTest() {
+        List<Tour> tours = tourDao.findAll();
+        Assert.assertNotNull(tours);
+        Assert.assertTrue(tours.size() > 0);
+
+        Integer tourId = tours.get(0).getTourId();
+        Tour expTour = tourDao.findById(tourId).get();
+        Assert.assertEquals(tourId, expTour.getTourId());
+        Assert.assertEquals(tours.get(0).getDirection(), expTour.getDirection());
+        Assert.assertEquals(tours.get(0), expTour);
+    }
+
+    @Test(expected = EmptyResultDataAccessException.class)
+    public void findByIdExceptionalTest() {
+        Tour expTour = tourDao.findById(999).get();
+    }
+
+    @Test
+    public void createTourTest() {
+        List<Tour> tours = tourDao.findAll();
+        Assert.assertNotNull(tours);
+        Assert.assertTrue(tours.size() > 0);
+
+        Tour tour = new Tour("BREST-MINSK");
+        tourDao.create(tour);
+
+        List<Tour> realTour = tourDao.findAll();
+        Assert.assertEquals(tours.size() + 1,realTour.size());
+
     }
 }
