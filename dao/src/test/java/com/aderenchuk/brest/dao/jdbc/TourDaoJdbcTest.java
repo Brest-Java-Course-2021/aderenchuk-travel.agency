@@ -46,7 +46,7 @@ public class TourDaoJdbcTest {
         Tour expTour = tourDao.findById(999).get();
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void createTourTest() {
         List<Tour> tours = tourDao.findAll();
         Assert.assertNotNull(tours);
@@ -54,6 +54,45 @@ public class TourDaoJdbcTest {
 
         Tour tour = new Tour("BREST-MINSK");
         tourDao.create(tour);
+
+        List<Tour> realTour = tourDao.findAll();
+        Assert.assertEquals(tours.size() + 1,realTour.size());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void createTourWithSameNameTest() {
+        List<Tour> tours = tourDao.findAll();
+        Assert.assertNotNull(tours);
+        Assert.assertTrue(tours.size() > 0);
+
+        tourDao.create(new Tour("BREST-MINSK"));
+        tourDao.create(new Tour("BREST-MINSK"));
+
+        List<Tour> realTour = tourDao.findAll();
+        Assert.assertEquals(tours.size() + 1,realTour.size());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void createTourWithSameNameDifferentCaseTest() {
+        List<Tour> tours = tourDao.findAll();
+        Assert.assertNotNull(tours);
+        Assert.assertTrue(tours.size() > 0);
+
+        tourDao.create(new Tour("BREST-MINSK"));
+        tourDao.create(new Tour("BREST-minsk"));
+
+        List<Tour> realTour = tourDao.findAll();
+        Assert.assertEquals(tours.size() + 1,realTour.size());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void updateTourWithSameNameDifferentCaseTest() {
+        List<Tour> tours = tourDao.findAll();
+        Assert.assertNotNull(tours);
+        Assert.assertTrue(tours.size() > 0);
+
+        tourDao.create(new Tour("BREST-MINSK"));
+        tourDao.create(new Tour("BREST-minsk"));
 
         List<Tour> realTour = tourDao.findAll();
         Assert.assertEquals(tours.size() + 1,realTour.size());
