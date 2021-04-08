@@ -17,4 +17,5 @@ public interface TourDao {
 
     Integer delete(Integer tourId);
 
+
 }
