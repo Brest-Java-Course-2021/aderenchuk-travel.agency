@@ -14,6 +14,8 @@
         <module>dao</module>
         <module>test-db</module>
         <module>web-app</module>
+        <module>dao-api</module>
+        <module>service-api</module>
     </modules>
 
     <properties>
@@ -34,8 +36,14 @@
 
             <dependency>
                 <groupId>com.aderenchuk.brest</groupId>
+                <artifactId>dao-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aderenchuk.brest</groupId>
                 <artifactId>dao</artifactId>
-                <version>${spring.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
