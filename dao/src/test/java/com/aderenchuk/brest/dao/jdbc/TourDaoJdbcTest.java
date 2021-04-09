@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.Optional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml"})
@@ -52,8 +53,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        Tour tour = new Tour("BREST-MINSK");
-        tourDao.create(tour);
+        tourDao.create(new Tour("BREST-MINSK"));
+        tourDao.create(new Tour("BREST-MINSK"));
 
         List<Tour> realTour = tourDao.findAll();
         Assert.assertEquals(tours.size() + 1,realTour.size());
@@ -67,9 +68,6 @@ public class TourDaoJdbcTest {
 
         tourDao.create(new Tour("BREST-MINSK"));
         tourDao.create(new Tour("BREST-MINSK"));
-
-        List<Tour> realTour = tourDao.findAll();
-        Assert.assertEquals(tours.size() + 1,realTour.size());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -80,22 +78,20 @@ public class TourDaoJdbcTest {
 
         tourDao.create(new Tour("BREST-MINSK"));
         tourDao.create(new Tour("BREST-minsk"));
-
-        List<Tour> realTour = tourDao.findAll();
-        Assert.assertEquals(tours.size() + 1,realTour.size());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void updateTourWithSameNameDifferentCaseTest() {
+    @Test
+    public void updateTourTest() {
         List<Tour> tours = tourDao.findAll();
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK"));
-        tourDao.create(new Tour("BREST-minsk"));
+        Tour tour = tours.get(0);
+        tour.setDirection("MOSCOW-BERLIN");
+        tourDao.update(tour);
 
-        List<Tour> realTour = tourDao.findAll();
-        Assert.assertEquals(tours.size() + 1,realTour.size());
+        Optional<Tour> realTour = tourDao.findById(tour.getTourId());
+        Assert.assertEquals(realTour.get(), "MOSCOW-BERLIN");
     }
 
 }

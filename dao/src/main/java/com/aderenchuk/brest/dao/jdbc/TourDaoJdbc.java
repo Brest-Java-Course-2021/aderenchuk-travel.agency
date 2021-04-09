@@ -28,6 +28,8 @@ public class TourDaoJdbc implements TourDao {
     private static final String SQL_CREATE_TOUR = "INSERT INTO TOUR (TOUR_DIRECTION) VALUES (:TOUR_DIRECTION);";
 
     private static final String SQL_CHECK_TOUR_DIRECTION = "SELECT COUNT(TOUR_ID) FROM TOUR WHERE lower(TOUR_DIRECTION) = lower(:TOUR_DIRECTION)";
+
+    private static final String SQL_UPDATE_TOUR = "UPDATE TOUR SET TOUR_DIRECTION = :TOUR_DIRECTION WHERE TOUR_ID = :TOUR_ID;";
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     public TourDaoJdbc(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
@@ -73,7 +75,10 @@ public class TourDaoJdbc implements TourDao {
     @Override
     public Integer update(Tour tour) {
         LOGGER.debug("Update tour: {}", tour);
-        return null;
+        SqlParameterSource sqlParameterSource =
+                new MapSqlParameterSource("TOUR_DIRECTION", tour.getDirection())
+                        .addValue("TOUR_ID", tour.getTourId());
+        return namedParameterJdbcTemplate.update(SQL_UPDATE_TOUR, sqlParameterSource);
     }
 
     @Override
