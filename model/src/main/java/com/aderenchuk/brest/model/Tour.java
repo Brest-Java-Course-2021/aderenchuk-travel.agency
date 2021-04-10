@@ -14,8 +14,9 @@ public class Tour {
     public Tour() {
     }
 
-    public Tour(String direction) {
+    public Tour(String direction, LocalDate dateTour) {
         this.direction = direction;
+        this.dateTour = dateTour;
     }
 
     public Integer getTourId() {
@@ -57,7 +58,7 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "com.aderenchuk.brest.model.Tour{" +
+        return "Tour{" +
                 "tourId=" + tourId +
                 ", direction='" + direction + '\'' +
                 ", dateTour=" + dateTour +

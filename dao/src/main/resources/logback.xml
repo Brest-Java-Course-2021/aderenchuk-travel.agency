@@ -14,8 +14,8 @@
     </appender>
 
     <logger name="com.aderenchuk" level="DEBUG">
-            <appender-ref ref="STDOUT"/>
-            <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
     </logger>
 
     <root level="INFO">
