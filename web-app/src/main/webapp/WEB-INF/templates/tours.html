@@ -4,84 +4,84 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet"
-          href="../../resources/static/css/font-awesome.min.css"
-          th:href="@{/resources/static/css/font-awesome.min.css}">
-    <link rel="stylesheet"
           href="../../resources/static/css/bootstrap.css"
           th:href="@{/resources/static/css/bootstrap.css}">
     <link rel="stylesheet"
           href="../../resources/static/css/style.css"
           th:href="@{/resources/static/css/style.css}">
-    <title>Flights</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Tours</title>
 </head>
-<body>
 
+<body>
 <header>
     <nav class="pl-2 navbar navbar-expand-sm navbar-dark" style="background-color: #FF8C00;">
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a href="/" class="navbar-brand"><img src="../../resources/static/img/bag.png"
-                                              th:src="@{/resources/static/img/bag.png}"
-                                              height="32" width="32" alt="HR"></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <a class="nav-item nav-link active"
-                   href="flights.html"
-                   th:href="@{/flights}">Tours</a>
-                <a class="nav-item nav-link"
-                   href="passengers.html"
-                   th:href="@{/passengers}">Clients</a>
-            </ul>
+        <div class="container-fluid">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="/" class="navbar-brand"><img src="../../resources/static/img/bag.png"
+                                                  th:src="@{/resources/static/img/bag.png}"
+                                                  height="32" width="32" alt="HR"></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <a class="nav-item nav-link active"
+                       href="tours.html"
+                       th:href="@{/tours}">Tours</a>
+                    <a class="nav-item nav-link"
+                       href="clients.html"
+                       th:href="@{/clients}">Clients</a>
+                </ul>
+            </div>
         </div>
     </nav>
     <nav id="main-header"
-         class="py-1 mb-3 navbar navbar-expand-sm navbar-light bg-light text-dark" >
-        <span class="navbar-brand text-uppercase mr-auto">Tours</span>
-        <ul class="navbar-nav float-right">
-            <li class="nav-item">
-                <a href="flight.html"
-                   th:href="@{/flights/add}"
-                   class="btn btn-light"
-                   title="Add flight"
-                   data-toggle="tooltip"
-                   data-placement="bottom">
-                    <i class="fa fa-plus"></i> <span
-                        class="d-none d-sm-inline">Add</span></a>
-            </li>
-        </ul>
+         class="py-1 mb-3 navbar navbar-light bg-light text-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand text-uppercase">Tours</span>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="tour.html"
+                       th:href="@{/tours/add}"
+                       class="btn btn-light"
+                       title="Add tour">
+                        <i class="bi-plus"></i>&nbsp;<span class="d-none d-sm-inline">Add</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
 
-<section id="flights">
-    <div class="container-fluid" >
+<section id="tours">
+    <div class="container-fluid">
         <!--Filter-->
-        <div class="container row align-items-center"  >
+        <div class="container row align-items-center">
             <form class="form-inline">
                 <div class="input-group-addon">
                     <span class="input-group-text">FROM:</span>
                 </div>
                 <input type="date" class="form-control my-sm-1"
                        id="dateFrom" name="dateFrom" placeholder="Date" required="">
-
                 <div class="input-group-addon">
                     <span class="input-group-text">TO</span>
                 </div>
                 <input type="date" class="form-control my-sm-1"
-                       id="dateTo" name="dateTo" placeholder="Date" required="" >
+                       id="dateTo" name="dateTo" placeholder="Date" required="">
                 <div class="btn btn-light"
-                     title="Find flights"
+                     title="Find tours"
                      data-toggle="tooltip"
                      data-placement="bottom">
-                    <button class="d-none d-sm-inline">Find</button> </div>
+                    <button class="d-none d-sm-inline">Find</button>
+                </div>
 
             </form>
         </div>
-        <div class="row" >
-            <div class="col" >
-                <div class="card" >
+        <div class="row">
+            <div class="col">
+                <div class="card">
 
-                    <table class="table table-striped" >
+                    <table class="table table-striped">
                         <thead class="text-light" style="background-color: #FF8C00;">
                         <tr>
                             <th>№ Tour</th>
@@ -92,103 +92,103 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="flight : ${flights}">
-                            <td th:text="${flight.flightId}">101</td>
-                            <td th:text="${flight.direction}">Brest-Madrid</td>
-                            <td th:text="${flight.dateFlight}">11.04.2021</td>
-                            <td th:text="${flight.quantityPassengers}">4</td>
+                        <tr th:each="tour : ${tours}">
+                            <td th:text="${tour.tourId}">101</td>
+                            <td th:text="${tour.direction}">Brest-Madrid</td>
+                            <td th:text="${tour.dateTour}">11.04.2021</td>
+                            <td th:text="${tour.quantityClients}">4</td>
                             <td class="text-right">
-                                <a href="flight.html"
-                                   th:href="@{|/flights/${flight.flightId}|}"
+                                <a href="tour.html"
+                                   th:href="@{|/tours/${tour.tourId}|}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit flight"
+                                   title="Edit tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-pencil"></i> <span
+                                    <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
                                 <span data-toggle="modal"
                                       data-target="#deleteDialog"
-                                      th:attr="data-id=${flight.flightId},data-name=${flight.direction}">
+                                      th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
                                 <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete flight"
+                                   title="delete tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-remove"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
                                 </span>
                             </td>
                         </tr>
-                        <tr th:each="flight : ${flights}">
-                            <td th:text="${flight.flightId}">102</td>
-                            <td th:text="${flight.direction}">Minsk-Ankara</td>
-                            <td th:text="${flight.dateFlight}">30.06.2021</td>
-                            <td th:text="${flight.quantityPassengers}">2</td>
+                        <tr th:each="tour : ${tours}">
+                            <td th:text="${tour.tourId}">102</td>
+                            <td th:text="${tour.direction}">Minsk-Ankara</td>
+                            <td th:text="${tour.dateTour}">30.06.2021</td>
+                            <td th:text="${tour.quantityClients}">2</td>
                             <td class="text-right">
-                                <a href="flight.html"
-                                   th:href="@{|/flights/${flight.flightId}|}"
+                                <a href="tour.html"
+                                   th:href="@{|/tours/${tour.tourId}|}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit flight"
+                                   title="Edit tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-pencil"></i> <span
+                                    <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
                                 <span data-toggle="modal"
                                       data-target="#deleteDialog"
-                                      th:attr="data-id=${flight.flightId},data-name=${flight.direction}">
+                                      th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
                                 <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete flight"
+                                   title="delete tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-remove"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
                                 </span>
                             </td>
                         </tr>
-                        <tr th:each="flight : ${flights}">
-                            <td th:text="${flight.flightId}">103</td>
-                            <td th:text="${flight.direction}">Brest-Egypt</td>
-                            <td th:text="${flight.dateFlight}">15.05.2021</td>
-                            <td th:text="${flight.quantityPassengers}">5</td>
+                        <tr th:each="tour : ${tours}">
+                            <td th:text="${tour.tourId}">103</td>
+                            <td th:text="${tour.direction}">Brest-Egypt</td>
+                            <td th:text="${tour.dateTour}">15.05.2021</td>
+                            <td th:text="${tour.quantityClients}">5</td>
                             <td class="text-right">
-                                <a href="flight.html"
-                                   th:href="@{|/flights/${flight.flightId}|}"
+                                <a href="tour.html"
+                                   th:href="@{|/tours/${tour.tourId}|}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit flight"
+                                   title="Edit tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-pencil"></i> <span
+                                    <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
                                 <span data-toggle="modal"
                                       data-target="#deleteDialog"
-                                      th:attr="data-id=${flight.flightId},data-name=${flight.direction}">
+                                      th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
                                 <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete flight"
+                                   title="delete tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-remove"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
                                 </span>
                             </td>
                         </tr>
-                        <tr th:each="flight : ${flights}">
-                            <td th:text="${flight.flightId}">104</td>
-                            <td th:text="${flight.direction}">Minsk-Rome</td>
-                            <td th:text="${flight.dateFlight}">20.06.2021</td>
-                            <td th:text="${flight.quantityPassengers}">3</td>
+                        <tr th:each="tour : ${tours}">
+                            <td th:text="${tour.tourId}">104</td>
+                            <td th:text="${tour.direction}">Minsk-Rome</td>
+                            <td th:text="${tour.dateTour}">20.06.2021</td>
+                            <td th:text="${tour.quantityClients}">3</td>
                             <td class="text-right">
-                                <a href="flight.html"
-                                   th:href="@{|/flights/${flight.flightId}|}"
+                                <a href="tour.html"
+                                   th:href="@{|/tours/${tour.tourId}|}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit flight"
+                                   title="Edit tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-pencil"></i> <span
+                                    <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
                                 <span data-toggle="modal"
                                       data-target="#deleteDialog"
-                                      th:attr="data-id=${flight.flightId},data-name=${flight.direction}">
+                                      th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
                                 <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete flight"
+                                   title="delete tour"
                                    data-toggle="tooltip"
                                    data-placement="top">
-                                    <i class="fa fa-remove"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
                                 </span>
                             </td>
                         </tr>
@@ -237,12 +237,13 @@
 <script>
     $('#deleteDialog').on('show.bs.modal', function (event) {
         var target = $(event.relatedTarget)
-        $(this).find('.modal-body').text('Please confirm delete flight: "' + target.data('name') + '"')
-        document.getElementById('deleteUrl').href = '/flights/' + target.data('id') + '/delete';
+        $(this).find('.modal-body').text('Please confirm delete tour: "' + target.data('name') + '"')
+        document.getElementById('deleteUrl').href = '/tours/' + target.data('id') + '/delete';
     })
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
+
 </script>
 </body>
 </html>
