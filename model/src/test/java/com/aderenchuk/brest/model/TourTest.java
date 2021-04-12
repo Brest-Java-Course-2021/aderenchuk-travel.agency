@@ -4,11 +4,13 @@ package com.aderenchuk.brest.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
+
 public class TourTest {
 
     @Test
     public void getDirectionConstructor() {
-        Tour tour = new Tour("Brest-Moscow");
+        Tour tour = new Tour("Brest-Moscow", LocalDate.of(2002, 2, 12));
         Assert.assertEquals("Brest-Moscow", tour.getDirection());
     }
 

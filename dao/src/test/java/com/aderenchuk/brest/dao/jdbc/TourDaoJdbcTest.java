@@ -5,13 +5,12 @@ import com.aderenchuk.brest.model.Tour;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,11 +52,11 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK"));
-        tourDao.create(new Tour("BREST-MINSK"));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
 
         List<Tour> realTour = tourDao.findAll();
-        Assert.assertEquals(tours.size() + 1,realTour.size());
+        Assert.assertEquals(tours.size() + 1, realTour.size());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -66,8 +65,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK"));
-        tourDao.create(new Tour("BREST-MINSK"));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -76,8 +75,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK"));
-        tourDao.create(new Tour("BREST-minsk"));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
+        tourDao.create(new Tour("BREST-minsk", LocalDate.of(2002, 2, 12)));
     }
 
     @Test
@@ -91,7 +90,6 @@ public class TourDaoJdbcTest {
         tourDao.update(tour);
 
         Optional<Tour> realTour = tourDao.findById(tour.getTourId());
-   //     Assert.assertEquals(realTour.get(), "MOSCOW-BERLIN");
+        Assert.assertEquals(realTour.get().getDirection(), "MOSCOW-BERLIN");
     }
-
 }

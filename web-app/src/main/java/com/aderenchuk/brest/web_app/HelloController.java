@@ -12,9 +12,9 @@ public class HelloController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
-    @GetMapping(value = "hello")
+    @GetMapping(value = "/hello")
     public String hello(@RequestParam(value = "name", required = false, defaultValue = "World")
-                        String name, Model model) {
+                                String name, Model model) {
         LOGGER.debug("hello(name:{})", name);
         model.addAttribute("name", name);
         return "hello";
