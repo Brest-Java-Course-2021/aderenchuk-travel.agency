@@ -182,7 +182,7 @@
                         <contextPath>/</contextPath>
                     </webApp>
                     <httpConnector>
-                        <port>8050</port>
+                        <port>8055</port>
                     </httpConnector>
                 </configuration>
             </plugin>

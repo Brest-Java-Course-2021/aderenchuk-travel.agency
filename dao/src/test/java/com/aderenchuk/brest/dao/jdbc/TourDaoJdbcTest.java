@@ -5,6 +5,8 @@ import com.aderenchuk.brest.model.Tour;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
@@ -52,8 +54,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
 
         List<Tour> realTour = tourDao.findAll();
         Assert.assertEquals(tours.size() + 1, realTour.size());
@@ -65,8 +67,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2 ,15)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -75,8 +77,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2002, 2, 12)));
-        tourDao.create(new Tour("BREST-minsk", LocalDate.of(2002, 2, 12)));
+        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour("BREST-minsk", LocalDate.of(2015, 2, 15)));
     }
 
     @Test
@@ -92,4 +94,5 @@ public class TourDaoJdbcTest {
         Optional<Tour> realTour = tourDao.findById(tour.getTourId());
         Assert.assertEquals(realTour.get().getDirection(), "MOSCOW-BERLIN");
     }
+
 }
