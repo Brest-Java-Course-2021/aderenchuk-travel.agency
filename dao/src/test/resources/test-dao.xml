@@ -8,9 +8,15 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="departmentDao" class="com.aderenchuk.brest.dao.jdbc.TourDaoJdbc">
+    <bean id="tourDao" class="com.aderenchuk.brest.dao.jdbc.TourDaoJdbc">
         <constructor-arg ref="namedParameterJdbcTemplate"/>
     </bean>
+
+<!--    <bean id="clientDao" class="com.aderenchuk.brest.dao.jdbc.ClientDaoJdbc">-->
+<!--        <constructor-arg ref="namedParameterJdbcTemplate"/>-->
+<!--    </bean>-->
+
+
 
 </beans>
 

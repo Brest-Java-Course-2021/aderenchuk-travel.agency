@@ -54,8 +54,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
 
         List<Tour> realTour = tourDao.findAll();
         Assert.assertEquals(tours.size() + 1, realTour.size());
@@ -67,8 +67,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2 ,15)));
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour(101,"BREST-MINSK", LocalDate.of(2015, 2 ,15)));
+        tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -77,8 +77,8 @@ public class TourDaoJdbcTest {
         Assert.assertNotNull(tours);
         Assert.assertTrue(tours.size() > 0);
 
-        tourDao.create(new Tour("BREST-MINSK", LocalDate.of(2015, 2, 15)));
-        tourDao.create(new Tour("BREST-minsk", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
+        tourDao.create(new Tour(101, "BREST-minsk", LocalDate.of(2015, 2, 15)));
     }
 
     @Test

@@ -10,7 +10,7 @@ public class TourTest {
 
     @Test
     public void getDirectionConstructor() {
-        Tour tour = new Tour("Brest-Moscow", LocalDate.of(2002, 2, 12));
+        Tour tour = new Tour(101, "Brest-Moscow", LocalDate.of(2002, 2, 12));
         Assert.assertEquals("Brest-Moscow", tour.getDirection());
     }
 
