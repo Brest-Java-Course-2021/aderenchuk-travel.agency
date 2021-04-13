@@ -4,6 +4,7 @@ import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.model.Tour;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -21,15 +22,22 @@ public class TourDaoJdbc implements TourDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
 
-    private static final String SQL_GET_ALL_TOUR = "SELECT * FROM TOUR AS T ORDER BY T.DIRECTION";
+    @Value("${tour.select}")
+    private String selectSql;
 
-    private static final String SQL_GET_TOUR_BY_ID = "SELECT * FROM TOUR AS T WHERE T.TOUR_ID = :TOUR_ID";
+    @Value("${tour.findById}")
+    private String findByIdSql;
 
-    private static final String SQL_CREATE_TOUR = "INSERT INTO TOUR (DIRECTION,DATE_TOUR) VALUES (:DIRECTION, :DATE_TOUR);";
+    @Value("${tour.create}")
+    private String createSql;
 
-    private static final String SQL_CHECK_DIRECTION = "SELECT COUNT(TOUR_ID) FROM TOUR WHERE lower(DIRECTION) = lower(:DIRECTION)";
+    @Value("${tour.update}")
+    private String updateSql;
 
-    private static final String SQL_UPDATE_TOUR = "UPDATE TOUR SET DIRECTION = :DIRECTION, DATE_TOUR =:DATE_TOUR WHERE TOUR_ID = :TOUR_ID;";
+    @Value("${tour.check}")
+    private String checkSql;
+
+
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     public TourDaoJdbc(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
@@ -41,14 +49,14 @@ public class TourDaoJdbc implements TourDao {
     @Override
     public List<Tour> findAll() {
         LOGGER.debug("Find all tours");
-        return namedParameterJdbcTemplate.query(SQL_GET_ALL_TOUR, new TourRowMapper());
+        return namedParameterJdbcTemplate.query(selectSql, new TourRowMapper());
     }
 
     @Override
     public Optional<Tour> findById(Integer tourId) {
         LOGGER.debug("Find tour by id: {}", tourId);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource("TOUR_ID", tourId);
-        return Optional.ofNullable(namedParameterJdbcTemplate.queryForObject(SQL_GET_TOUR_BY_ID, sqlParameterSource, new TourRowMapper()));
+        return Optional.ofNullable(namedParameterJdbcTemplate.queryForObject(findByIdSql, sqlParameterSource, new TourRowMapper()));
 
     }
 
@@ -63,14 +71,14 @@ public class TourDaoJdbc implements TourDao {
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
                 .addValue("DIRECTION", tour.getDirection())
                 .addValue("DATE_TOUR", tour.getDateTour());
-        namedParameterJdbcTemplate.update(SQL_CREATE_TOUR, sqlParameterSource, keyHolder);
+        namedParameterJdbcTemplate.update(createSql, sqlParameterSource, keyHolder);
         long stopTime = System.nanoTime();
         LOGGER.debug("Execution time: {}", stopTime - startTime);
         return Objects.requireNonNull(keyHolder.getKey().intValue());
     }
 
     public boolean isTourDirectionUnique(Tour tour) {
-        return namedParameterJdbcTemplate.queryForObject(SQL_CHECK_DIRECTION,
+        return namedParameterJdbcTemplate.queryForObject(checkSql,
                 new MapSqlParameterSource("DIRECTION", tour.getDirection()), Integer.class) == 0;
     }
 
@@ -82,7 +90,7 @@ public class TourDaoJdbc implements TourDao {
                         .addValue("TOUR_ID", tour.getTourId())
                         .addValue("DIRECTION", tour.getDirection())
                         .addValue("DATE_TOUR", tour.getDateTour());
-        return namedParameterJdbcTemplate.update(SQL_UPDATE_TOUR, sqlParameterSource);
+        return namedParameterJdbcTemplate.update(updateSql, sqlParameterSource);
     }
 
     @Override
