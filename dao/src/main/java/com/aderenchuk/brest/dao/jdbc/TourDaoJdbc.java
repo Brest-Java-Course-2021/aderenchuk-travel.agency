@@ -37,6 +37,9 @@ public class TourDaoJdbc implements TourDao {
     @Value("${tour.check}")
     private String checkSql;
 
+    @Value("${tour.delete}")
+    private String deleteSql;
+
 
     NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -96,7 +99,10 @@ public class TourDaoJdbc implements TourDao {
     @Override
     public Integer delete(Integer tourId) {
         LOGGER.debug("Delete tour: {}", tourId);
-        return null;
+        SqlParameterSource sqlParameterSource =
+                new MapSqlParameterSource()
+                .addValue("TOUR_ID", tourId);
+        return namedParameterJdbcTemplate.update(deleteSql, sqlParameterSource);
     }
 
     private class TourRowMapper implements RowMapper<Tour> {
