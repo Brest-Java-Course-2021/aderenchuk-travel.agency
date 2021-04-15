@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.aderenchuk.brest.service.impl</groupId>
+    <groupId>com.aderenchuk.brest</groupId>
     <artifactId>service</artifactId>
 
     <dependencies>

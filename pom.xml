@@ -71,7 +71,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.aderenchuk.brest.service.impl</groupId>
+                <groupId>com.aderenchuk.brest</groupId>
                 <artifactId>service</artifactId>
                 <version>${project.version}</version>
             </dependency>

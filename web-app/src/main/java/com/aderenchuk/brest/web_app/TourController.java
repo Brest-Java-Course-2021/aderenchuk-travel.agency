@@ -23,6 +23,8 @@ public class TourController {
 
     @GetMapping(value = "/tours")
     private final String tours(Model model) {
+        LOGGER.debug("tours()");
+        model.addAttribute("tours", tourDtoService.findAllQuantityClients());
         return "tours";
     }
 

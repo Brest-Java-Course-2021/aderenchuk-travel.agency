@@ -14,27 +14,39 @@
     <artifactId>web-app</artifactId>
     <description>Spring MVC Web application</description>
 
-    <dependencies>
+    <dependencies<dependency>
+            <groupId>com.aderenchuk.brest</groupId>
+            <artifactId>model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aderenchuk.brest</groupId>
+            <artifactId>dao-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aderenchuk.brest</groupId>
+            <artifactId>dao</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.aderenchuk.brest</groupId>
             <artifactId>service-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.aderenchuk.brest</groupId>
+            <artifactId>service</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
@@ -50,13 +62,11 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>${logback.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -64,10 +74,35 @@
             <version>1.7.30</version>
         </dependency>
 
+        <!--tests-->
+        <dependency>
+            <groupId>com.aderenchuk.brest</groupId>
+            <artifactId>test-db</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
     </dependencies>
 
