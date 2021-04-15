@@ -28,8 +28,7 @@ public class TourDtoDaoJdbc implements TourDtoDao {
     @Override
     public List<TourDto> findAllQuantityClients() {
         LOGGER.debug("findAllQuantityClients()");
-        List<TourDto> tours = namedParameterJdbcTemplate.query(
+        return namedParameterJdbcTemplate.query(
                 findAllQuantityClients, BeanPropertyRowMapper.newInstance(TourDto.class));
-        return tours;
     }
 }

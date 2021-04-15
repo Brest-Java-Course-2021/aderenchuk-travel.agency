@@ -1,4 +1,4 @@
-package com.derenchuk.brest.service.impl;
+package com.aderenchuk.brest.service.impl;
 
 import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.model.Tour;
