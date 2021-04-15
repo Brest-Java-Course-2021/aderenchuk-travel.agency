@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -23,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {"classpath:app-context-test.xml"})
+@ContextConfiguration(locations = {"classpath*:app-context-test.xml"})
 @Transactional
 class DepartmentControllerIT {
 
@@ -49,21 +50,21 @@ class DepartmentControllerIT {
                         allOf(
                                 hasProperty("tourId", is(101)),
                                 hasProperty("direction", is("BREST-MINSK")),
-                                hasProperty("dateTour", is("2020-05-12"))
+                                hasProperty("dateTour", is(LocalDate.of(2020, 06, 05)))
                         )
                 )))
                 .andExpect(model().attribute("tours", hasItem(
                         allOf(
                                 hasProperty("tourId", is(102)),
                                 hasProperty("direction", is("MINSK-DUBAI")),
-                                hasProperty("dateTour", is("2020-06-13"))
+                                hasProperty("dateTour", is(LocalDate.of(2020, 06, 20)))
                         )
                 )))
                 .andExpect(model().attribute("tours", hasItem(
                         allOf(
                                 hasProperty("tourId", is(103)),
                                 hasProperty("direction", is("MOSCOW-BERLIN")),
-                                hasProperty("dateTour", is("2020-05-18"))
+                                hasProperty("dateTour", is(LocalDate.of(2020, 05, 15)))
                         )
                 )))
         ;

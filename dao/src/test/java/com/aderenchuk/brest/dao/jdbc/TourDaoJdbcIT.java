@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml", "classpath:dao.xml"})
@@ -27,26 +27,26 @@ public class TourDaoJdbcIT {
     @Test
     public void findAllTest() {
         List<Tour> tours = tourDao.findAll();
-        Assertions.assertNotNull(tours);
-        Assertions.assertTrue(tours.size() > 0);
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
     }
 
     @Test
     public void findByIdTest() {
         List<Tour> tours = tourDao.findAll();
-        Assertions.assertNotNull(tours);
-        Assertions.assertTrue(tours.size() > 0);
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
 
         Integer tourId = tours.get(0).getTourId();
         Tour expTour = tourDao.findById(tourId).get();
-        Assertions.assertEquals(tourId, expTour.getTourId());
-        Assertions.assertEquals(tours.get(0).getDirection(), expTour.getDirection());
-        Assertions.assertEquals(tours.get(0), expTour);
+        assertEquals(tourId, expTour.getTourId());
+        assertEquals(tours.get(0).getDirection(), expTour.getDirection());
+        assertEquals(tours.get(0), expTour);
     }
 
     @Test
     public void findByIdExceptionalTest() {
-        Assertions.assertThrows(EmptyResultDataAccessException.class, ()-> {
+        assertThrows(EmptyResultDataAccessException.class, ()-> {
             tourDao.findById(999).get();
         });
     }
@@ -54,23 +54,23 @@ public class TourDaoJdbcIT {
     @Test
     public void createTourTest() {
         List<Tour> tours = tourDao.findAll();
-        Assertions.assertNotNull(tours);
-        Assertions.assertTrue(tours.size() > 0);
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
             tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
         });
         List<Tour> realTour = tourDao.findAll();
-        Assertions.assertEquals(tours.size() + 1, realTour.size());
+        assertEquals(tours.size() + 1, realTour.size());
     }
 
     @Test
     public void createTourWithSameNameTest() {
         List<Tour> tours = tourDao.findAll();
-        Assertions.assertNotNull(tours);
-        Assertions.assertTrue(tours.size() > 0);
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
+        assertThrows(IllegalArgumentException.class, () -> {
             tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
             tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
         });
@@ -79,10 +79,10 @@ public class TourDaoJdbcIT {
     @Test
     public void createTourWithSameNameDifferentCaseTest() {
         List<Tour> tours = tourDao.findAll();
-        Assertions.assertNotNull(tours);
-        Assertions.assertTrue(tours.size() > 0);
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
             tourDao.create(new Tour(101, "BREST-minsk", LocalDate.of(2015, 2, 15)));
         });
@@ -91,15 +91,15 @@ public class TourDaoJdbcIT {
     @Test
     public void updateTourTest() {
         List<Tour> tours = tourDao.findAll();
-        Assertions.assertNotNull(tours);
-        Assertions.assertTrue(tours.size() > 0);
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
 
         Tour tour = tours.get(0);
         tour.setDirection("MOSCOW-BERLIN");
         tourDao.update(tour);
 
         Optional<Tour> realTour = tourDao.findById(tour.getTourId());
-        Assertions.assertEquals(realTour.get().getDirection(), "MOSCOW-BERLIN");
+        assertEquals(realTour.get().getDirection(), "MOSCOW-BERLIN");
     }
 
 }

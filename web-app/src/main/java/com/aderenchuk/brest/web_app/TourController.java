@@ -1,6 +1,7 @@
 package com.aderenchuk.brest.web_app;
 
 import com.aderenchuk.brest.service.TourDtoService;
+import com.aderenchuk.brest.service.TourService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,25 +17,44 @@ public class TourController {
 
     private final TourDtoService tourDtoService;
 
+    private final TourService tourService;
+
     @Autowired
-    public TourController(TourDtoService tourDtoService) {
+    public TourController(TourDtoService tourDtoService, TourService tourService) {
         this.tourDtoService = tourDtoService;
+        this.tourService = tourService;
     }
 
+    /**
+     * Goto tours list page.
+     *
+     * @return view name
+     */
     @GetMapping(value = "/tours")
-    private final String tours(Model model) {
+    public final String tours(Model model) {
         LOGGER.debug("tours()");
         model.addAttribute("tours", tourDtoService.findAllQuantityClients());
         return "tours";
     }
 
-    @GetMapping(value = "/tour/{id}")
-    private final String gotoEditTourPage(@PathVariable Integer id, Model model) {
-        return "tour";
-    }
-
-    @GetMapping(value = "/tour/{id}")
-    private final String gotoEditAddTourPage(Model model) {
-        return "tour";
-    }
+//    /**
+//     * Goto edit tour page.
+//     *
+//     * @return view name
+//     */
+//    @GetMapping(value = "/tour/{id}")
+//    public final String gotoEditTourPage(@PathVariable Integer id, Model model) {
+//        return "tour";
+//    }
+//
+//
+//    /**
+//     * Goto new tour page.
+//     *
+//     * @return view name
+//     */
+//    @GetMapping(value = "/tour/{id}")
+//    public final String gotoEditAddTourPage(Model model) {
+//        return "tour";
+//    }
 }
