@@ -19,6 +19,10 @@ public class Client {
         this.tourId = tourId;
     }
 
+    public Client() {
+
+    }
+
 
     public String getFirstName() {
         return firstName;

@@ -23,4 +23,5 @@
     <bean id="tourDtoService" class="com.aderenchuk.brest.service.impl.TourDtoServiceImpl">
         <constructor-arg name="tourDtoDao" ref="tourDtoDao"/>
     </bean>
+
 </beans>
