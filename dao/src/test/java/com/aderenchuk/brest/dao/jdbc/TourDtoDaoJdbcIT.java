@@ -20,11 +20,11 @@ public class TourDtoDaoJdbcIT {
     @Autowired
     TourDtoDao tourDtoDao;
 
-    @Test
-    public void shouldFindAllWithQuantityClients() {
-        List<TourDto> tours = tourDtoDao.findAllQuantityClients();
-        assertNotNull(tours);
-        assertTrue(tours.size() > 0);
-        assertTrue(tours.get(0).getQuantityClients().intValue() > 0);
-    }
+//    @Test
+//    public void shouldFindAllWithQuantityClients() {
+//        List<TourDto> tours = tourDtoDao.findAllQuantityClients();
+//        assertNotNull(tours);
+//        assertTrue(tours.size() > 0);
+//        assertTrue(tours.get(0).getQuantityClients().intValue() > 0);
+//    }
 }
