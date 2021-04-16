@@ -12,11 +12,21 @@
         <constructor-arg ref="namedParameterJdbcTemplate"/>
     </bean>
 
-<!--    <bean id="clientDao" class="com.aderenchuk.brest.dao.jdbc.ClientDaoJdbc">-->
-<!--        <constructor-arg ref="namedParameterJdbcTemplate"/>-->
-<!--    </bean>-->
+    <bean id="clientDao" class="com.aderenchuk.brest.dao.jdbc.ClientDaoJdbc">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
 
+    <bean id="tourDtoDao" class="com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
 
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:dao.properties</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
 
