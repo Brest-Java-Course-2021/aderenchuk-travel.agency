@@ -14,17 +14,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml", "classpath:dao.xml"})
+@ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml"})
 public class TourDtoDaoJdbcIT {
 
     @Autowired
     TourDtoDao tourDtoDao;
 
-//    @Test
-//    public void shouldFindAllWithQuantityClients() {
-//        List<TourDto> tours = tourDtoDao.findAllQuantityClients();
-//        assertNotNull(tours);
-//        assertTrue(tours.size() > 0);
-//        assertTrue(tours.get(0).getQuantityClients().intValue() > 0);
-//    }
+    @Test
+    public void shouldFindAllWithQuantityClients() {
+        List<TourDto> tours = tourDtoDao.findAllQuantityClients();
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
+        assertTrue(tours.get(0).getQuantityClients().intValue() > 0);
+    }
 }

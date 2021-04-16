@@ -8,6 +8,10 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
+    <bean id="clientDao" class="com.aderenchuk.brest.dao.jdbc.ClientDaoJdbc">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
+
     <bean id="tourDao" class="com.aderenchuk.brest.dao.jdbc.TourDaoJdbc">
         <constructor-arg ref="namedParameterJdbcTemplate"/>
     </bean>
@@ -24,6 +28,13 @@
         <constructor-arg name="tourDtoDao" ref="tourDtoDao"/>
     </bean>
 
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:dao.properties</value>
+            </list>
+        </property>
+    </bean>
 
 
 </beans>

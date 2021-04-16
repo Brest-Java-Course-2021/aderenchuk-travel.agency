@@ -32,6 +32,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 class DepartmentControllerIT {
 
+    private final String TOURS_URL = "/tours";
+
     @Autowired
     private WebApplicationContext wac;
 
@@ -45,7 +47,7 @@ class DepartmentControllerIT {
     @Test
     public void shouldReturnDepartmentsPage() throws Exception {
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/tours")
+                MockMvcRequestBuilders.get(TOURS_URL)
         ).andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))
@@ -74,10 +76,10 @@ class DepartmentControllerIT {
     }
 
     @Test
-    public void shouldOpenEditToursPageId() throws Exception {
+    public void shouldOpenEditTourPageById() throws Exception {
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get( "/tours"+"/101")
+                MockMvcRequestBuilders.get( TOURS_URL+"/101")
         ).andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))
@@ -93,7 +95,7 @@ class DepartmentControllerIT {
     public void shouldReturnToToursPageIfTourNotFoundById() throws Exception {
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/tours"+"/13")
+                MockMvcRequestBuilders.get(TOURS_URL+"/13")
         ).andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isFound())
                 .andExpect(MockMvcResultMatchers.redirectedUrl("tours"));
@@ -105,7 +107,7 @@ class DepartmentControllerIT {
         Tour tour = create(1);
 
         mockMvc.perform(
-                MockMvcRequestBuilders.post("/tours" + "/101")
+                MockMvcRequestBuilders.post(TOURS_URL + "/101")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("tourId", String.valueOf(tour.getTourId()))
                 .param("direction", tour.getDirection())
@@ -120,7 +122,7 @@ class DepartmentControllerIT {
     public void shouldOpenNewTourPage() throws Exception {
 
         mockMvc.perform(
-         MockMvcRequestBuilders.get("/tours" + "/add")
+         MockMvcRequestBuilders.get(TOURS_URL + "/add")
         ).andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))
@@ -134,20 +136,20 @@ class DepartmentControllerIT {
         Tour tour = create(1);
 
         mockMvc.perform(
-                MockMvcRequestBuilders.post("/tours" + "/add")
+                MockMvcRequestBuilders.post(TOURS_URL + "/add")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("tourId", String.valueOf(tour.getTourId()))
                 .param("direction", tour.getDirection())
                 .param("dateTour", ("2020-05-12"))
         ).andExpect(status().isFound())
-                .andExpect(redirectedUrl("/tours"));
+                .andExpect(redirectedUrl(TOURS_URL));
     }
 
     @Test
     public  void shouldDeleteTour() throws Exception {
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/tours" + "/1/delete")
+                MockMvcRequestBuilders.get(TOURS_URL + "/1/delete")
         ).andExpect(status().isFound())
                 .andExpect(view().name("redirect:" + "/tours"))
                 .andExpect(redirectedUrl("tours"));

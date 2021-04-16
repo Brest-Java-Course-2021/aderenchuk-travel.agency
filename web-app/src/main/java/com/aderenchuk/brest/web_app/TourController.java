@@ -11,16 +11,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/tours")
 public class TourController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
 
+    @Autowired
     private final TourDtoService tourDtoService;
 
+    @Autowired
     private final TourService tourService;
 
     @Autowired
@@ -46,7 +50,7 @@ public class TourController {
      *
      * @return view name
      */
-    @GetMapping(value = "/tour/{id}")
+    @GetMapping(value = "/{tourId}")
     public final String gotoEditTourPage(@PathVariable Integer id, Model model) {
         LOGGER.debug("gotoEditTourPage({}, {})", id, model);
         Optional<Tour> optionalTour = tourService.findById(id);
@@ -65,8 +69,8 @@ public class TourController {
      *
      * @return view name
      */
-    @GetMapping(value = "/tour")
-    public final String gotoEditAddTourPage(Model model) {
+    @GetMapping(value = "/add")
+    public final String gotoAddTourPage(Model model) {
         LOGGER.debug("gotoAddTourPage({})", model);
         model.addAttribute("isNew", true);
         model.addAttribute("tour", new Tour());
@@ -79,7 +83,7 @@ public class TourController {
      * @param tour new tour with filled data.
      * @return view name
      */
-    @PostMapping(value = "/tour")
+    @PostMapping(value = "/add")
     public String addTour(Tour tour) {
         LOGGER.debug("addTour({}, {})", tour);
         this.tourService.create(tour);
@@ -92,7 +96,7 @@ public class TourController {
      * @param tour tour with filled data.
      * @return view name
      */
-    @PostMapping(value = "/tour/{id}")
+    @PostMapping(value = "/{id}")
     public String updateTour(Tour tour) {
         LOGGER.debug("updateTour({}, {})", tour);
         this.tourService.update(tour);
@@ -104,7 +108,7 @@ public class TourController {
      *
      * @return view name
      */
-    @PostMapping(value = "/tour/{id}/delete")
+    @PostMapping(value = "/{tourId}/delete")
     public String deleteTour(@PathVariable Integer id, Model model){
         LOGGER.debug("deleteTour({}, {})");
         tourService.delete(id);
