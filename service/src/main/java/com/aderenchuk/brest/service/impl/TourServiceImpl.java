@@ -1,8 +1,11 @@
 package com.aderenchuk.brest.service.impl;
 
 import com.aderenchuk.brest.dao.TourDao;
+import com.aderenchuk.brest.dao.jdbc.TourDaoJdbc;
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.service.TourService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,11 +17,10 @@ import java.util.Optional;
 @Transactional
 public class TourServiceImpl implements TourService {
 
-    //private static final Logger LOGGER = Logger
+    private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
 
     private final TourDao tourDao;
 
-    @Autowired
     public TourServiceImpl(TourDao tourDao) {
         this.tourDao = tourDao;
     }
