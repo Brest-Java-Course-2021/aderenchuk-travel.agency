@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,10 @@ import java.util.*;
 
 import static com.aderenchuk.brest.constants.ClientConstants.*;
 
+@Repository
 public class ClientDaoJdbc implements ClientDao {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
 
     @Value("${client.select}")
     private String selectSql;
@@ -39,7 +43,6 @@ public class ClientDaoJdbc implements ClientDao {
     @Value("${client.delete}")
     private String deleteSql;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
 
     private final ClientRowMapper clientRowMapper = new ClientRowMapper();
 
