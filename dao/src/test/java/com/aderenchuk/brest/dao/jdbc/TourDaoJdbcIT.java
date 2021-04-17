@@ -46,9 +46,8 @@ public class TourDaoJdbcIT {
 
     @Test
     public void findByIdExceptionalTest() {
-        assertThrows(EmptyResultDataAccessException.class, ()-> {
-            tourDao.findById(999).get();
-        });
+        Optional<Tour> optionalTour = tourDao.findById(999);
+        assertTrue(optionalTour.isEmpty());
     }
 
     @Test
