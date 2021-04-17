@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(locations = {"classpath*:app-context-test.xml"})
 @ApplicationScope
 @Transactional
-class DepartmentControllerIT {
+class TourControllerIT {
 
     private final String TOURS_URL = "/tours";
 
@@ -55,25 +55,27 @@ class DepartmentControllerIT {
                 .andExpect(model().attribute("tours", hasItem(
                         allOf(
                                 hasProperty("tourId", is(101)),
-                                hasProperty("direction", is("BREST-MINSK")),
-                                hasProperty("dateTour", is(convertToLocalDate("2020-06-05")))
+                                hasProperty("direction", is("BREST-MOSCOW")),
+                                hasProperty("dateTour", is(convertToLocalDate("2021-08-01")))
                         )
                 )))
                 .andExpect(model().attribute("tours", hasItem(
                         allOf(
                                 hasProperty("tourId", is(102)),
-                                hasProperty("direction", is("MINSK-DUBAI")),
-                                hasProperty("dateTour", is(convertToLocalDate("2020-06-20")))
+                                hasProperty("direction", is("MINSK-ROME")),
+                                hasProperty("dateTour", is(convertToLocalDate("2021-08-01")))
                         )
                 )))
                 .andExpect(model().attribute("tours", hasItem(
                         allOf(
                                 hasProperty("tourId", is(103)),
-                                hasProperty("direction", is("MOSCOW-BERLIN")),
-                                hasProperty("dateTour", is(convertToLocalDate("2020-05-15")))
+                                hasProperty("direction", is("MOSCOW-BARCELONA")),
+                                hasProperty("dateTour", is(convertToLocalDate("2021-06-15")))
                         )
                 )));
     }
+
+
 
     @Test
     public void shouldOpenEditTourPageById() throws Exception {
@@ -86,8 +88,8 @@ class DepartmentControllerIT {
                 .andExpect(view().name("tour"))
                 .andExpect(model().attribute("isNew", is(false)))
                 .andExpect(model().attribute("tour", hasProperty("tourId", is(101))))
-                .andExpect(model().attribute("tour", hasProperty("direction", is("MINSK-BREST"))))
-                .andExpect(model().attribute("tour", hasProperty("dateTour", is(convertToLocalDate("2020-03-11"))
+                .andExpect(model().attribute("tour", hasProperty("direction", is("BREST-MOSCOW"))))
+                .andExpect(model().attribute("tour", hasProperty("dateTour", is(convertToLocalDate("2021-08-01"))
                 )));
     }
 
@@ -114,15 +116,15 @@ class DepartmentControllerIT {
                 .param("dateTour", String.valueOf(tour.getDateTour()))
                 .sessionAttr("tour", tour)
         ).andExpect(status().isFound())
-                .andExpect(view().name("redirect:" + "/tours"))
-                .andExpect(redirectedUrl("/tours"));
+                .andExpect(view().name("redirect:" + TOURS_URL))
+                .andExpect(redirectedUrl(TOURS_URL));
     }
 
     @Test
     public void shouldOpenNewTourPage() throws Exception {
 
         mockMvc.perform(
-         MockMvcRequestBuilders.get(TOURS_URL + "/add")
+         MockMvcRequestBuilders.get(TOURS_URL+"/add")
         ).andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))

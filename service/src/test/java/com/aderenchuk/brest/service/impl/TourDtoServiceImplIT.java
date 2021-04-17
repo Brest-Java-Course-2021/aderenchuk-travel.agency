@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:service_test.xml"})
+@ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:service-test.xml"})
 @Transactional
 public class TourDtoServiceImplIT {
 
