@@ -5,6 +5,7 @@ import com.aderenchuk.brest.model.Tour;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -61,7 +62,8 @@ public class TourDaoJdbc implements TourDao {
     public Optional<Tour> findById(Integer tourId) {
         LOGGER.debug("Find tour by id: {}", tourId);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource("TOUR_ID", tourId);
-        return Optional.ofNullable(namedParameterJdbcTemplate.queryForObject(findByIdSql, sqlParameterSource, new TourRowMapper()));
+        List<Tour> results = namedParameterJdbcTemplate.query(findByIdSql, sqlParameterSource, new TourRowMapper());
+        return Optional.ofNullable(DataAccessUtils.uniqueResult(results));
 
     }
 

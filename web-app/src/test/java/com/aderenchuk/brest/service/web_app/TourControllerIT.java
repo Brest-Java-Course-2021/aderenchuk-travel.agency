@@ -93,32 +93,61 @@ class TourControllerIT {
                 )));
     }
 
-//    @Test
-//    public void shouldReturnToToursPageIfTourNotFoundById() throws Exception {
-//
-//        mockMvc.perform(
-//                MockMvcRequestBuilders.get(TOURS_URL+"/13")
-//        ).andDo(MockMvcResultHandlers.print())
-//                .andExpect(status().isFound())
-//                .andExpect(MockMvcResultMatchers.redirectedUrl("tours"));
-//    }
+// 
+    @Test
+    public void shouldReturnToToursPageIfTourNotFoundById() throws Exception {
 
-//    @Test
-//    public void shouldUpdateTourAfterEdit() throws Exception {
-//
-//        Tour tour = create(1);
-//
-//        mockMvc.perform(
-//                MockMvcRequestBuilders.post(TOURS_URL + "/101")
-//                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-//                .param("tourId", String.valueOf(tour.getTourId()))
-//                .param("direction", tour.getDirection())
-//                .param("dateTour", String.valueOf(tour.getDateTour()))
-//                .sessionAttr("tour", tour)
-//        ).andExpect(status().isFound())
-//                .andExpect(view().name("redirect:" + TOURS_URL))
-//                .andExpect(redirectedUrl(TOURS_URL));
-//    }
+//         mockMvc.perform(
+// //    @Test
+// //    public void shouldReturnToToursPageIfTourNotFoundById() throws Exception {
+// //
+// //        mockMvc.perform(
+// //                MockMvcRequestBuilders.get(TOURS_URL+"/13")
+// //        ).andDo(MockMvcResultHandlers.print())
+// //                .andExpect(status().isFound())
+// //                .andExpect(MockMvcResultMatchers.redirectedUrl("tours"));
+// //    }
+
+// //    @Test
+// //    public void shouldUpdateTourAfterEdit() throws Exception {
+// //
+// //        Tour tour = create(1);
+// //
+// //        mockMvc.perform(
+// //                MockMvcRequestBuilders.post(TOURS_URL + "/101")
+// //                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+// //                .param("tourId", String.valueOf(tour.getTourId()))
+// //                .param("direction", tour.getDirection())
+// //                .param("dateTour", String.valueOf(tour.getDateTour()))
+// //                .sessionAttr("tour", tour)
+// //        ).andExpect(status().isFound())
+// //                .andExpect(view().name("redirect:" + TOURS_URL))
+// //                .andExpect(redirectedUrl(TOURS_URL));
+// //    }
+// 
+                MockMvcRequestBuilders.get(TOURS_URL+"/13")
+        ).andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isFound())
+                .andExpect(MockMvcResultMatchers.redirectedUrl("tours"));
+    }
+
+    @Test
+    public void shouldUpdateTourAfterEdit() throws Exception {
+
+        Tour tour = create(101, "BREST-MOSCOW");
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.post(TOURS_URL + "/101")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("tourId", String.valueOf(tour.getTourId()))
+                .param("direction", tour.getDirection())
+                .param("dateTour", String.valueOf(tour.getDateTour()))
+                .sessionAttr("tour", tour)
+        ).andExpect(status().isFound())
+                .andExpect(view().name("redirect:" + TOURS_URL))
+                .andExpect(redirectedUrl(TOURS_URL));
+    }
+
 
     @Test
     public void shouldOpenNewTourPage() throws Exception {
@@ -133,35 +162,59 @@ class TourControllerIT {
                 .andExpect(model().attribute("tour", isA(Tour.class)));
     }
 
-//    @Test
-//    public void shouldAddNewTour() throws Exception {
-//        Tour tour = create(1);
-//
-//        mockMvc.perform(
-//                MockMvcRequestBuilders.post(TOURS_URL + "/add")
-//                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-//                .param("tourId", String.valueOf(tour.getTourId()))
-//                .param("direction", tour.getDirection())
-//                .param("dateTour", ("2020-05-12"))
-//        ).andExpect(status().isFound())
-//                .andExpect(redirectedUrl(TOURS_URL));
-//    }
-//
-//    @Test
-//    public  void shouldDeleteTour() throws Exception {
-//
-//        mockMvc.perform(
-//                MockMvcRequestBuilders.get(TOURS_URL + "/1/delete")
-//        ).andExpect(status().isFound())
-//                .andExpect(view().name("redirect:" + "/tours"))
-//                .andExpect(redirectedUrl("tours"));
-//    }
+// <<<<<<< rest
+// //    @Test
+// //    public void shouldAddNewTour() throws Exception {
+// //        Tour tour = create(1);
+// //
+// //        mockMvc.perform(
+// //                MockMvcRequestBuilders.post(TOURS_URL + "/add")
+// //                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+// //                .param("tourId", String.valueOf(tour.getTourId()))
+// //                .param("direction", tour.getDirection())
+// //                .param("dateTour", ("2020-05-12"))
+// //        ).andExpect(status().isFound())
+// //                .andExpect(redirectedUrl(TOURS_URL));
+// //    }
+// //
+// //    @Test
+// //    public  void shouldDeleteTour() throws Exception {
+// //
+// //        mockMvc.perform(
+// //                MockMvcRequestBuilders.get(TOURS_URL + "/1/delete")
+// //        ).andExpect(status().isFound())
+// //                .andExpect(view().name("redirect:" + "/tours"))
+// //                .andExpect(redirectedUrl("tours"));
+// //    }
+// =======
+//     @Test
+//     public void shouldAddNewTour() throws Exception {
 
-    private Tour create(int index) {
+//         mockMvc.perform(
+//                 MockMvcRequestBuilders.post(TOURS_URL+"/add")
+//                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+//                 .param("tour", "test")
+//         ).andExpect(status().isFound())
+//                 .andExpect(view().name("redirect:/tours"))
+//                 .andExpect(redirectedUrl("/tours"));
+//     }
+
+//     @Test
+//     public  void shouldDeleteTour() throws Exception {
+
+//         mockMvc.perform(
+//                 MockMvcRequestBuilders.get(TOURS_URL + "/1/delete")
+//         ).andExpect(status().isFound())
+//                 .andExpect(view().name("redirect:" + "/tours"))
+//                 .andExpect(redirectedUrl("tours"));
+//     }
+// >>>>>>> main
+
+    private Tour create(int id, String direction) {
         Tour tour = new Tour();
-        tour.setTourId(index);
-        tour.setDirection("MINSK-" + index);
-        tour.setDateTour(LocalDate.now());
+        tour.setTourId(id);
+        tour.setDirection(direction);
+        tour.setDateTour(convertToLocalDate("2021-08-01"));
         return tour;
     }
 
