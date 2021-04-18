@@ -106,7 +106,7 @@ class TourControllerIT {
     @Test
     public void shouldUpdateTourAfterEdit() throws Exception {
 
-        Tour tour = create(1);
+        Tour tour = create(101, "BREST-MOSCOW");
 
         mockMvc.perform(
                 MockMvcRequestBuilders.post(TOURS_URL + "/101")
@@ -135,16 +135,14 @@ class TourControllerIT {
 
     @Test
     public void shouldAddNewTour() throws Exception {
-        Tour tour = create(1);
 
         mockMvc.perform(
-                MockMvcRequestBuilders.post(TOURS_URL + "/add")
+                MockMvcRequestBuilders.post(TOURS_URL+"/add")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("tourId", String.valueOf(tour.getTourId()))
-                .param("direction", tour.getDirection())
-                .param("dateTour", ("2020-05-12"))
+                .param("tour", "test")
         ).andExpect(status().isFound())
-                .andExpect(redirectedUrl(TOURS_URL));
+                .andExpect(view().name("redirect:/tours"))
+                .andExpect(redirectedUrl("/tours"));
     }
 
     @Test
@@ -157,11 +155,11 @@ class TourControllerIT {
                 .andExpect(redirectedUrl("tours"));
     }
 
-    private Tour create(int index) {
+    private Tour create(int id, String direction) {
         Tour tour = new Tour();
-        tour.setTourId(index);
-        tour.setDirection("MINSK-" + index);
-        tour.setDateTour(LocalDate.now());
+        tour.setTourId(id);
+        tour.setDirection(direction);
+        tour.setDateTour(convertToLocalDate("2021-08-01"));
         return tour;
     }
 
