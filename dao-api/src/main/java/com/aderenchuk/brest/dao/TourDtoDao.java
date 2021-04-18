@@ -2,6 +2,7 @@ package com.aderenchuk.brest.dao;
 
 import com.aderenchuk.brest.model.dto.TourDto;
 
+import java.util.Date;
 import java.util.List;
 
 public interface TourDtoDao {
@@ -11,6 +12,8 @@ public interface TourDtoDao {
          * @return Tours list.
          */
         List<TourDto> findAllQuantityClients();
+
+        List<TourDto> findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo);
 
 
 }

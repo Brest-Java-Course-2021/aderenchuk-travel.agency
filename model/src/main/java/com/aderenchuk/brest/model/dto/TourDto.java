@@ -1,6 +1,7 @@
 package com.aderenchuk.brest.model.dto;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class TourDto {
 
@@ -17,7 +18,7 @@ public class TourDto {
     /**
      * Date tour.
      */
-    private LocalDate dateTour;
+    private Date dateTour;
 
     /**
      * Quantity clients of tour.
@@ -81,7 +82,7 @@ public class TourDto {
      *
      * @return dateTour.
      */
-    public LocalDate getDateTour() {
+    public Date getDateTour() {
         return dateTour;
     }
 
@@ -90,7 +91,7 @@ public class TourDto {
      *
      * @param dateTour dateTour.
      */
-    public void setDateTour(LocalDate dateTour) {
+    public void setDateTour(Date dateTour) {
         this.dateTour = dateTour;
     }
 

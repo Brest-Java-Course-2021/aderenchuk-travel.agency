@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -26,5 +27,11 @@ public class TourDtoServiceImpl implements TourDtoService {
     public List<TourDto> findAllQuantityClients() {
         LOGGER.debug("findAllQuantityClients()");
         return tourDtoDao.findAllQuantityClients();
+    }
+
+    @Override
+    public List<TourDto> findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo) {
+        LOGGER.debug("findAllQuantityClientsAndDateFilter()");
+        return tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom, dateTo);
     }
 }
