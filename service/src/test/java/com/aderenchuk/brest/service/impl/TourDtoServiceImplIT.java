@@ -37,8 +37,8 @@ public class TourDtoServiceImplIT {
         Date dateFrom = new Date();
         Date dateTo = new Date(130,05,12);
         assertTrue(dateFrom.compareTo(dateTo)<0);
-//        List<TourDto> tours = tourDtoService.findAllQuantityClientsAndDateFilter(dateFrom,dateTo);
-//        assertNotNull(tours);
-//        assertTrue(tours.size() > 0);
+        List<TourDto> tours = tourDtoService.findAllQuantityClientsAndDateFilter(dateFrom,dateTo);
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
     }
 }

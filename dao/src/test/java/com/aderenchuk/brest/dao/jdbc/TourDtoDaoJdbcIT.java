@@ -34,7 +34,7 @@ public class TourDtoDaoJdbcIT {
         Date dateFrom = new Date();
         Date dateTo = new Date(130, 05, 12);
         assertTrue(dateFrom.compareTo(dateTo) < 0);
-//        List<TourDto> tours = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom, dateTo);
-//        assertNotNull(tours);
+        List<TourDto> tours = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom, dateTo);
+        assertNotNull(tours);
     }
 }

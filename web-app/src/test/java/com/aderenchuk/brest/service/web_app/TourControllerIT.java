@@ -93,7 +93,7 @@ class TourControllerIT {
                 )));
     }
 
-// 
+
     @Test
     public void shouldReturnToToursPageIfTourNotFoundById() throws Exception {
 
