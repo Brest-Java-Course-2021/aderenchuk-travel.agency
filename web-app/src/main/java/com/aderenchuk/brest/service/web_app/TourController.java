@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.web_app;
+package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.service.TourDtoService;

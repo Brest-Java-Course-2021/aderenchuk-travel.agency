@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.web_app;
+package com.aderenchuk.brest.service.web_app;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
