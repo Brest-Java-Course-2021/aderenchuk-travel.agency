@@ -1,13 +1,15 @@
 package com.aderenchuk.brest.service.impl;
 
+import com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc;
 import com.aderenchuk.brest.model.dto.TourDto;
-import com.aderenchuk.brest.service.TourDtoService;
+import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
@@ -16,8 +18,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:service-test.xml"})
+@SpringBootTest
+@Import({TourDtoServiceImpl.class, TourDtoDaoJdbc.class})
+@ContextConfiguration(classes = SpringJdbcConfig.class)
+@ComponentScan(basePackages = {"com.aderenchuk.brest.dao", "com.aderenchuk.brest.testdb"})
+@PropertySource({"classpath:dao.properties"})
 @Transactional
 public class TourDtoServiceImplIT {
 
