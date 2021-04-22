@@ -1,7 +1,8 @@
 package com.aderenchuk.brest.service.impl;
 
-import com.aderenchuk.brest.service.TourDtoService;
+
 import com.aderenchuk.brest.model.dto.TourDto;
+import com.aderenchuk.brest.service.TourDtoService;
 import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TourDtoServiceImplIT {
 
     @Autowired
-          TourDtoService tourDtoService;
+    TourDtoService tourDtoService;
 
     @Test
     public void shouldFindAllWithQuantityClients() {

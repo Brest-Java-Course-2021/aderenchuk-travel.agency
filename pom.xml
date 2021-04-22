@@ -19,10 +19,10 @@
         <module>test-db</module>
         <module>dao-api</module>
         <module>dao</module>
-        <module>service-api</module>
-        <module>service</module>
         <module>web-app</module>
         <module>rest-app</module>
+        <module>service-api</module>
+        <module>service</module>
     </modules>
 
     <properties>
