@@ -10,12 +10,6 @@
         This is a maven aggregator that contains all application modules
     </description>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.2</version>
-    </parent>
-
     <groupId>com.aderenchuk.brest</groupId>
     <artifactId>travel.agency</artifactId>
     <version>1.0-SNAPSHOT</version>
