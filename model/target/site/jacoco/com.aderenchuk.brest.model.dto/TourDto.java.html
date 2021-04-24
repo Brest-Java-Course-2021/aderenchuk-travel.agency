@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TourDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">model</a> &gt; <a href="index.source.html" class="el_package">com.aderenchuk.brest.model.dto</a> &gt; <span class="el_source">TourDto.java</span></div><h1>TourDto.java</h1><pre class="source lang-java linenums">package com.aderenchuk.brest.model.dto;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+public class TourDto {
+
+    /**
+     * Tour Id.
+     */
+    private Integer tourId;
+
+    /**
+     * Tour Direction.
+     */
+    private String direction;
+
+    /**
+     * Date tour.
+     */
+    private Date dateTour;
+
+    /**
+     * Quantity clients of tour.
+     */
+    private Integer quantityClients;
+
+    /**
+     * Constructor without arguments.
+     */
+<span class="nc" id="L31">    public TourDto() {</span>
+<span class="nc" id="L32">    }</span>
+
+    /**
+     * Constructor with tour direction.
+     *
+     * @param direction direction
+     */
+<span class="nc" id="L39">    public TourDto(String direction) {</span>
+<span class="nc" id="L40">        this.direction = direction;</span>
+<span class="nc" id="L41">    }</span>
+
+    /**
+     * Returns &lt;code&gt;Integer&lt;/code&gt; representation of this tourId.
+     *
+     * @return tourId Tour Id.
+     */
+    public Integer getTourId() {
+<span class="nc" id="L49">        return tourId;</span>
+    }
+
+    /**
+     * Sets the tour's identifier.
+     *
+     * @param tourId Tour Id.
+     */
+    public void setTourId(Integer tourId) {
+<span class="nc" id="L58">        this.tourId = tourId;</span>
+<span class="nc" id="L59">    }</span>
+
+    /**
+     * Returns &lt;code&gt;String&lt;/code&gt; representation of this direction.
+     *
+     * @return direction tourDirection
+     */
+    public String getDirection() {
+<span class="nc" id="L67">        return direction;</span>
+    }
+
+    /**
+     * Sets the tour's name.
+     *
+     * @param direction tourDirection.
+     */
+    public void setDirection(String direction) {
+<span class="nc" id="L76">        this.direction = direction;</span>
+<span class="nc" id="L77">    }</span>
+
+    /**
+     * Returns &lt;code&gt;LocalDate&lt;/code&gt; representation of date tour
+     * for the Tour.
+     *
+     * @return dateTour.
+     */
+    public Date getDateTour() {
+<span class="nc" id="L86">        return dateTour;</span>
+    }
+
+    /**
+     * Sets the tour's name.
+     *
+     * @param dateTour dateTour.
+     */
+    public void setDateTour(Date dateTour) {
+<span class="nc" id="L95">        this.dateTour = dateTour;</span>
+<span class="nc" id="L96">    }</span>
+
+    /**
+     * Returns &lt;code&gt;Integer&lt;/code&gt; representation of quantity clients
+     * for the Tour.
+     *
+     * @return quantityClients.
+     */
+    public Integer getQuantityClients() {
+<span class="nc" id="L105">        return quantityClients;</span>
+    }
+
+    /**
+     * Sets the tour's quantity clients.
+     *
+     * @param quantityClients Quantity clients.
+     */
+    public void setQuantityClients(Integer quantityClients) {
+<span class="nc" id="L114">        this.quantityClients = quantityClients;</span>
+<span class="nc" id="L115">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L122">        return &quot;TourDto{&quot; +</span>
+                &quot;tourId=&quot; + tourId +
+                &quot;, direction='&quot; + direction + '\'' +
+                &quot;, dateTour=&quot; + dateTour +
+                &quot;, quantityClients=&quot; + quantityClients +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -1,15 +1,14 @@
 package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Tour;
+import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -17,7 +16,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.annotation.ApplicationScope;
 
 
 import java.time.LocalDate;
@@ -26,12 +24,10 @@ import java.time.format.DateTimeFormatter;
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@ExtendWith(SpringExtension.class)
-@WebAppConfiguration
-@ContextConfiguration(locations = {"classpath*:app-context-test.xml"})
-@ApplicationScope
+@JdbcTest
+@PropertySource({"classpath:dao.properties"})
+@ContextConfiguration(classes = SpringJdbcConfig.class)
 @Transactional
-@Disabled //TODO fix
 class TourControllerIT {
 
     private final String TOURS_URL = "/tours";
