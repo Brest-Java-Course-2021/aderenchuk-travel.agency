@@ -21,7 +21,7 @@ public class TourDtoController {
         this.tourDtoService = tourDtoService;
     }
 
-    @GetMapping(value = "/tour_quantity")
+    @GetMapping(value = "/tours_quantity")
     public final Collection<TourDto> tourDto() {
         LOGGER.debug("tourDto()");
         return tourDtoService.findAllQuantityClients();
