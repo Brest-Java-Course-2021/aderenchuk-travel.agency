@@ -70,7 +70,7 @@ public class TourDaoJdbc implements TourDao {
 
     @Override
     public Integer create(Tour tour) {
-        long startTime = System.nanoTime();
+//        long startTime = System.nanoTime();
         LOGGER.debug("Find tour by id: {}", tour);
         if (!isTourDirectionUnique(tour)) {
             throw new IllegalArgumentException("Tour with the same direction");
@@ -80,8 +80,8 @@ public class TourDaoJdbc implements TourDao {
                 .addValue("DIRECTION", tour.getDirection())
                 .addValue("DATE_TOUR", tour.getDateTour());
         namedParameterJdbcTemplate.update(createSql, sqlParameterSource, keyHolder);
-        long stopTime = System.nanoTime();
-        LOGGER.debug("Execution time: {}", stopTime - startTime);
+//        long stopTime = System.nanoTime();
+//        LOGGER.debug("Execution time: {}", stopTime - startTime);
         return Objects.requireNonNull(keyHolder.getKey().intValue());
     }
 

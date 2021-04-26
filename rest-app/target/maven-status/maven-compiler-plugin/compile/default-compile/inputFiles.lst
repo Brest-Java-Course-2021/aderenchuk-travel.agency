@@ -1,6 +1,0 @@
-/home/artem/IdeaProjects/aderenchuk-travel.agency/rest-app/src/main/java/com/aderenchuk/brest/service/rest_app/exception/ErrorResponse.java
-/home/artem/IdeaProjects/aderenchuk-travel.agency/rest-app/src/main/java/com/aderenchuk/brest/service/rest_app/exception/TourNotFoundException.java
-/home/artem/IdeaProjects/aderenchuk-travel.agency/rest-app/src/main/java/com/aderenchuk/brest/service/rest_app/VersionController.java
-/home/artem/IdeaProjects/aderenchuk-travel.agency/rest-app/src/main/java/com/aderenchuk/brest/service/rest_app/exception/CustomExceptionHandler.java
-/home/artem/IdeaProjects/aderenchuk-travel.agency/rest-app/src/main/java/com/aderenchuk/brest/service/rest_app/TourController.java
-/home/artem/IdeaProjects/aderenchuk-travel.agency/rest-app/src/main/java/com/aderenchuk/brest/service/rest_app/ApplicationRest.java

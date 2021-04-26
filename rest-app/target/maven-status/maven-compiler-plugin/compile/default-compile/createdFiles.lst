@@ -1,6 +1,0 @@
-com/aderenchuk/brest/service/rest_app/exception/TourNotFoundException.class
-com/aderenchuk/brest/service/rest_app/TourController.class
-com/aderenchuk/brest/service/rest_app/ApplicationRest.class
-com/aderenchuk/brest/service/rest_app/exception/CustomExceptionHandler.class
-com/aderenchuk/brest/service/rest_app/VersionController.class
-com/aderenchuk/brest/service/rest_app/exception/ErrorResponse.class

@@ -12,7 +12,7 @@ public class Client {
 
     private Integer tourId;
 
-    public Client(Integer clientId, String firstName, String lastName, Integer tourId) {
+    public Client(String firstName, String lastName, Integer tourId) {
         this.clientId = clientId;
         this.firstName = firstName;
         this.lastName = lastName;

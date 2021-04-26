@@ -14,6 +14,11 @@ public class Tour {
     public Tour() {
     }
 
+    public Tour(String direction, LocalDate dateTour) {
+        this.direction = direction;
+        this.dateTour = dateTour;
+    }
+
     public Tour(Integer tourId, String direction, LocalDate dateTour) {
         this.tourId = tourId;
         this.direction = direction;

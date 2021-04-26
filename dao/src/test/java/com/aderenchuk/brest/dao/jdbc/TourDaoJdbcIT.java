@@ -3,6 +3,7 @@ package com.aderenchuk.brest.dao.jdbc;
 import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.testdb.SpringJdbcConfig;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
@@ -17,6 +18,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import static com.aderenchuk.brest.constants.ClientConstants.FIRST_NAME_SIZE;
+import static com.aderenchuk.brest.constants.ClientConstants.LAST_NAME_SIZE;
+import static com.aderenchuk.brest.constants.TourConstants.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JdbcTest
@@ -60,10 +64,8 @@ public class TourDaoJdbcIT {
         assertNotNull(tours);
         assertTrue(tours.size() > 0);
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
-            tourDao.create(new Tour(101, "BREST-MINSK", LocalDate.of(2015, 2, 15)));
-        });
+            tourDao.create(new Tour(101,"BREST-MINSK", LocalDate.of(2021, 2, 12)));
+
         List<Tour> realTour = tourDao.findAll();
         assertEquals(tours.size() + 1, realTour.size());
     }
@@ -103,6 +105,26 @@ public class TourDaoJdbcIT {
 
         Optional<Tour> realTour = tourDao.findById(tour.getTourId());
         assertEquals(realTour.get().getDirection(), "MOSCOW-BERLIN");
+    }
+
+    @Test
+    public void deleteTour() {
+        Tour tour = new Tour();
+        tour.setDirection(RandomStringUtils.randomAlphabetic(DIRECTION_MAX_SIZE));
+        tour.setDateTour(LocalDate.of(2015, 2, 15));
+        Integer id = tourDao.create(tour);
+
+        List<Tour> tours = tourDao.findAll();
+        assertNotNull(tours);
+
+        int result = tourDao.delete(id);
+
+        assertTrue(1 == result);
+
+        List<Tour> realTours = tourDao.findAll();
+        assertNotNull(realTours);
+
+        assertTrue(tours.size()-1 == realTours.size());
     }
 
 }

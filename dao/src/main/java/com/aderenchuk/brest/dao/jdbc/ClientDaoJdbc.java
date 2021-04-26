@@ -45,7 +45,7 @@ public class ClientDaoJdbc implements ClientDao {
     private String deleteSql;
 
 
-    private final ClientRowMapper clientRowMapper = new ClientRowMapper();
+//    private final ClientRowMapper clientRowMapper = new ClientRowMapper();
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -56,46 +56,46 @@ public class ClientDaoJdbc implements ClientDao {
     @Override
     public List<Client> findAll() {
         LOGGER.debug("findAll()");
-        return namedParameterJdbcTemplate.query(selectSql, clientRowMapper);
+        return namedParameterJdbcTemplate.query(selectSql, new ClientRowMapper());
     }
 
     @Override
     public Optional<Client> findById(Integer clientId) {
         LOGGER.debug("findById(client_id:{})", clientId);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource(CLIENT_ID, clientId);
-        List<Client> results = namedParameterJdbcTemplate.query(findByIdSql, sqlParameterSource, clientRowMapper);
+        List<Client> results = namedParameterJdbcTemplate.query(findByIdSql, sqlParameterSource, new ClientRowMapper());
         return Optional.ofNullable(DataAccessUtils.uniqueResult(results));
     }
 
     @Override
     public Integer create(Client client) {
         LOGGER.debug("create(client:{})", client);
-        MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue(FIRST_NAME, client.getFirstName());
-        params.addValue(LAST_NAME, client.getLastName());
-        params.addValue(TOUR_ID, client.getTourId());
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
+            .addValue(FIRST_NAME, client.getFirstName())
+            .addValue(LAST_NAME, client.getLastName())
+            .addValue(TOUR_ID, client.getTourId());
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        namedParameterJdbcTemplate.update(createSql, params, keyHolder);
-        return keyHolder.getKey().intValue();
+        namedParameterJdbcTemplate.update(createSql, sqlParameterSource, keyHolder);
+        return Objects.requireNonNull(keyHolder.getKey().intValue());
     }
 
     @Override
     public Integer update(Client client) {
         LOGGER.debug("update(client:{})", client);
-        Map<String, Object> params = new HashMap<>();
-        params.put(FIRST_NAME, client.getFirstName());
-        params.put(LAST_NAME, client.getLastName());
-        params.put(TOUR_ID, client.getTourId());
-        params.put(CLIENT_ID, client.getClientId());
-        return namedParameterJdbcTemplate.update(updateSql, params);
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
+            .addValue(FIRST_NAME, client.getFirstName())
+            .addValue(LAST_NAME, client.getLastName())
+            .addValue(TOUR_ID, client.getTourId())
+            .addValue(CLIENT_ID, client.getClientId());
+        return namedParameterJdbcTemplate.update(updateSql, sqlParameterSource);
     }
 
     @Override
     public Integer delete(Integer clientId) {
         LOGGER.debug("delete(client_id:{})");
-        MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
-        mapSqlParameterSource.addValue(CLIENT_ID, clientId);
-        return namedParameterJdbcTemplate.update(updateSql, mapSqlParameterSource);
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
+        .addValue(CLIENT_ID, clientId);
+        return namedParameterJdbcTemplate.update(deleteSql, sqlParameterSource);
     }
 
     private class ClientRowMapper implements RowMapper<Client> {
