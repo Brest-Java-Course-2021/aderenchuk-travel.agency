@@ -14,52 +14,57 @@ public class Tour {
 <span class="fc" id="L14">    public Tour() {</span>
 <span class="fc" id="L15">    }</span>
 
-<span class="fc" id="L17">    public Tour(Integer tourId, String direction, LocalDate dateTour) {</span>
-<span class="fc" id="L18">        this.tourId = tourId;</span>
-<span class="fc" id="L19">        this.direction = direction;</span>
-<span class="fc" id="L20">        this.dateTour = dateTour;</span>
-<span class="fc" id="L21">    }</span>
+<span class="nc" id="L17">    public Tour(String direction, LocalDate dateTour) {</span>
+<span class="nc" id="L18">        this.direction = direction;</span>
+<span class="nc" id="L19">        this.dateTour = dateTour;</span>
+<span class="nc" id="L20">    }</span>
+
+<span class="fc" id="L22">    public Tour(Integer tourId, String direction, LocalDate dateTour) {</span>
+<span class="fc" id="L23">        this.tourId = tourId;</span>
+<span class="fc" id="L24">        this.direction = direction;</span>
+<span class="fc" id="L25">        this.dateTour = dateTour;</span>
+<span class="fc" id="L26">    }</span>
 
     public Integer getTourId() {
-<span class="nc" id="L24">        return tourId;</span>
+<span class="nc" id="L29">        return tourId;</span>
     }
 
     public void setTourId(Integer tourId) {
-<span class="nc" id="L28">        this.tourId = tourId;</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L33">        this.tourId = tourId;</span>
+<span class="nc" id="L34">    }</span>
 
     public String getDirection() {
-<span class="fc" id="L32">        return direction;</span>
+<span class="fc" id="L37">        return direction;</span>
     }
 
     public void setDirection(String direction) {
-<span class="fc" id="L36">        this.direction = direction;</span>
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L41">        this.direction = direction;</span>
+<span class="fc" id="L42">    }</span>
 
     public LocalDate getDateTour() {
-<span class="nc" id="L40">        return dateTour;</span>
+<span class="nc" id="L45">        return dateTour;</span>
     }
 
     public void setDateTour(LocalDate dateTour) {
-<span class="nc" id="L44">        this.dateTour = dateTour;</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L49">        this.dateTour = dateTour;</span>
+<span class="nc" id="L50">    }</span>
 
     @Override
     public boolean equals(Object o) {
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (this == o) return true;</span>
-<span class="nc bnc" id="L50" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
-<span class="nc" id="L51">        Tour tour = (Tour) o;</span>
-<span class="nc bnc" id="L52" title="All 6 branches missed.">        return Objects.equals(tourId, tour.tourId) &amp;&amp; Objects.equals(direction, tour.direction) &amp;&amp; Objects.equals(dateTour, tour.dateTour);</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L55" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="nc" id="L56">        Tour tour = (Tour) o;</span>
+<span class="nc bnc" id="L57" title="All 6 branches missed.">        return Objects.equals(tourId, tour.tourId) &amp;&amp; Objects.equals(direction, tour.direction) &amp;&amp; Objects.equals(dateTour, tour.dateTour);</span>
     }
 
     @Override
     public int hashCode() {
-<span class="nc" id="L57">        return Objects.hash(tourId, direction, dateTour);</span>
+<span class="nc" id="L62">        return Objects.hash(tourId, direction, dateTour);</span>
     }
 
     @Override
     public String toString() {
-<span class="nc" id="L62">        return &quot;Tour{&quot; +</span>
+<span class="nc" id="L67">        return &quot;Tour{&quot; +</span>
                 &quot;tourId=&quot; + tourId +
                 &quot;, direction='&quot; + direction + '\'' +
                 &quot;, dateTour=&quot; + dateTour +

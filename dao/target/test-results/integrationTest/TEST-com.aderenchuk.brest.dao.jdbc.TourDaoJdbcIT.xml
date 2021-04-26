@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report-3.0.xsd" version="3.0" name="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="2.401" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report-3.0.xsd" version="3.0" name="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.276" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/surefire/surefirebooter11238098998789636245.jar /home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/surefire 2021-04-24T19-29-23_895-jvmRun1 surefire2802898126090161111tmp surefire_014722685481079327608tmp"/>
+    <property name="sun.java.command" value="/home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/surefire/surefirebooter16226999800971042389.jar /home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/surefire 2021-04-26T22-11-26_758-jvmRun1 surefire6360151287829977075tmp surefire_013999410520782129633tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/test-classes:/home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/classes:/home/artem/IdeaProjects/aderenchuk-travel.agency/model/target/model-1.0-SNAPSHOT.jar:/home/artem/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.1/junit-jupiter-api-5.7.1.jar:/home/artem/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/artem/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/artem/.m2/repository/org/junit/platform/junit-platform-commons/1.7.1/junit-platform-commons-1.7.1.jar:/home/artem/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.1/junit-jupiter-engine-5.7.1.jar:/home/artem/.m2/repository/org/junit/platform/junit-platform-engine/1.7.1/junit-platform-engine-1.7.1.jar:/home/artem/IdeaProjects/aderenchuk-travel.agency/dao-api/target/dao-api-1.0-SNAPSHOT.jar:/home/artem/IdeaProjects/aderenchuk-travel.agency/test-db/target/test-db-1.0-SNAPSHOT.jar:/home/artem/.m2/repository/com/h2database/h2/1.4.200/h2-1.4.200.jar:/home/artem/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.4.4/spring-boot-starter-jdbc-2.4.4.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-starter/2.4.4/spring-boot-starter-2.4.4.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot/2.4.4/spring-boot-2.4.4.jar:/home/artem/.m2/repository/org/springframework/spring-context/5.3.5/spring-context-5.3.5.jar:/home/artem/.m2/repository/org/springframework/spring-aop/5.3.5/spring-aop-5.3.5.jar:/home/artem/.m2/repository/org/springframework/spring-expression/5.3.5/spring-expression-5.3.5.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.4.4/spring-boot-autoconfigure-2.4.4.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.4.4/spring-boot-starter-logging-2.4.4.jar:/home/artem/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/artem/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/artem/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.13.3/log4j-to-slf4j-2.13.3.jar:/home/artem/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.3/log4j-api-2.13.3.jar:/home/artem/.m2/repository/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar:/home/artem/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/artem/.m2/repository/org/yaml/snakeyaml/1.27/snakeyaml-1.27.jar:/home/artem/.m2/repository/com/zaxxer/HikariCP/3.4.5/HikariCP-3.4.5.jar:/home/artem/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/home/artem/.m2/repository/org/springframework/spring-jdbc/5.3.5/spring-jdbc-5.3.5.jar:/home/artem/.m2/repository/org/springframework/spring-beans/5.3.5/spring-beans-5.3.5.jar:/home/artem/.m2/repository/org/springframework/spring-tx/5.3.5/spring-tx-5.3.5.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.4.4/spring-boot-starter-test-2.4.4.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-test/2.4.4/spring-boot-test-2.4.4.jar:/home/artem/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.4.4/spring-boot-test-autoconfigure-2.4.4.jar:/home/artem/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar:/home/artem/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/home/artem/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/home/artem/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/home/artem/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/home/artem/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/artem/.m2/repository/org/assertj/assertj-core/3.18.1/assertj-core-3.18.1.jar:/home/artem/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/artem/.m2/repository/org/junit/jupiter/junit-jupiter/5.7.1/junit-jupiter-5.7.1.jar:/home/artem/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.1/junit-jupiter-params-5.7.1.jar:/home/artem/.m2/repository/org/mockito/mockito-core/3.6.28/mockito-core-3.6.28.jar:/home/artem/.m2/repository/net/bytebuddy/byte-buddy/1.10.22/byte-buddy-1.10.22.jar:/home/artem/.m2/repository/net/bytebuddy/byte-buddy-agent/1.10.22/byte-buddy-agent-1.10.22.jar:/home/artem/.m2/repository/org/objenesis/objenesis/3.1/objenesis-3.1.jar:/home/artem/.m2/repository/org/mockito/mockito-junit-jupiter/3.6.28/mockito-junit-jupiter-3.6.28.jar:/home/artem/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/home/artem/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/artem/.m2/repository/org/springframework/spring-core/5.3.5/spring-core-5.3.5.jar:/home/artem/.m2/repository/org/springframework/spring-jcl/5.3.5/spring-jcl-5.3.5.jar:/home/artem/.m2/repository/org/springframework/spring-test/5.3.5/spring-test-5.3.5.jar:/home/artem/.m2/repository/org/xmlunit/xmlunit-core/2.7.0/xmlunit-core-2.7.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/surefire/surefirebooter11238098998789636245.jar"/>
+    <property name="surefire.real.class.path" value="/home/artem/IdeaProjects/aderenchuk-travel.agency/dao/target/surefire/surefirebooter16226999800971042389.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.10+9-Ubuntu-0ubuntu1.20.04"/>
     <property name="user.name" value="artem"/>
@@ -51,7 +51,7 @@
     <property name="user.dir" value="/home/artem/IdeaProjects/aderenchuk-travel.agency/dao"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="10842"/>
+    <property name="PID" value="35417"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
@@ -62,11 +62,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="createTourWithSameNameTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.613"/>
-  <testcase name="findAllTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.036"/>
-  <testcase name="updateTourTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.044"/>
-  <testcase name="createTourTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.028"/>
-  <testcase name="findByIdExceptionalTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.026"/>
-  <testcase name="createTourWithSameNameDifferentCaseTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.022"/>
-  <testcase name="findByIdTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.018"/>
+  <testcase name="createTourWithSameNameTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.039"/>
+  <testcase name="findAllTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.027"/>
+  <testcase name="updateTourTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.012"/>
+  <testcase name="createTourTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.032"/>
+  <testcase name="findByIdExceptionalTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.061"/>
+  <testcase name="createTourWithSameNameDifferentCaseTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.024"/>
+  <testcase name="findByIdTest" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.013"/>
+  <testcase name="deleteTour" classname="com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT" time="0.019"/>
 </testsuite>

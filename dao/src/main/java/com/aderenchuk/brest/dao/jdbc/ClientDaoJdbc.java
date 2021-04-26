@@ -87,6 +87,7 @@ public class ClientDaoJdbc implements ClientDao {
             .addValue(LAST_NAME, client.getLastName())
             .addValue(TOUR_ID, client.getTourId())
             .addValue(CLIENT_ID, client.getClientId());
+        //dsfsdfsdfds
         return namedParameterJdbcTemplate.update(updateSql, sqlParameterSource);
     }
 

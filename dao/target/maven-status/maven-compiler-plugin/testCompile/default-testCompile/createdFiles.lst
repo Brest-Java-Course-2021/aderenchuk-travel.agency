@@ -1,2 +1,3 @@
 com/aderenchuk/brest/dao/jdbc/TourDtoDaoJdbcIT.class
 com/aderenchuk/brest/dao/jdbc/TourDaoJdbcIT.class
+com/aderenchuk/brest/dao/jdbc/ClientDaoJdbcIT.class
