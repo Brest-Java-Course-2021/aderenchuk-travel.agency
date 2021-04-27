@@ -23,155 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5be7368d-8659-4492-94dd-3d70ee811bfd" name="Default Changelist" comment="rollback commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aderenchuk_brest_service_1_0_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aderenchuk_brest_service_api_1_0_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao-api/dao-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/dao-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao-api/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao-api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/dao.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/aderenchuk/brest/dao/jdbc/ClientDaoJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/aderenchuk/brest/dao/jdbc/ClientDaoJdbc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/TEST-com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/TEST-com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/jacoco.exec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/ClientConstants.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/ClientConstants.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/TourConstants.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/TourConstants.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model.dto/TourDto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model.dto/TourDto.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model.dto/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model.dto/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Client.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Tour.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Tour.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/branchfc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/branchnc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/branchpc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/bundle.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/class.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/down.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/greenbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/group.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/method.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/package.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/redbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/report.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/session.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/sort.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/source.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-resources/up.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-sessions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/test-results/test/TEST-com.aderenchuk.brest.model.TourTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/test-results/test/com.aderenchuk.brest.model.TourTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-app/rest-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rest-app/rest-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/service-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/service-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/test-results/integrationTest/TEST-com.aderenchuk.brest.service.impl.TourDtoServiceImplIT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/test-results/integrationTest/com.aderenchuk.brest.service.impl.TourDtoServiceImplIT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/classes/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/classes/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/test-db.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test-db/test-db.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-grid.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/bootstrap.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/img/bag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.esm.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.esm.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.esm.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/static/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/templates/client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/templates/clients.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/templates/tour.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/classes/templates/tours.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/test-results/integrationTest/TEST-com.aderenchuk.brest.service.web_app.TourControllerIT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/test-results/integrationTest/com.aderenchuk.brest.service.web_app.TourControllerIT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/target/web-app.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/web-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/web-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +184,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619084773008</updated>
-      <workItem from="1619542146894" duration="940000" />
+      <workItem from="1619542146894" duration="1252000" />
     </task>
     <task id="LOCAL-00001" summary="fix pom">
       <created>1619095044937</created>
@@ -473,10 +325,10 @@
       <screen x="1440" y="141" width="1920" height="1080" />
     </state>
     <state x="2267" y="609" width="256" height="177" key="VCS.EditChangelistDialog/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619542736891" />
-    <state x="1995" y="426" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1619542760885">
+    <state x="1995" y="426" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1619543286054">
       <screen x="1440" y="141" width="1920" height="1080" />
     </state>
-    <state x="1995" y="426" width="800" height="543" key="Vcs.Push.Dialog.v2/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619542760885" />
+    <state x="1995" y="426" width="800" height="543" key="Vcs.Push.Dialog.v2/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619543286054" />
     <state x="2023" y="349" width="744" height="697" key="VcsDiffUtil.ChangesDialog" timestamp="1619542397321">
       <screen x="1440" y="141" width="1920" height="1080" />
     </state>
@@ -485,9 +337,13 @@
       <screen x="1440" y="141" width="1920" height="1080" />
     </state>
     <state x="1540" y="268" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619542631272" />
-    <state x="2169" y="607" width="461" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619542967409">
+    <state x="2169" y="607" width="461" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619543233769">
       <screen x="1440" y="141" width="1920" height="1080" />
     </state>
-    <state x="2169" y="607" width="461" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619542967409" />
+    <state x="2169" y="607" width="461" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619543233769" />
+    <state x="2115" y="583" width="559" height="230" key="git4idea.ui.GitResetDialog" timestamp="1619543085855">
+      <screen x="1440" y="141" width="1920" height="1080" />
+    </state>
+    <state x="2115" y="583" width="559" height="230" key="git4idea.ui.GitResetDialog/1440.141.1920.1080/0.168.1440.732@1440.141.1920.1080" timestamp="1619543085855" />
   </component>
 </project>
