@@ -1,0 +1,8 @@
+21:10:14 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 15.0.1 on prohor-MS-7850 with PID 23255 (started by prohor in /home/prohor/IdeaProjects/aderenchuk-travel.agency/service)
+21:10:14 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+21:10:14 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+21:10:14 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 0.949 seconds (JVM running for 1.611)
+21:10:15 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+21:10:15 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+21:10:15 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+21:10:15 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
