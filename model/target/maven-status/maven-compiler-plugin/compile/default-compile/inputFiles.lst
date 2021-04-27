@@ -1,0 +1,5 @@
+/home/artem/IdeaProjects/aderenchuk-travel.agency/model/src/main/java/com/aderenchuk/brest/model/Tour.java
+/home/artem/IdeaProjects/aderenchuk-travel.agency/model/src/main/java/com/aderenchuk/brest/constants/TourConstants.java
+/home/artem/IdeaProjects/aderenchuk-travel.agency/model/src/main/java/com/aderenchuk/brest/model/Client.java
+/home/artem/IdeaProjects/aderenchuk-travel.agency/model/src/main/java/com/aderenchuk/brest/constants/ClientConstants.java
+/home/artem/IdeaProjects/aderenchuk-travel.agency/model/src/main/java/com/aderenchuk/brest/model/dto/TourDto.java

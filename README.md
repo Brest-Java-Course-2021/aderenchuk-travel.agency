@@ -13,24 +13,13 @@ This is simple 'Travel agency' web application.
 mvn clean install
 ```
 
-## Local tests
+## Local tests with Jetty Maven Plugin
+
+The [Jetty Maven plugin](https://www.eclipse.org/jetty/documentation/jetty-10/programming-guide/index.html#jetty-maven-plugin) is useful for development and nd local testing.
 
 From the same directory as your root pom.xml, type:
-for start web-app...
 ```
-cd web-app/target
-java -jar web-app.jar
-
-
-```
-for start rest-app...
-```
-cd rest-app/target
-java -jar rest-app.jar
-
-
+mvn jetty:run
 ```
 
-
-
-This starts application and serves up your project on [http://localhost:8080](http://localhost:8080) 
+This starts Jetty and serves up your project on [http://localhost:8080](http://localhost:8080).
