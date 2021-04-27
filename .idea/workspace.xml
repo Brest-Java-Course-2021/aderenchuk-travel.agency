@@ -4,33 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5be7368d-8659-4492-94dd-3d70ee811bfd" name="Default Changelist" comment="add ClientDaoJdbcIT, fix TourDaoJdbcIT">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5be7368d-8659-4492-94dd-3d70ee811bfd" name="Default Changelist" comment="fix .gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao-api/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/aderenchuk/brest/dao/jdbc/ClientDaoJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/aderenchuk/brest/dao/jdbc/ClientDaoJdbc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/classes/dao.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/failsafe-reports/failsafe-summary.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/TEST-com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/test-results/integrationTest/TEST-com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/TEST-com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/test-results/integrationTest/TEST-com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/test-results/integrationTest/com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/target/test-results/integrationTest/com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/test-results/integrationTest/com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/ClientConstants.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/ClientConstants.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/TourConstants.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.constants/TourConstants.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Client.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Client.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Client.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Tour.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Tour.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Tour.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/Tour.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/com.aderenchuk.brest.model/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/jacoco.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/jacoco/jacoco.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/test-results/test/TEST-com.aderenchuk.brest.model.TourTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/test-results/test/TEST-com.aderenchuk.brest.model.TourTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/test-results/test/com.aderenchuk.brest.model.TourTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/test-results/test/com.aderenchuk.brest.model.TourTest.txt" afterDir="false" />
@@ -38,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/test-results/integrationTest/TEST-com.aderenchuk.brest.service.impl.TourDtoServiceImplIT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/test-results/integrationTest/TEST-com.aderenchuk.brest.service.impl.TourDtoServiceImplIT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/test-results/integrationTest/com.aderenchuk.brest.service.impl.TourDtoServiceImplIT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/test-results/integrationTest/com.aderenchuk.brest.service.impl.TourDtoServiceImplIT.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-db/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/test-db/target/classes/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-db/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test-db/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-app/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-app/target/test-results/integrationTest/TEST-com.aderenchuk.brest.service.web_app.TourControllerIT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/target/test-results/integrationTest/TEST-com.aderenchuk.brest.service.web_app.TourControllerIT.xml" afterDir="false" />
@@ -217,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619463427600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix .gitignore">
+      <created>1619464424549</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619464424549</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,6 +229,7 @@
     <MESSAGE value="add restControllers (tour)" />
     <MESSAGE value="add TourControllerIT REST" />
     <MESSAGE value="add ClientDaoJdbcIT, fix TourDaoJdbcIT" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ClientDaoJdbcIT, fix TourDaoJdbcIT" />
+    <MESSAGE value="fix .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix .gitignore" />
   </component>
 </project>

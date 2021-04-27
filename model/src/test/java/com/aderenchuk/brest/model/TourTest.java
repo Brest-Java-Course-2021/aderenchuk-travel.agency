@@ -22,4 +22,9 @@ public class TourTest {
         tour.setDirection("Brest-Moscow");
         Assertions.assertEquals("Brest-Moscow", tour.getDirection());
     }
+
+    @Test
+    public void getTourIdSetter() {
+
+    }
 }
