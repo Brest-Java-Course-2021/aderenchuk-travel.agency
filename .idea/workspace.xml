@@ -412,6 +412,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="web-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aderenchuk.brest.service.web_app.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationRest" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="rest-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aderenchuk.brest.service.rest_app.ApplicationRest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ClientDaoJdbcIT.deleteClient" />
