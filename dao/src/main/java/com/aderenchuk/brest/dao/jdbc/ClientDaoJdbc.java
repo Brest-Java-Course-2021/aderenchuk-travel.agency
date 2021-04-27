@@ -75,7 +75,6 @@ public class ClientDaoJdbc implements ClientDao {
             .addValue(LAST_NAME, client.getLastName())
             .addValue(TOUR_ID, client.getTourId());
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        //sadasdasasd
         namedParameterJdbcTemplate.update(createSql, sqlParameterSource, keyHolder);
         return Objects.requireNonNull(keyHolder.getKey().intValue());
     }

@@ -1,6 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-model,com.aderenchuk.brest.model.dto,TourDto,47,0,0,0,18,0,11,0,11,0
-model,com.aderenchuk.brest.model,Tour,89,22,12,0,16,10,14,4,8,4
-model,com.aderenchuk.brest.model,Client,113,0,12,0,26,0,19,0,13,0
-model,com.aderenchuk.brest.constants,ClientConstants,3,0,0,0,1,0,1,0,1,0
-model,com.aderenchuk.brest.constants,TourConstants,3,0,0,0,1,0,1,0,1,0
