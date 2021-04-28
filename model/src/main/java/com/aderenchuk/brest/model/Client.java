@@ -33,6 +33,15 @@ public class Client {
     public Client() {
 
     }
+
+    /**
+     * Constructor without arguments.
+     * @param clientId Client id.
+     */
+    public Client(Integer clientId) {
+        this.clientId = clientId;
+    }
+
     /**
      * Constructor with  FirstName, LastName, Tour id.
      * @param firstName first name client.
