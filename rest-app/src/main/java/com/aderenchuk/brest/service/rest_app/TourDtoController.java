@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+/**
+ * TourDto rest Controller
+ */
 @RestController
 public class TourDtoController {
 
@@ -16,14 +19,29 @@ public class TourDtoController {
 
     private final TourDtoService tourDtoService;
 
-
     public TourDtoController(TourDtoService tourDtoService) {
         this.tourDtoService = tourDtoService;
     }
 
+    /**
+     * Get tour with quantity clients.
+     *
+     * @return Tours Dtos collection.
+     */
     @GetMapping(value = "/tours_quantity")
-    public final Collection<TourDto> tourDto() {
-        LOGGER.debug("tourDto()");
+    public final Collection<TourDto> tourWithQuantityClients() {
+        LOGGER.debug("tours find all with quantity clients()");
         return tourDtoService.findAllQuantityClients();
     }
+
+//    /**
+//     * Find tours with date Filter
+//     * @param dateFrom
+//     * @param dateTo
+//     * @return Collection of tours with date filter
+//     */
+//    @GetMapping(value = "/toursDto")
+//    public final Collection<TourDto> tourWithDateFilter() {
+//        return tourDtoService.findAllQuantityClientsAndDateFilter();
+//    }
 }

@@ -6,14 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import static com.aderenchuk.brest.constants.TourConstants.DATE_FROM;
@@ -45,8 +44,8 @@ public class TourDtoDaoJdbc implements TourDtoDao {
     }
 
     @Override
-    public List<TourDto> findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo) {
-        LOGGER.debug("findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})");
+    public List<TourDto> findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo) {
+        LOGGER.debug("findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})");
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
                 .addValue(DATE_FROM,dateFrom)
                 .addValue(DATE_TO, dateTo);

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -37,10 +37,12 @@ public class TourDtoDaoJdbcIT {
 
     @Test
     public void shouldFindAllQuantityClientsAndDateFilter() {
-        Date dateFrom = new Date();
-        Date dateTo = new Date(130, 05, 12);
-        assertTrue(dateFrom.compareTo(dateTo) < 0);
-        List<TourDto> tours = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom, dateTo);
+        LocalDate dateFrom = LocalDate.now().minusMonths(1);
+        LocalDate dateTo = LocalDate.now();
+        assertTrue(dateFrom.compareTo(dateTo)<0);
+        List<TourDto> tours = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom,dateTo);
         assertNotNull(tours);
+//        List<TourDto> tourList = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom,dateTo);
+//        assertTrue(tourList.size() == 0);
     }
 }

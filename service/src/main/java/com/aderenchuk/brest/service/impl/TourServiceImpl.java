@@ -27,27 +27,33 @@ public class TourServiceImpl implements TourService {
 
 
     @Override
+    @Transactional(readOnly = true)
     public List<Tour> findAll() {
+        LOGGER.trace("findAll()");
         return tourDao.findAll();
     }
 
     @Override
     public Optional<Tour> findById(Integer tourId) {
+        LOGGER.debug("findById(tourId:{})", tourId);
         return tourDao.findById(tourId);
     }
 
     @Override
     public Integer create(Tour tour) {
+        LOGGER.debug("create(tour:{})", tour);
         return tourDao.create(tour);
     }
 
     @Override
     public Integer update(Tour tour) {
+        LOGGER.debug("update(tour:{})", tour);
         return tourDao.update(tour);
     }
 
     @Override
     public Integer delete(Integer tourId) {
+        LOGGER.debug("delete(tourId:{})", tourId);
         return tourDao.delete(tourId);
     }
 }

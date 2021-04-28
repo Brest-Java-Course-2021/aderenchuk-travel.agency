@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -25,13 +25,15 @@ public class TourDtoServiceImpl implements TourDtoService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<TourDto> findAllQuantityClients() {
         LOGGER.debug("findAllQuantityClients()");
         return tourDtoDao.findAllQuantityClients();
     }
 
     @Override
-    public List<TourDto> findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo) {
+    @Transactional(readOnly = true)
+    public List<TourDto> findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo) {
         LOGGER.debug("findAllQuantityClientsAndDateFilter()");
         return tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom, dateTo);
     }

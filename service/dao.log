@@ -6,3 +6,89 @@
 21:10:15 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
 21:10:15 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
 21:10:15 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+21:49:35 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 7216 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+21:49:35 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+21:49:35 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+21:49:36 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.349 seconds (JVM running for 2.205)
+21:49:36 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+21:49:36 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+21:49:36 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+21:49:36 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+10:39:37 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23065 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+10:39:37 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+10:39:37 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+10:39:37 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.223 seconds (JVM running for 2.027)
+10:39:38 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+10:39:38 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+10:39:38 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+10:39:38 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+10:40:52 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23284 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+10:40:52 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+10:40:52 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+10:40:52 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.089 seconds (JVM running for 1.921)
+10:40:53 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+10:40:53 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+10:40:53 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+10:40:53 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+11:04:12 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23941 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+11:04:12 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+11:04:12 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+11:04:13 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.257 seconds (JVM running for 2.109)
+11:04:13 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+11:04:13 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+11:04:13 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+11:04:13 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:15:45 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 27340 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+12:15:45 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:15:45 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+12:15:46 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.196 seconds (JVM running for 2.04)
+12:15:46 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+12:15:46 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+12:15:46 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+12:15:46 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:15:46 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+12:15:46 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:56:02 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5176 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+19:56:02 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:56:02 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+19:56:03 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.301 seconds (JVM running for 2.272)
+19:56:03 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+19:56:03 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+19:56:03 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+19:56:03 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:56:03 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+19:56:03 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:57:04 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5300 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+19:57:04 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:57:04 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+19:57:05 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.326 seconds (JVM running for 3.166)
+19:57:05 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+19:57:05 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+19:57:05 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+19:57:05 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:57:05 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+19:57:05 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:57:42 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5468 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+19:57:42 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:57:42 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+19:57:43 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.279 seconds (JVM running for 2.151)
+19:57:44 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+19:57:44 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+19:57:44 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+19:57:44 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+20:05:10 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 6018 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+20:05:10 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+20:05:10 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+20:05:11 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.308 seconds (JVM running for 2.164)
+20:05:11 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+20:05:11 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+20:05:11 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+20:05:11 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+20:26:25 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Starting TourDtoServiceImplIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 7582 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/service)
+20:26:25 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+20:26:25 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - No active profile set, falling back to default profiles: default
+20:26:26 [main] INFO  com.aderenchuk.brest.service.impl.TourDtoServiceImplIT - Started TourDtoServiceImplIT in 1.233 seconds (JVM running for 2.042)
+20:26:26 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClients()
+20:26:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+20:26:26 [main] DEBUG com.aderenchuk.brest.service.impl.TourDtoServiceImpl - findAllQuantityClientsAndDateFilter()
+20:26:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})

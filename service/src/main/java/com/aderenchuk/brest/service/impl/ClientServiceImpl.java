@@ -26,27 +26,33 @@ public class ClientServiceImpl implements ClientService {
 
 
     @Override
+    @Transactional(readOnly = true)
     public List<Client> findAll() {
+        LOGGER.trace("findAll()");
         return clientDao.findAll();
     }
 
     @Override
     public Optional<Client> findById(Integer clientId) {
+        LOGGER.debug("findById(clientId:{})", clientId);
         return clientDao.findById(clientId);
     }
 
     @Override
     public Integer create(Client client) {
+        LOGGER.debug("create(client:{})", client);
         return clientDao.create(client);
     }
 
     @Override
     public Integer update(Client client) {
+        LOGGER.debug("update(client:{})", client);
         return clientDao.update(client);
     }
 
     @Override
     public Integer delete(Integer clientId) {
+        LOGGER.debug("delete(clientId:{})", clientId);
         return clientDao.delete(clientId);
     }
 }

@@ -42,3 +42,523 @@
 21:10:12 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.247 seconds (JVM running for 2.748)
 21:10:12 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
 21:10:12 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+21:49:29 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 7171 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+21:49:29 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+21:49:29 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+21:49:31 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 2.268 seconds (JVM running for 3.735)
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='QrCgUCGPnZxmvvwYmmkb', lastName='iHuftdOJznxysqWyssANTEQnSLlgnb', tourId=101})
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='AZiGgbNMqAwzyAQlxdkG', lastName='yXWRiIwSumkMIJGzFhWPUoRQTmhBKm', tourId=101})
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='WYfaKZCaPclTwvFmlVFWMAzvfJtaomQRTFzVFhaaCbVLIfhKfm', dateTour=2015-02-15}
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+21:49:32 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 7171 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+21:49:32 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+21:49:32 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.357 seconds (JVM running for 5.157)
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+21:49:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+10:39:32 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23024 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+10:39:32 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+10:39:32 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+10:39:33 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.975 seconds (JVM running for 3.609)
+10:39:33 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:33 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='VxilNPOsxoJomJnWBnJV', lastName='GFUvXTtTYSQggGvgFCOhOhGZeddIaD', tourId=101})
+10:39:33 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='xFDNbkPnZbtOCxoVvHJh', lastName='UoHzqoXJATZkYOKqAqTkOkmBdqFMnd', tourId=101})
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='vIjFzyqfqCsTFfohjNuFmWWeXeWOKKmCywPtfGFGRypwYWMZHL', dateTour=2015-02-15}
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:39:34 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23024 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+10:39:34 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+10:39:34 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.364 seconds (JVM running for 5.034)
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+10:39:34 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+10:40:48 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23244 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+10:40:48 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+10:40:48 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+10:40:49 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.031 seconds (JVM running for 1.912)
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='JYqjtkzhnhoBgnvkWxXP', lastName='ONvqBtYTcUfnNPJkhVdeLmBMUhpgoQ', tourId=101})
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='QifcrvLKRSheXSAITkwc', lastName='IscEngsbDlDdgYDxrLYhhkdVbSMqLY', tourId=101})
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='gfVNiuzTuOhYVoBOQvmwNpOsUOIeuJxqUcmiQZCOZWccRjYykR', dateTour=2015-02-15}
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+10:40:49 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23244 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+10:40:49 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+10:40:49 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+10:40:50 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.319 seconds (JVM running for 3.009)
+10:40:50 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+10:40:50 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+11:04:07 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23898 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+11:04:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+11:04:07 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+11:04:08 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.213 seconds (JVM running for 2.1)
+11:04:08 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:08 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='LmWlJzSlvNGUoVWyeVcs', lastName='agujmHDvAZmiPxyOcwZesvVHgkYQxX', tourId=101})
+11:04:08 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='vFCfSFvIFwSDAIbegeiz', lastName='TjmMEKDqbUMsOQfcnVzUxZtaKxRRRI', tourId=101})
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='COEFPBJMAgSsAKejqWslOvBzWAumnWEDtZRKgJLsnriUktbKOo', dateTour=2015-02-15}
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+11:04:09 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 23898 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+11:04:09 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+11:04:09 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+11:04:10 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.607 seconds (JVM running for 3.656)
+11:04:10 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+11:04:10 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:06:24 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26528 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:06:24 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:06:24 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:06:25 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.075 seconds (JVM running for 1.955)
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='iKiWkmJFPNuawzOfbXGS', lastName='LdHYayfIxNgXoUvbuRzTtCgLhFgUdj', tourId=101})
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='ToQqSOeRqNzwxBLaMXpv', lastName='JTyEGsmFQNcjFtwPTtQJejtqckFdYm', tourId=101})
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='bMuOlfsokUirPzSFeIShslGLiIAMGIOcLtUXVQYklxCrOnUIab', dateTour=2015-02-15}
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:06:25 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26528 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:06:25 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:06:25 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:06:26 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.297 seconds (JVM running for 2.911)
+12:06:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+12:06:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:06:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:07:27 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26609 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:07:27 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:07:27 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:07:28 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.158 seconds (JVM running for 2.824)
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='jAPpNVBDnJtRbMlQgfUp', lastName='SEyrluJAUetKPDwWdObioRwfEKOiVV', tourId=101})
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='hbEjoIgQXTpZVUhmPiJO', lastName='ldrAweOPIgljpyEeUIpIhqIyvIoJDU', tourId=101})
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+12:07:28 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:07:41 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT - Starting TourDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26673 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:07:41 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:07:41 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:07:42 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDaoJdbcIT - Started TourDaoJdbcIT in 1.343 seconds (JVM running for 3.083)
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='UPjCGrPlxxSwoZQFZTkljNOIjvsxxNaqTxgOvHfsSlepaQWWjV', dateTour=2015-02-15}
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+12:07:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:08:00 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26742 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:08:00 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:08:00 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:08:01 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 1.37 seconds (JVM running for 3.069)
+12:08:01 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+12:08:01 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:08:01 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:09:29 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26843 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:09:29 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:09:29 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:09:30 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 1.537 seconds (JVM running for 3.14)
+12:09:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:09:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:12:26 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 26954 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:12:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:12:26 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:12:27 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 1.543 seconds (JVM running for 2.942)
+12:12:27 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:12:27 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(Date dateFrom, Date dateTo:{})
+12:13:24 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 27024 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:13:24 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:13:24 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:13:25 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 1.58 seconds (JVM running for 3.218)
+12:13:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:13:26 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:14:14 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 27099 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:14:14 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:14:14 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:14:15 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 1.517 seconds (JVM running for 2.954)
+12:14:15 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:14:15 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:14:30 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 27165 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:14:30 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:14:30 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:14:31 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 1.328 seconds (JVM running for 2.841)
+12:14:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:14:31 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+12:15:41 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 27299 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:15:41 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:15:41 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:15:42 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.117 seconds (JVM running for 2.104)
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='ZZEBWTKooXNGfehdFfOZ', lastName='GzXFJXxwMPooYUCgpCvfBeQdDaxHwZ', tourId=101})
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='YvkxxVGSPjjolczUirXj', lastName='bbkXQScuQQhlyIOxGCzisTXWwZIjQe', tourId=101})
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:42 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='bxGMdmZxlViDSPoaoQThzPimdifjNseOFNtUmOwaixPElxociT', dateTour=2015-02-15}
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+12:15:43 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 27299 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+12:15:43 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+12:15:43 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.338 seconds (JVM running for 3.194)
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+12:15:43 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:55:56 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5131 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+19:55:56 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:55:56 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+19:55:57 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 2.186 seconds (JVM running for 3.996)
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='LSJMQtrpMUxPXfmvYUlq', lastName='HNhVvIqSmTenTOIOzExeeutCQcHNrN', tourId=101})
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='NoFDsPFBiZWvskeYBFjJ', lastName='kvElxfMjSyBeAyKVcTgDqOVnyRmtDx', tourId=101})
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='kBmPREVjeQfwpkLBmDqgeKCwbgGcsJjHwrQBQUTenluEdeqzEL', dateTour=2015-02-15}
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+19:55:58 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:55:59 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5131 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+19:55:59 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:55:59 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+19:55:59 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.872 seconds (JVM running for 6.043)
+19:55:59 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+19:56:00 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+19:57:38 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5424 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+19:57:38 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:57:38 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+19:57:39 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.239 seconds (JVM running for 2.191)
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='ERPeVvSLVdnuQpxWCxRu', lastName='bauiPeMrRKwEeNDUqttKMBTUYRudLu', tourId=101})
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='HxmRdOceoDtNMbXXVgkM', lastName='mYlxCOYYNNydAcXnHiCQgccYSVuxVj', tourId=101})
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='XESFwWlhZrSDXnGUOMuSewQbVeKMcDTYKVGwQWyptnovOzHyvV', dateTour=2015-02-15}
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+19:57:39 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+19:57:40 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5424 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+19:57:40 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+19:57:40 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+19:57:40 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.569 seconds (JVM running for 3.47)
+19:57:40 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+19:57:40 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+20:05:05 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5926 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+20:05:05 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+20:05:05 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+20:05:06 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.585 seconds (JVM running for 2.584)
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='EviXpUgfIdxItYOyZTHF', lastName='MYwbinZCYPIEkAHFsIrNVIJgKlqlFs', tourId=101})
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='hUjZpySvhaafaVYTSNtJ', lastName='jnsTkoiuYclMXZFJTXWfrZSiJkCwpY', tourId=101})
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+20:05:06 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='OnCFRRteGCxgXWvfgsUFslUeAFPAHZeUitFKNYPQYzyZNMnuCH', dateTour=2015-02-15}
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:05:07 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 5926 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+20:05:07 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+20:05:07 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+20:05:08 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.845 seconds (JVM running for 4.471)
+20:05:08 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+20:05:08 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})
+20:26:21 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Starting ClientDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 7540 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+20:26:21 [main] DEBUG com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+20:26:21 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - No active profile set, falling back to default profiles: default
+20:26:22 [main] INFO  com.aderenchuk.brest.dao.jdbc.ClientDaoJdbcIT - Started ClientDaoJdbcIT in 1.218 seconds (JVM running for 2.18)
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - update(client:com.aderenchuk.brest.model.Client{firstName='tZBoRVbahZQvhqGlBdRm', lastName='cGQITGSrNgIxejpRTcOOrzUNZAfhWF', tourId=101})
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='tEejDCIeogxMsWyzGZZJ', lastName='hbUxZZmYSkGHWuFoMeMZWDwGtCoDBD', tourId=101})
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - delete(client_id:{})
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:1)
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findById(client_id:999)
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - create(client:com.aderenchuk.brest.model.Client{firstName='Ihor', lastName='Dmitriev', tourId=101})
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - findAll()
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Update tour: Tour{tourId=101, direction='MOSCOW-BERLIN', dateTour=2021-08-01}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2021-02-12}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 999
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-MINSK', dateTour=2015-02-15}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=101, direction='BREST-minsk', dateTour=2015-02-15}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: 101
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find tour by id: Tour{tourId=null, direction='maTZdcmcNbFfEdPIYDpcrmLrEImHHuyZiRJWuxwZwZsesWBGDp', dateTour=2015-02-15}
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Delete tour: 109
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDaoJdbc - Find all tours
+20:26:22 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Starting TourDtoDaoJdbcIT using Java 11.0.10 on artem-HP-Laptop-15-bs0xx with PID 7540 (started by artem in /home/artem/IdeaProjects/aderenchuk-travel.agency/dao)
+20:26:22 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Running with Spring Boot v2.4.4, Spring v5.3.5
+20:26:22 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - No active profile set, falling back to default profiles: default
+20:26:23 [main] INFO  com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbcIT - Started TourDtoDaoJdbcIT in 0.392 seconds (JVM running for 3.424)
+20:26:23 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClients()
+20:26:23 [main] DEBUG com.aderenchuk.brest.dao.jdbc.TourDtoDaoJdbc - findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})

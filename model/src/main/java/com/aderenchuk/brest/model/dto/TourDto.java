@@ -1,7 +1,8 @@
 package com.aderenchuk.brest.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class TourDto {
 
@@ -18,7 +19,8 @@ public class TourDto {
     /**
      * Date tour.
      */
-    private Date dateTour;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dateTour;
 
     /**
      * Quantity clients of tour.
@@ -82,7 +84,8 @@ public class TourDto {
      *
      * @return dateTour.
      */
-    public Date getDateTour() {
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    public LocalDate getDateTour() {
         return dateTour;
     }
 
@@ -91,7 +94,7 @@ public class TourDto {
      *
      * @param dateTour dateTour.
      */
-    public void setDateTour(Date dateTour) {
+    public void setDateTour(LocalDate dateTour) {
         this.dateTour = dateTour;
     }
 
