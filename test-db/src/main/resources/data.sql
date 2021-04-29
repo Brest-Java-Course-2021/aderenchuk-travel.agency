@@ -8,10 +8,10 @@ VALUES (101, 'BREST-MOSCOW', '2021-08-01'),
 
 INSERT INTO CLIENT (FIRSTNAME, LASTNAME, TOUR_ID)
 VALUES ('Ihor', 'Dmitriev', 101),
-       ('Alex', 'Volkanovski', 103),
+       ('Alex', 'Volkanovski', 102),
        ('Irina', 'Sheyk', 103),
        ('Leonel', 'Messi', 104),
-       ('Polina', 'Chistyakova', 104),
-       ('Anna', 'Sedakova', 102),
-       ('Gareth', 'Bale', 102),
-       ('Toni', 'Kross', 102);
+       ('Polina', 'Chistyakova', 105);
+--       ('Anna', 'Sedakova', 102),
+--       ('Gareth', 'Bale', 102),
+--       ('Toni', 'Kross', 102);
