@@ -1,18 +1,18 @@
 INSERT INTO TOUR (TOUR_ID, DIRECTION, DATE_TOUR)
-VALUES (101, 'BREST-MOSCOW', '2021-08-01'),
-       (102, 'MINSK-ROME', '2021-09-01'),
-       (103, 'MOSCOW-BARCELONA', '2021-06-15'),
-       (104, 'MINSK-RIGA', '2021-07-02'),
-       (105, 'MINSK-DUBAI', '2021-05-25');
+VALUES (106, 'BREST-KYPR', '2023-10-01'),
+       (107, 'SARATOV-ASTANA', '2023-12-01'),
+       (108, 'KYPR-BARCELONA', '2023-12-15'),
+       (109, 'VENA-RIGA', '2024-05-02'),
+       (110, 'AMSTERDAM-DUBAI', '2025-04-12');
 
 
 INSERT INTO CLIENT (FIRSTNAME, LASTNAME, TOUR_ID)
-VALUES ('Ihor', 'Dmitriev', 101),
-       ('Alex', 'Volkanovski', 103),
-       ('Irina', 'Sheyk', 103),
-       ('Leonel', 'Messi', 104),
-       ('Polina', 'Chistyakova', 104),
-       ('Anna', 'Sedakova', 102),
-       ('Gareth', 'Bale', 102),
-       ('Toni', 'Kross', 102);
+VALUES ('Griha', 'Bogin', 106),
+       ('Leha', 'Vlonskiy', 108),
+       ('Sasha', 'Mir', 108),
+       ('Kin', 'Vel', 109),
+       ('Kun', 'Malonskaya', 109),
+       ('Vera', 'Lodkina', 107),
+       ('Minay', 'Imirova', 107),
+       ('Valet', 'Moss', 107);
 
