@@ -106,15 +106,14 @@
                                    data-placement="top">
                                     <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
-                                <span data-toggle="modal"
-                                      data-target="#deleteDialog"
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
                                       th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
-                                <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete tour"
-                                   data-toggle="tooltip"
-                                   data-placement="top">
-                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <a href="#" class="btn-sm btn-outline-secondary"
+                                       title="Delete tour"><i class="bi-x"></i><span
+                                            class="d-none d-md-inline">&nbsp;Delete</span>
+                                    </a>
                                 </span>
+
                             </td>
                         </tr>
                         <tr th:remove="all">
@@ -131,14 +130,12 @@
                                    data-placement="top">
                                     <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
-                                <span data-toggle="modal"
-                                      data-target="#deleteDialog"
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
                                       th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
-                                <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete tour"
-                                   data-toggle="tooltip"
-                                   data-placement="top">
-                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete tour"><i class="bi-x"></i><span
+                                            class="d-none d-md-inline">&nbsp;Delete</span>
+                                    </a>
                                 </span>
                             </td>
                         </tr>
@@ -156,14 +153,12 @@
                                    data-placement="top">
                                     <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
-                                <span data-toggle="modal"
-                                      data-target="#deleteDialog"
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
                                       th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
-                                <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete tour"
-                                   data-toggle="tooltip"
-                                   data-placement="top">
-                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete tour"><i class="bi-x"></i><span
+                                            class="d-none d-md-inline">&nbsp;Delete</span>
+                                    </a>
                                 </span>
                             </td>
                         </tr>
@@ -181,14 +176,12 @@
                                    data-placement="top">
                                     <i class="bi-pen"></i> <span
                                         class="d-none d-md-inline">Edit</span></a>
-                                <span data-toggle="modal"
-                                      data-target="#deleteDialog"
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
                                       th:attr="data-id=${tour.tourId},data-name=${tour.direction}">
-                                <a href="#" class="btn-sm btn-outline-secondary"
-                                   title="delete tour"
-                                   data-toggle="tooltip"
-                                   data-placement="top">
-                                    <i class="bi-x"></i> <span class="d-none d-md-inline">Delete</span></a>
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete tour"><i class="bi-x"></i><span
+                                            class="d-none d-md-inline">&nbsp;Delete</span>
+                                    </a>
                                 </span>
                             </td>
                         </tr>
@@ -213,15 +206,13 @@
         <div class="modal-content">
             <div class="modal-header alert-danger">
                 <h5 class="modal-title" id="exampleModalLabel">Delete tour</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Please confirm delete tour
+                Please confirm delete
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <a id="deleteUrl" href="#" class="btn btn-danger">Delete</a>
             </div>
         </div>
