@@ -131,7 +131,7 @@ public class TourController {
      *
      * @return view name
      */
-    @PostMapping(value = "/{tourId}/delete")
+    @GetMapping(value = "/{tourId}/delete")
     public String deleteTour(@PathVariable Integer tourId, Model model){
         LOGGER.debug("deleteTour({}, {})", tourId, model);
         tourService.delete(tourId);
