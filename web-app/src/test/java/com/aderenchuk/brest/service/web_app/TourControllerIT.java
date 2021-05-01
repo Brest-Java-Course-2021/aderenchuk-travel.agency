@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,10 +25,7 @@ import java.time.format.DateTimeFormatter;
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@JdbcTest
-@PropertySource({"classpath:dao.properties"})
-@ContextConfiguration(classes = SpringJdbcConfig.class)
-@Transactional
+@SpringBootTest
 class TourControllerIT {
 
     private final String TOURS_URL = "/tours";
@@ -41,6 +39,9 @@ class TourControllerIT {
     public void setup() {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
+
+
+
 
     @Test
     public void shouldReturnDepartmentsPage() throws Exception {
@@ -136,7 +137,7 @@ class TourControllerIT {
 
      @Test
      public void shouldAddNewTour() throws Exception {
-         Tour tour = create(101, "BREST-MOSCOW");
+         Tour tour = create(108, "BREST-KIEV");
 
          mockMvc.perform(
                  MockMvcRequestBuilders.post(TOURS_URL + "/add")
@@ -155,7 +156,7 @@ class TourControllerIT {
                  MockMvcRequestBuilders.get(TOURS_URL + "/1/delete")
          ).andExpect(status().isFound())
                  .andExpect(view().name("redirect:" + "/tours"))
-                 .andExpect(redirectedUrl("tours"));
+                 .andExpect(redirectedUrl("/tours"));
      }
 
 
