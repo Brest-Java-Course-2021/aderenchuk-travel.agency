@@ -51,42 +51,81 @@
     </nav>
 </header>
 
-<section id="employee">
+<section id="client">
     <div class="container-fluid">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label"
-                                       for="field_department">Department</label>
-                                <select class="form-control"
-                                        id="field_department">
-                                    <option value="0">CEO</option>
-                                    <option value="1">Accounting</option>
-                                    <option value="2">Java</option>
-                                    <option value="3">Testing</option>
-                                    <option value="4">People management</option>
-                                </select>
+                        <form id="clientForm"
+                              th:object="${client}"
+                              action="clients.html"
+                              th:action="@{${#httpServletRequest.servletPath}}"
+                              th:method="@{post}">
+
+                            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                                <p>Please fix errors below:</p>
                             </div>
+
+                            <input id="field_clientId"
+                                   type="hidden"
+                                   th:field="*{clientId}"/>
+
                             <div class="mb-3">
-                                <label class="form-label"
-                                       for="field_employeeName">Employee Name</label>
+                                <label class="form-control-label"
+                                       for="field_firstname_client">Your Name</label>
                                 <input class="form-control"
-                                       id="field_employeeName"
-                                       type="text"
-                                       value="Ivan Ivanov"/>
+                                       th:class="${#fields.hasErrors('firstName')} ? 'form-control is-invalid' : 'form-control'"
+                                       id="field_firstname_client"
+                                       type="text" value="Dmitry"
+                                       th:field="*{firstName}"/>
+                                <div th:if="${#fields.hasErrors('firstName')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{firstName}">[errors]</div>
                             </div>
+
+                            <div class="mb-3">
+                                <label class="form-control-label"
+                                       for="field_lastname_client">Your lastname</label>
+                                <input class="form-control"
+                                       th:class="${#fields.hasErrors('lastName')} ? 'form-control is-invalid' : 'form-control'"
+                                       id="field_lastname_client"
+                                       type="text" value="Skovoronski"
+                                       th:field="*{lastName}"/>
+                                <div th:if="${#fields.hasErrors('lastName')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{lastName}">[errors]</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-control-label"
+                                       for="field_tour_direction">Tour number</label>
+                                <select class="form-control"
+                                        id="field_tour_direction"
+                                        th:field="*{tourId}">
+                                    <option th:each="tour : ${tours}"
+                                            value="0" th:value="${tour.tourId}"
+                                            th:text="${tour.tourId}">Choose tour</option>
+                                    <option th:remove="all"
+                                            value="1">102</option>
+                                   </select>
+                            </div>
+
                             <div class="d-flex justify-content-end">
-                                <a href="employees.html"
-                                   th:href="@{/employees}"
-                                   class="btn btn-light me-1"
-                                   title="Cancel">Cancel</a>
-                                <a href="employees.html"
-                                   th:href="@{/employees}"
+                                <a href="clients.html"
+                                   th:href="@{/clients}"
+                                   class="btn btn-light mr-1"
+                                   title="Cancel"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Cancel</a>
+                                <a href="clients.html"
+                                   th:href="@{/clients}"
+                                   th:onclick="@{document.forms['clientForm'].submit(); return false;}"
                                    class="btn btn-primary"
-                                   title="Save employee">Save</a>
+                                   title="Save client"
+                                   data-toggle="tooltip"
+                                   data-placement="top">
+                                     Save</a>
                             </div>
                         </form>
                     </div>
@@ -95,89 +134,6 @@
         </div>
     </div>
 </section>
-<!--<section id="client">-->
-<!--    <div class="container-fluid">-->
-<!--        <div class="row">-->
-<!--            <div class="col">-->
-<!--                <div class="card">-->
-<!--                    <div class="card-body">-->
-<!--                        <form id="clientForm"-->
-<!--                              th:object="${client}"-->
-<!--                              action="clients.html"-->
-<!--                              th:action="@{${#httpServletRequest.servletPath}}"-->
-<!--                              th:method="@{post}">-->
-
-<!--&lt;!&ndash;                            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p>Please fix errors below:</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-
-<!--                            <input id="field_clientId"-->
-<!--                                   type="hidden"-->
-<!--                                   th:field="*{clientId}"/>-->
-
-<!--                            <div class="mb-3">-->
-<!--                                <label class="form-control-label"-->
-<!--                                       for="field_firstnname_client">Your Name</label>-->
-<!--                                <input class="form-control"-->
-<!--                                       th:class="${#fields.hasErrors('firstname')} ? 'form-control is-invalid' : 'form-control'"-->
-<!--                                       id="field_firstnname_client"-->
-<!--                                       type="text" value="Dmitry"-->
-<!--                                       th:field="*{firstname}"/>-->
-<!--                                <div th:if="${#fields.hasErrors('firstname')}"-->
-<!--                                     class="invalid-feedback"-->
-<!--                                     th:errors="*{firstname}">[errors]</div>-->
-<!--                            </div>-->
-
-<!--                            <div class="mb-3">-->
-<!--                                <label class="form-control-label"-->
-<!--                                       for="field_lastname_client">Your lastname</label>-->
-<!--                                <input class="form-control"-->
-<!--                                       th:class="${#fields.hasErrors('lastname')} ? 'form-control is-invalid' : 'form-control'"-->
-<!--                                       id="field_lastname_client"-->
-<!--                                       type="text" value="Skovoronski"-->
-<!--                                       th:field="*{lastname}"/>-->
-<!--                                <div th:if="${#fields.hasErrors('lastname')}"-->
-<!--                                     class="invalid-feedback"-->
-<!--                                     th:errors="*{lastname}">[errors]</div>-->
-<!--                            </div>-->
-
-<!--                            <div class="mb-3">-->
-<!--                                <label class="form-control-label"-->
-<!--                                       for="field_tour_direction">Tour number</label>-->
-<!--                                <select class="form-control"-->
-<!--                                        id="field_tour_direction"-->
-<!--                                        th:field="*{tourId}">-->
-<!--                                    <option th:each="tour : ${tours}"-->
-<!--                                            value="0" th:value="${tour.tourId}"-->
-<!--                                            th:text="${tour.tourId}">Choose tour</option>-->
-<!--                                    <option th:remove="all"-->
-<!--                                            value="1">102</option>-->
-<!--                                   </select>-->
-<!--                            </div>-->
-
-<!--                            <div class="d-flex justify-content-end">-->
-<!--                                <a href="clients.html"-->
-<!--                                   th:href="@{/clients}"-->
-<!--                                   class="btn btn-light mr-1"-->
-<!--                                   title="Cancel"-->
-<!--                                   data-toggle="tooltip"-->
-<!--                                   data-placement="top">Cancel</a>-->
-<!--                                <a href="clients.html"-->
-<!--                                   th:href="@{/clients}"-->
-<!--                                   th:onclick="@{document.forms['clientForm'].submit(); return false;}"-->
-<!--                                   class="btn btn-primary"-->
-<!--                                   title="Save client"-->
-<!--                                   data-toggle="tooltip"-->
-<!--                                   data-placement="top">-->
-<!--                                     Save</a>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
 
 <footer>
     <hr/>

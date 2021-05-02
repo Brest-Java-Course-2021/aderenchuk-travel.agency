@@ -70,37 +70,45 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Ihor</td>
-                            <td>Bern</td>
-                            <td>104</td>
-                            <td class="text-end">
+                        <tr th:each="client : ${clients}">
+                            <td th:text="${client.firstName}">Ihor</td>
+                            <td th:text="${client.lastName}">Bern</td>
+                            <td th:text="${client.tourId}">104</td>
+                            <td class="text-right">
                                 <a href="client.html"
-                                   th:href="@{/client/1}"
+                                   th:href="@{|/client/${client.clientId}|}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit client">
-                                    <i class="bi-pen"></i><span class="d-none d-md-inline">&nbsp;Edit</span></a>
-                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog">
-                                    <a href="#" class="btn-sm btn-outline-secondary"
-                                       title="delete client"><i class="bi-x"></i><span
+                                   title="Edit client"
+                                   data-toggle="tooltip"
+                                   data-placement="top">
+                                    <i class="bi-pen"></i> <span
+                                        class="d-none d-md-inline">Edit</span></a>
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
+                                      th:attr="data-id=${client.clientId},data-name=${client.firstName}">
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete client"><i class="bi-x"></i><span
                                             class="d-none d-md-inline">&nbsp;Delete</span>
                                     </a>
                                 </span>
                             </td>
                         </tr>
-                        <tr>
+                        <tr th:remove="all">
                             <td>Vladimir</td>
                             <td>Rogachev</td>
                             <td>102</td>
-                            <td class="text-end">
+                            <td class="text-right">
                                 <a href="client.html"
-                                   th:href="@{/client/2}"
+                                   th:href="@{/client}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit client">
-                                    <i class="bi-pen"></i><span class="d-none d-md-inline">&nbsp;Edit</span></a>
-                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog">
-                                    <a href="#" class="btn-sm btn-outline-secondary"
-                                       title="delete client"><i class="bi-x"></i><span
+                                   title="Edit client"
+                                   data-toggle="tooltip"
+                                   data-placement="top">
+                                    <i class="bi-pen"></i> <span
+                                        class="d-none d-md-inline">Edit</span></a>
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
+                                      th:attr="data-id=${client.clientId},data-name=${client.firstName}">
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete client"><i class="bi-x"></i><span
                                             class="d-none d-md-inline">&nbsp;Delete</span>
                                     </a>
                                 </span>
@@ -110,15 +118,63 @@
                             <td>Michail</td>
                             <td>Wolfman</td>
                             <td>103</td>
-                            <td class="text-end">
+                            <td class="text-right">
                                 <a href="client.html"
-                                   th:href="@{/client/2}"
+                                   th:href="@{/client}"
                                    class="btn-sm btn-outline-secondary"
-                                   title="Edit client">
-                                    <i class="bi-pen"></i><span class="d-none d-md-inline">&nbsp;Edit</span></a>
-                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog">
-                                    <a href="#" class="btn-sm btn-outline-secondary"
-                                       title="delete client"><i class="bi-x"></i><span
+                                   title="Edit client"
+                                   data-toggle="tooltip"
+                                   data-placement="top">
+                                    <i class="bi-pen"></i> <span
+                                        class="d-none d-md-inline">Edit</span></a>
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
+                                      th:attr="data-id=${client.clientId},data-name=${client.firstName}">
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete client"><i class="bi-x"></i><span
+                                            class="d-none d-md-inline">&nbsp;Delete</span>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr th:remove="all">
+                            <td>Inga</td>
+                            <td>Wolfman</td>
+                            <td>103</td>
+                            <td class="text-right">
+                                <a href="client.html"
+                                   th:href="@{/client}"
+                                   class="btn-sm btn-outline-secondary"
+                                   title="Edit client"
+                                   data-toggle="tooltip"
+                                   data-placement="top">
+                                    <i class="bi-pen"></i> <span
+                                        class="d-none d-md-inline">Edit</span></a>
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
+                                      th:attr="data-id=${client.clientId},data-name=${client.firstName}">
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete client"><i class="bi-x"></i><span
+                                            class="d-none d-md-inline">&nbsp;Delete</span>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr th:remove="all">
+                            <td>Kris</td>
+                            <td>Nowel</td>
+                            <td>102</td>
+                            <td class="text-right">
+                                <a href="client.html"
+                                   th:href="@{/client}"
+                                   class="btn-sm btn-outline-secondary"
+                                   title="Edit client"
+                                   data-toggle="tooltip"
+                                   data-placement="top">
+                                    <i class="bi-pen"></i> <span
+                                        class="d-none d-md-inline">Edit</span></a>
+                                <span data-bs-toggle="modal" data-bs-target="#deleteDialog"
+                                      th:attr="data-id=${client.clientId},data-name=${client.firstName}">
+                                    <a class="btn-sm btn-outline-secondary"
+                                       title="Delete client"><i class="bi-x"></i><span
                                             class="d-none d-md-inline">&nbsp;Delete</span>
                                     </a>
                                 </span>
