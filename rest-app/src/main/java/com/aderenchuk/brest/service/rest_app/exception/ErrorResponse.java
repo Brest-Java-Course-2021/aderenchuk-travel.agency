@@ -24,13 +24,13 @@ public class ErrorResponse {
     private List<String> details;
 
 
-//    public ErrorResponse(String message, Exception ex) {
-//        super();
-//        this.message = message;
-//        if(ex != null) {
-//            this.details = Arrays.asList(ex.getMessage());
-//        }
-//    }
+    public ErrorResponse(String message, Exception e) {
+        super();
+        this.message = message;
+        if(e != null) {
+            this.details = Arrays.asList(e.getMessage());
+        }
+    }
 
     public String getMessage() {
         return message;
