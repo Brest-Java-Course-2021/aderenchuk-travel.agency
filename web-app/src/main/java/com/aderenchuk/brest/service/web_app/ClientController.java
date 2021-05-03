@@ -69,14 +69,14 @@ public class ClientController {
      * @param result binding result
      * @return       view name
      */
-    @PostMapping(value = "/tour/{id}")
+    @PostMapping(value = "/client/{id}")
     public String updateClient(Client client, BindingResult result) {
         LOGGER.debug("updateClient({}, {})", client, result);
         if (result.hasErrors()) {
             return "tour";
         } else  {
             this.clientService.update(client);
-            return "redirect:/tours";
+            return "redirect:/clients";
         }
     }
 
@@ -118,9 +118,9 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "/client/{clientId}/delete")
-    public final String deleteClientById(Integer clientId, Model model) {
+    public final String deleteClientById(@PathVariable Integer clientId, Model model) {
         LOGGER.debug("delete({}, {})", clientId, model);
         clientService.delete(clientId);
-        return "redirect:/tours";
+        return "redirect:/clients";
     }
 }
