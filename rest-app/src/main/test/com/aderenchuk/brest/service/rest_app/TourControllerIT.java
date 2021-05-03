@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,11 +19,8 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@JdbcTest
-@PropertySource({"classpath:dao.properties"})
-@ContextConfiguration(classes = SpringJdbcConfig.class)
+@SpringBootTest
 @Transactional
-
 public class TourControllerIT {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
@@ -108,14 +106,14 @@ public class TourControllerIT {
         assertEquals(realTour.get().getDirection(), "MOSCOW-BERLIN");
     }
 
-//    @Test
-//    public void deleteTour() {
-//        List<Tour> tours = tourService.findAll();
-//        assertNotNull(tours);
-//        assertTrue(tours.size() > 0);
-//
-//        Integer id = tours.get(0).getTourId();
-//        tourService.delete(id);
-//    }
+    @Test
+    public void deleteTour() {
+        List<Tour> tours = tourService.findAll();
+        assertNotNull(tours);
+        assertTrue(tours.size() > 0);
+
+        Integer id = tours.get(0).getTourId();
+        tourService.delete(id);
+    }
 
 }
