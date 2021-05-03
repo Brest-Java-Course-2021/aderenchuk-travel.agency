@@ -97,7 +97,7 @@ class TourControllerIT {
     public void shouldReturnToToursPageIfTourNotFoundById() throws Exception {
 
          mockMvc.perform(
-                 MockMvcRequestBuilders.get(TOURS_URL+"/13")
+                 MockMvcRequestBuilders.get(TOURS_URL+"/999")
          ).andDo(MockMvcResultHandlers.print())
                  .andExpect(status().isFound())
                  .andExpect(MockMvcResultMatchers.redirectedUrl("tours"));
@@ -155,8 +155,8 @@ class TourControllerIT {
          mockMvc.perform(
                  MockMvcRequestBuilders.get(TOURS_URL + "/1/delete")
          ).andExpect(status().isFound())
-                 .andExpect(view().name("redirect:" + "/tours"))
-                 .andExpect(redirectedUrl("/tours"));
+                 .andExpect(view().name("redirect:" + TOURS_URL))
+                 .andExpect(redirectedUrl(TOURS_URL));
      }
 
 

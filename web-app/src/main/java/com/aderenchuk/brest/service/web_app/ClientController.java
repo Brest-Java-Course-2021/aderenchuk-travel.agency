@@ -1,7 +1,6 @@
 package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Client;
-import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.service.ClientService;
 import com.aderenchuk.brest.service.TourService;
 import org.slf4j.Logger;
@@ -22,10 +21,15 @@ public class ClientController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
 
     @Autowired
-    ClientService clientService;
+    private final ClientService clientService;
 
     @Autowired
-    TourService tourService;
+    private final TourService tourService;
+
+    public ClientController(ClientService clientService, TourService tourService) {
+        this.clientService = clientService;
+        this.tourService = tourService;
+    }
 
     /**
      * Goto client page.
@@ -65,14 +69,14 @@ public class ClientController {
      * @param result binding result
      * @return       view name
      */
-    @PostMapping(value = "/tour/{id}")
+    @PostMapping(value = "/client/{id}")
     public String updateClient(Client client, BindingResult result) {
         LOGGER.debug("updateClient({}, {})", client, result);
         if (result.hasErrors()) {
             return "tour";
         } else  {
             this.clientService.update(client);
-            return "redirect:/tours";
+            return "redirect:/clients";
         }
     }
 
@@ -114,9 +118,9 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "/client/{clientId}/delete")
-    public final String deleteClientById(Integer clientId, Model model) {
+    public final String deleteClientById(@PathVariable Integer clientId, Model model) {
         LOGGER.debug("delete({}, {})", clientId, model);
         clientService.delete(clientId);
-        return "redirect:/tours";
+        return "redirect:/clients";
     }
 }

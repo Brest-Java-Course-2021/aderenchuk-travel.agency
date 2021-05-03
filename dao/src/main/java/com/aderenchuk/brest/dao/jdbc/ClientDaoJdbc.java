@@ -92,7 +92,7 @@ public class ClientDaoJdbc implements ClientDao {
 
     @Override
     public Integer delete(Integer clientId) {
-        LOGGER.debug("delete(client_id:{})");
+        LOGGER.debug("delete(client_id:{})", clientId);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
         .addValue(CLIENT_ID, clientId);
         return namedParameterJdbcTemplate.update(deleteSql, sqlParameterSource);
