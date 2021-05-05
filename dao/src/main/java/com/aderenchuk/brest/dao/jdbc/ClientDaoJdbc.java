@@ -1,5 +1,6 @@
 package com.aderenchuk.brest.dao.jdbc;
 
+import com.aderenchuk.brest.model.constants.ClientConstants;
 import com.aderenchuk.brest.dao.ClientDao;
 import com.aderenchuk.brest.model.Client;
 import org.slf4j.Logger;
@@ -18,8 +19,6 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-
-import static com.aderenchuk.brest.constants.ClientConstants.*;
 
 @Repository
 public class ClientDaoJdbc implements ClientDao {
@@ -62,7 +61,7 @@ public class ClientDaoJdbc implements ClientDao {
     @Override
     public Optional<Client> findById(Integer clientId) {
         LOGGER.debug("findById(client_id:{})", clientId);
-        SqlParameterSource sqlParameterSource = new MapSqlParameterSource(CLIENT_ID, clientId);
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource(ClientConstants.CLIENT_ID, clientId);
         List<Client> results = namedParameterJdbcTemplate.query(findByIdSql, sqlParameterSource, new ClientRowMapper());
         return Optional.ofNullable(DataAccessUtils.uniqueResult(results));
     }
@@ -71,9 +70,9 @@ public class ClientDaoJdbc implements ClientDao {
     public Integer create(Client client) {
         LOGGER.debug("create(client:{})", client);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
-            .addValue(FIRST_NAME, client.getFirstName())
-            .addValue(LAST_NAME, client.getLastName())
-            .addValue(TOUR_ID, client.getTourId());
+            .addValue(ClientConstants.FIRST_NAME, client.getFirstName())
+            .addValue(ClientConstants.LAST_NAME, client.getLastName())
+            .addValue(ClientConstants.TOUR_ID, client.getTourId());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         namedParameterJdbcTemplate.update(createSql, sqlParameterSource, keyHolder);
         return Objects.requireNonNull(keyHolder.getKey().intValue());
@@ -83,10 +82,10 @@ public class ClientDaoJdbc implements ClientDao {
     public Integer update(Client client) {
         LOGGER.debug("update(client:{})", client);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
-            .addValue(FIRST_NAME, client.getFirstName())
-            .addValue(LAST_NAME, client.getLastName())
-            .addValue(TOUR_ID, client.getTourId())
-            .addValue(CLIENT_ID, client.getClientId());
+            .addValue(ClientConstants.FIRST_NAME, client.getFirstName())
+            .addValue(ClientConstants.LAST_NAME, client.getLastName())
+            .addValue(ClientConstants.TOUR_ID, client.getTourId())
+            .addValue(ClientConstants.CLIENT_ID, client.getClientId());
         return namedParameterJdbcTemplate.update(updateSql, sqlParameterSource);
     }
 
@@ -94,7 +93,7 @@ public class ClientDaoJdbc implements ClientDao {
     public Integer delete(Integer clientId) {
         LOGGER.debug("delete(client_id:{})", clientId);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
-        .addValue(CLIENT_ID, clientId);
+        .addValue(ClientConstants.CLIENT_ID, clientId);
         return namedParameterJdbcTemplate.update(deleteSql, sqlParameterSource);
     }
 
@@ -103,10 +102,10 @@ public class ClientDaoJdbc implements ClientDao {
         @Override
         public Client mapRow(ResultSet resultSet, int i) throws SQLException {
             Client client = new Client();
-            client.setClientId(resultSet.getInt(CLIENT_ID));
-            client.setFirstName(resultSet.getString(FIRST_NAME));
-            client.setLastName(resultSet.getString(LAST_NAME));
-            client.setTourId(resultSet.getInt(TOUR_ID));
+            client.setClientId(resultSet.getInt(ClientConstants.CLIENT_ID));
+            client.setFirstName(resultSet.getString(ClientConstants.FIRST_NAME));
+            client.setLastName(resultSet.getString(ClientConstants.LAST_NAME));
+            client.setTourId(resultSet.getInt(ClientConstants.TOUR_ID));
             return client;
         }
     }

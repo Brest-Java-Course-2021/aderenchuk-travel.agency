@@ -1,7 +1,7 @@
 package com.aderenchuk.brest.service.rest_app;
 
-import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientService;
+import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.rest_app.exception.ErrorResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

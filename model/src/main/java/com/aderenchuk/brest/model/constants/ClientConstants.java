@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.constants;
+package com.aderenchuk.brest.model.constants;
 
 public class ClientConstants {
     public static final String CLIENT_ID = "CLIENT_ID";

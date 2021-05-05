@@ -1,5 +1,6 @@
 package com.aderenchuk.brest.dao.jdbc;
 
+import com.aderenchuk.brest.model.constants.TourConstants;
 import com.aderenchuk.brest.dao.TourDtoDao;
 import com.aderenchuk.brest.model.dto.TourDto;
 import org.slf4j.Logger;
@@ -14,9 +15,6 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.time.LocalDate;
 import java.util.List;
-
-import static com.aderenchuk.brest.constants.TourConstants.DATE_FROM;
-import static com.aderenchuk.brest.constants.TourConstants.DATE_TO;
 
 @Repository
 public class TourDtoDaoJdbc implements TourDtoDao {
@@ -47,8 +45,8 @@ public class TourDtoDaoJdbc implements TourDtoDao {
     public List<TourDto> findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo) {
         LOGGER.debug("findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})");
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
-                .addValue(DATE_FROM,dateFrom)
-                .addValue(DATE_TO, dateTo);
+                .addValue(TourConstants.DATE_FROM,dateFrom)
+                .addValue(TourConstants.DATE_TO, dateTo);
         List<TourDto> tours = namedParameterJdbcTemplate.query
                 (findAllQuantityClientsAndDateFilter, sqlParameterSource, BeanPropertyRowMapper.newInstance(TourDto.class));
         return tours;
