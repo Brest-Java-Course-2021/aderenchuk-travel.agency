@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.constants;
+package com.aderenchuk.brest.model.constants;
 
 public class TourConstants {
     public static final String TOUR_ID = "TOUR_ID";

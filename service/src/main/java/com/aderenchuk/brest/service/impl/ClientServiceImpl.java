@@ -1,9 +1,9 @@
 package com.aderenchuk.brest.service.impl;
 
 import com.aderenchuk.brest.dao.ClientDao;
-import com.aderenchuk.brest.dao.jdbc.TourDaoJdbc;
 import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientService;
+import com.aderenchuk.brest.dao.jdbc.TourDaoJdbc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

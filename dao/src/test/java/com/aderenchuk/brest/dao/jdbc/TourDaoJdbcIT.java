@@ -1,15 +1,13 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.dao.TourDao;
+import com.aderenchuk.brest.model.constants.TourConstants;
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.testdb.SpringJdbcConfig;
+import com.aderenchuk.brest.dao.TourDao;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,9 +16,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static com.aderenchuk.brest.constants.ClientConstants.FIRST_NAME_SIZE;
-import static com.aderenchuk.brest.constants.ClientConstants.LAST_NAME_SIZE;
-import static com.aderenchuk.brest.constants.TourConstants.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JdbcTest
@@ -110,7 +105,7 @@ public class TourDaoJdbcIT {
     @Test
     public void deleteTour() {
         Tour tour = new Tour();
-        tour.setDirection(RandomStringUtils.randomAlphabetic(DIRECTION_MAX_SIZE));
+        tour.setDirection(RandomStringUtils.randomAlphabetic(TourConstants.DIRECTION_MAX_SIZE));
         tour.setDateTour(LocalDate.of(2015, 2, 15));
         Integer id = tourDao.create(tour);
 

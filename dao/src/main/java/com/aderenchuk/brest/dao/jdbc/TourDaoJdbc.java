@@ -1,7 +1,7 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.model.Tour;
+import com.aderenchuk.brest.dao.TourDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

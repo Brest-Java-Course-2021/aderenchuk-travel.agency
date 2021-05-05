@@ -1,8 +1,8 @@
 package com.aderenchuk.brest.dao.jdbc;
 
+import com.aderenchuk.brest.model.constants.ClientConstants;
 import com.aderenchuk.brest.dao.ClientDao;
 import com.aderenchuk.brest.model.Client;
-import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
@@ -12,13 +12,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static com.aderenchuk.brest.constants.ClientConstants.FIRST_NAME_SIZE;
-import static com.aderenchuk.brest.constants.ClientConstants.LAST_NAME_SIZE;
-import static com.aderenchuk.brest.constants.TourConstants.DIRECTION_MAX_SIZE;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JdbcTest
@@ -77,8 +73,8 @@ public class ClientDaoJdbcIT {
         assertTrue(clients.size() > 0);
 
         Client client = clients.get(0);
-        client.setLastName(RandomStringUtils.randomAlphabetic(LAST_NAME_SIZE));
-        client.setFirstName(RandomStringUtils.randomAlphabetic(FIRST_NAME_SIZE));
+        client.setLastName(RandomStringUtils.randomAlphabetic(ClientConstants.LAST_NAME_SIZE));
+        client.setFirstName(RandomStringUtils.randomAlphabetic(ClientConstants.FIRST_NAME_SIZE));
         client.setTourId(101);
         clientDao.update(client);
 
@@ -91,8 +87,8 @@ public class ClientDaoJdbcIT {
     @Test
     public void deleteClient() {
         Client client = new Client();
-        client.setFirstName(RandomStringUtils.randomAlphabetic(FIRST_NAME_SIZE));
-        client.setLastName(RandomStringUtils.randomAlphabetic(LAST_NAME_SIZE));
+        client.setFirstName(RandomStringUtils.randomAlphabetic(ClientConstants.FIRST_NAME_SIZE));
+        client.setLastName(RandomStringUtils.randomAlphabetic(ClientConstants.LAST_NAME_SIZE));
         client.setTourId(101);
         Integer id = clientDao.create(client);
         assertNotNull(id);
