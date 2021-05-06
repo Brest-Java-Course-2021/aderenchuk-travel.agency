@@ -1,8 +1,8 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.model.constants.ClientConstants;
 import com.aderenchuk.brest.dao.ClientDao;
 import com.aderenchuk.brest.model.Client;
+import com.aderenchuk.brest.model.constants.ClientConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,9 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 @Repository
 public class ClientDaoJdbc implements ClientDao {
@@ -43,8 +45,6 @@ public class ClientDaoJdbc implements ClientDao {
     @Value("${client.delete}")
     private String deleteSql;
 
-
-//    private final ClientRowMapper clientRowMapper = new ClientRowMapper();
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 

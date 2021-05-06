@@ -1,7 +1,7 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.model.constants.TourConstants;
 import com.aderenchuk.brest.dao.TourDtoDao;
+import com.aderenchuk.brest.model.constants.TourConstants;
 import com.aderenchuk.brest.model.dto.TourDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +43,7 @@ public class TourDtoDaoJdbc implements TourDtoDao {
 
     @Override
     public List<TourDto> findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo) {
-        LOGGER.debug("findAllQuantityClientsAndDateFilter(LocalDate dateFrom, LocalDate dateTo:{})");
+        LOGGER.debug("findAllWithQuantityClientsAndDateFilter(Date dateFrom=:{}, Date dateTo=:{})", dateFrom, dateTo);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
                 .addValue(TourConstants.DATE_FROM,dateFrom)
                 .addValue(TourConstants.DATE_TO, dateTo);

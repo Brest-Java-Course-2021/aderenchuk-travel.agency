@@ -1,7 +1,7 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.dao.TourDao;
+import com.aderenchuk.brest.model.Tour;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -51,8 +51,6 @@ public class TourDaoJdbc implements TourDao {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
-//    RowMapper<Tour> rowMapper = BeanPropertyRowMapper.newInstance(Tour.class);
-
     @Override
     public List<Tour> findAll() {
         LOGGER.debug("Find all tours");
@@ -70,7 +68,6 @@ public class TourDaoJdbc implements TourDao {
 
     @Override
     public Integer create(Tour tour) {
-//        long startTime = System.nanoTime();
         LOGGER.debug("Find tour by id: {}", tour);
         if (!isTourDirectionUnique(tour)) {
             throw new IllegalArgumentException("Tour with the same direction");
@@ -80,8 +77,6 @@ public class TourDaoJdbc implements TourDao {
                 .addValue("DIRECTION", tour.getDirection())
                 .addValue("DATE_TOUR", tour.getDateTour());
         namedParameterJdbcTemplate.update(createSql, sqlParameterSource, keyHolder);
-//        long stopTime = System.nanoTime();
-//        LOGGER.debug("Execution time: {}", stopTime - startTime);
         return Objects.requireNonNull(keyHolder.getKey().intValue());
     }
 

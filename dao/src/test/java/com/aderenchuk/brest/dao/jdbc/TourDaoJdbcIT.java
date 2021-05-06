@@ -1,9 +1,9 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.model.constants.TourConstants;
-import com.aderenchuk.brest.model.Tour;
-import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import com.aderenchuk.brest.dao.TourDao;
+import com.aderenchuk.brest.model.Tour;
+import com.aderenchuk.brest.model.constants.TourConstants;
+import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

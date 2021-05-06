@@ -1,8 +1,8 @@
 package com.aderenchuk.brest.dao.jdbc;
 
-import com.aderenchuk.brest.model.constants.ClientConstants;
 import com.aderenchuk.brest.dao.ClientDao;
 import com.aderenchuk.brest.model.Client;
+import com.aderenchuk.brest.model.constants.ClientConstants;
 import com.aderenchuk.brest.testdb.SpringJdbcConfig;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;

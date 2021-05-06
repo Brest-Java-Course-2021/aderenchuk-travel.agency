@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -70,7 +71,7 @@ public class ClientController {
      * @return       view name
      */
     @PostMapping(value = "/client/{id}")
-    public String updateClient(Client client, BindingResult result) {
+    public String updateClient(@Valid Client client, BindingResult result) {
         LOGGER.debug("updateClient({}, {})", client, result);
         if (result.hasErrors()) {
             return "tour";
@@ -102,7 +103,7 @@ public class ClientController {
      * @return view name
      */
     @PostMapping(value = "/client")
-    public String addClient(Client client, BindingResult result) {
+    public String addClient(@Valid Client client, BindingResult result) {
         LOGGER.debug("addClient({}, {})", client, result);
         if(result.hasErrors()) {
             return "client";

@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -84,7 +85,7 @@ public class TourController {
      * @return view name
      */
     @PostMapping(value = "/{id}")
-    public String updateTour(@ModelAttribute("tour") Tour tour, BindingResult result, Model model) {
+    public String updateTour(@ModelAttribute("tour")@Valid Tour tour, BindingResult result, Model model) {
         LOGGER.debug("updateTour({}, {})", tour, result);
         model.addAttribute("tourEntity", tour);
         if(result.hasErrors()) {
@@ -115,7 +116,7 @@ public class TourController {
      * @return view name
      */
     @PostMapping(value = "/add")
-    public String addTour(Tour tour, BindingResult result) {
+    public String addTour(@Valid Tour tour, BindingResult result) {
         LOGGER.debug("addTour({}, {})", tour, result);
         if (result.hasErrors()) {
             return "tour";

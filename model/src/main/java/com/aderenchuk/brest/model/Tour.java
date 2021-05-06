@@ -1,5 +1,6 @@
 package com.aderenchuk.brest.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -80,6 +81,7 @@ public class Tour {
      * Return Date of tour.
      * @return date Date of tour.
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     public LocalDate getDateTour() {
         return dateTour;
     }

@@ -1,7 +1,6 @@
 package com.aderenchuk.brest.service.rest;
 
 import com.aderenchuk.brest.model.Client;
-import com.aderenchuk.brest.service.ClientService;
 import com.aderenchuk.brest.service.rest.config.TestConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
