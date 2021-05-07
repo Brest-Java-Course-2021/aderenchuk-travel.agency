@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.TOUR_NOT_FOUND;
 import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.TOUR_NOT_FOUND_BY_ID;
 
 @RestController
+
 public class TourController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
@@ -52,8 +54,7 @@ public class TourController {
         return optionalTour.isPresent()
                 ? new ResponseEntity<>(optionalTour.get(), HttpStatus.OK)
                 : new ResponseEntity(
-                        new ErrorResponse(TOUR_NOT_FOUND,
-                                Arrays.asList(TOUR_NOT_FOUND_BY_ID + id)),
+                        new ErrorResponse(List.of("Can't find Tour with such id")),
                 HttpStatus.NOT_FOUND);
     }
 

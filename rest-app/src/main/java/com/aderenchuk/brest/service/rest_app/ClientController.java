@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.CLIENT_NOT_FOUND;
@@ -50,8 +51,7 @@ public class ClientController {
         return optionalClient.isPresent()
                 ? new ResponseEntity<>(optionalClient.get(), HttpStatus.OK)
                 : new ResponseEntity(
-                new ErrorResponse(CLIENT_NOT_FOUND,
-                        Arrays.asList(CLIENT_NOT_FOUND_BY_ID + id)),
+                new ErrorResponse(List.of("Can't find Client with such id")),
                 HttpStatus.NOT_FOUND);
     }
 
