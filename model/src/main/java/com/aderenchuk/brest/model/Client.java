@@ -1,6 +1,12 @@
 package com.aderenchuk.brest.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
+
+import static com.aderenchuk.brest.model.constants.ClientConstants.FIRST_NAME_SIZE;
+import static com.aderenchuk.brest.model.constants.ClientConstants.LAST_NAME_SIZE;
 
 /**
  *  POJO Client for model.
@@ -15,16 +21,21 @@ public class Client {
     /**
      * Client firstname.
      */
+    @NotBlank(message = "First name is a required field")
+    @Size(min = 2, max = FIRST_NAME_SIZE, message = "First name should be min 2, max 20 symbols")
     private String firstName;
 
     /**
      * Client lastname.
      */
+    @NotBlank(message = "Last name is a required field")
+    @Size(min = 2, max = LAST_NAME_SIZE, message = "Last name should be min 2, max 30 symbols")
     private String lastName;
 
     /**
      * Tour id.
      */
+    @Min(value = 1, message = "Tour id is a required field")
     private Integer tourId;
 
     /**

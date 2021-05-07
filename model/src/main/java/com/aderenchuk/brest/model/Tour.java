@@ -1,8 +1,12 @@
 package com.aderenchuk.brest.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -14,16 +18,20 @@ public class Tour {
     /**
      * Tour id.
      */
+    @Min(value = 1, message = "Tour number is a required field")
+
     private Integer tourId;
 
     /**
      * Name of tour direction .
      */
+    @NotBlank(message = "Direction is a required field")
     private String direction;
 
     /**
      * Date of tour.
      */
+    @NotNull(message = "dateTour is a required field")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateTour;
 
@@ -57,6 +65,7 @@ public class Tour {
      * Set Tour id.
      * @param tourId Tour id.
      */
+    @Required
     public void setTourId(Integer tourId) {
         this.tourId = tourId;
     }
@@ -73,6 +82,7 @@ public class Tour {
      * Set name of route tour.
      * @param direction name of direction tour.
      */
+    @Required
     public void setDirection(String direction) {
         this.direction = direction;
     }
@@ -90,6 +100,7 @@ public class Tour {
      * Set Date of tour.
      * @param dateTour Date of tour.
      */
+    @Required
     public void setDateTour(LocalDate dateTour) {
         this.dateTour = dateTour;
     }
