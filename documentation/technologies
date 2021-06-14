@@ -1,0 +1,509 @@
+    List of technologies:
+
+    • Spring Core
+    • Spring MVC
+    • Spring Boot
+    • Maven
+    • Thymeleaf
+    • JUnit
+    • Logging
+
+    Spring Core
+
+Q1. What Is Spring Framework?
+
+Spring is the most broadly used framework for the development of Java Enterprise Edition applications. The core features of Spring can be used in developing any Java application.
+
+Q2. What Are the Benefits of Using Spring?
+
+Spring targets to make Jakarta EE development easier. Here are the advantages of using it:
+• Lightweight: there is a slight overhead of using the framework in development
+• Inversion of Control (IoC): Spring container takes care of wiring dependencies of various objects, instead of creating or looking for dependent objects
+• Aspect Oriented Programming (AOP): Spring supports AOP to separate business logic from system services
+• IoC container: it manages Spring Bean life cycle and project specific configurations
+• MVC framework: that is used to create web applications or RESTful web services, capable of returning XML/JSON responses
+• Transaction management: reduces the amount of boiler-plate code in JDBC operations, file uploading, etc., either by using Java annotations or by Spring Bean XML configuration file
+• Exception Handling: Spring provides a convenient API for translating technology-specific exceptions into unchecked exceptions
+
+Q3. What Spring Sub-Projects Do You Know? Describe Them Briefly.
+
+• Core – a key module that provides fundamental parts of the framework, like IoC or DI
+• JDBC – this module enables a JDBC-abstraction layer that removes the need to do JDBC coding for specific vendor databases
+• ORM integration – provides integration layers for popular object-relational mapping APIs, such as JPA, JDO, and Hibernate
+• Web – a web-oriented integration module, providing multipart file upload, Servlet listeners, and web-oriented application context functionalities
+• MVC framework – a web module implementing the Model View Controller design pattern
+• AOP module – aspect-oriented programming implementation allowing the definition of clean method-interceptors and pointcuts
+
+Q4. What Is Dependency Injection?
+
+Dependency Injection, an aspect of Inversion of Control (IoC), is a general concept stating that you do not create your objects manually but instead describe how they should be created. An IoC container will instantiate required classes if needed.
+
+Q5. How Can We Inject Beans in Spring?
+
+A few different options exist:
+• Setter Injection
+• Constructor Injection
+• Field Injection
+
+Q6. What Is a Spring Bean?
+
+The Spring Beans are Java Objects that are initialized by the Spring IoC container.
+
+Q7. What Is the Default Bean Scope in Spring Framework?
+
+By default, a Spring Bean is initialized as a singleton.
+
+Q8. How to Define the Scope of a Bean?
+
+To set Spring Bean's scope, we can use @Scope annotation or “scope” attribute in XML configuration files. There are five supported scopes:
+• singleton
+• prototype
+• request
+• session
+• global-session
+
+Q9. What is Application Context?
+
+It is an advanced version of IOC Container. It provides all the functionalities of Bean Factory and also provides things like AOP, Internationalization capabilities, web application context (request, session, etc).
+
+Q10. Which Is the Best Way of Injecting Beans and Why?
+
+The recommended approach is to use constructor arguments for mandatory dependencies and setters for optional ones. Constructor injection allows injecting values to immutable fields and makes testing easier.
+
+Q11. What Is the Difference Between Beanfactory and Applicationcontext?
+
+BeanFactory is an interface representing a container that provides and manages bean instances. The default implementation instantiates beans lazily when getBean() is called.
+ApplicationContext is an interface representing a container holding all information, metadata, and beans in the application. It also extends the BeanFactory interface but the default implementation instantiates beans eagerly when the application starts. This behavior can be overridden for individual beans.
+
+    Spring MVC
+
+Q1. What is Spring MVC ?
+
+The MVC (Model-View-Controller) is a software architectural design pattern. It separates the functionality of an application into three interconnected parts - Model, View, and Controller. This approach facilitates the reusability of the code and parallel development.
+
+Q2 What is the front controller of Spring MVC?
+
+The front controller is a DispatcherServlet class present in org.springframework.web.servlet package. It dispatches the request to the appropriate controller and manages the flow of the application. It is required to specify the DispatcherServlet class in the web.xml file.
+
+Q3. What Is the Role of the @Autowired Annotation?
+
+The @Autowired annotation can be used with fields or methods for injecting a bean by type. This annotation allows Spring to resolve and inject collaborating beans into your bean.
+
+Q4. Explain a Model Attribute
+
+The @ModelAttribute annotation is one of the most important annotations in Spring MVC. It binds a method parameter or a method return value to a named model attribute and then exposes it to a web view.
+If we use it at the method level, it indicates the purpose of that method is to add one or more model attributes.
+On the other hand, when used as a method argument, it indicates the argument should be retrieved from the model. When not present, we should first instantiate it and then add it to the model. Once present in the model, we should populate the arguments fields from all request parameters that have matching names.
+
+Q5. Explain the Difference Between @Controller and @RestController?
+
+The main difference between the @Controller and @RestController annotations is that the @ResponseBody annotation is automatically included in the @RestController. This means that we don't need to annotate our handler methods with the @ResponseBody. We need to do this in a @Controller class if we want to write response type directly to the HTTP response body.
+
+Q6. What are the @RequestBody and the @ResponseBody?
+
+The @RequestBody annotation, used as a handler method parameter, binds the HTTP Request body to a transfer or a domain object. Spring automatically deserializes incoming HTTP Request to the Java object using Http Message Converters.
+When we use the @ResponseBody annotation on a handler method in the Spring MVC controller, it indicates that we'll write the return type of the method directly to the HTTP response body. We'll not put it in a Model, and Spring won't interpret as a view name.
+Please check out the article on @RequestBody and @ResponseBody to see more details about these annotations.
+
+Q7. Explain Model, ModelMap and ModelAndView?
+
+The Model interface defines a holder for model attributes. The ModelMap has a similar purpose, with the ability to pass a collection of values. It then treats those values as if they were within a Map. We should note that in Model (ModelMap) we can only store data. We put data in and return a view name.
+On the other hand, with the ModelAndView, we return the object itself. We set all the required information, like the data and the view name, in the object we're returning.
+
+Q8. What Is ViewResolver in Spring?
+
+The ViewResolver enables an application to render models in the browser – without tying the implementation to a specific view technology – by mapping view names to actual views.
+
+Q9. What’s the Difference Between @Controller, @Component, @Repository, and @Service Annotations in Spring?
+
+According to the official Spring documentation, @Component is a generic stereotype for any Spring-managed component. @Repository, @Service, and @Controller are specializations of @Component for more specific use cases, for example, in the persistence, service, and presentation layers, respectively.
+Let's take a look at specific use cases of last three:
+@Controller – indicates that the class serves the role of a controller, and detects @RequestMapping annotations within the class
+@Service – indicates that the class holds business logic and calls methods in the repository layer
+@Repository – indicates that the class defines a data repository; its job is to catch platform-specific exceptions and re-throw them as one of Spring’s unified unchecked exceptions
+
+Q10. What is the purpose of @PathVariable annotation in Spring MVC?
+
+The @PathVariable annotation is used to extract the value of the URI template. It is passed within the parameters of the handler method.
+
+Q11. What is the role of @ResponseBody annotation in Spring MVC?
+
+The @ResponseBody annotation is used to serialize the returned object automatically in JSON and bind it with the Http response body. Here, it not required to invoke the model.
+
+Q12. 5) What are the advantages of Spring MVC Framework?
+
+The following are the advantages of Spring MVC Framework :
+• Separate roles - The Spring MVC separates the application into three interconnected layers where each layer has its role.
+• Light-weight - It uses light-weight servlet container to develop and deploy your application.
+• Powerful Configuration - It provides a robust configuration for both framework and application classes that includes easy referencing across contexts, such as from web controllers to business objects and validators.
+• Rapid development - The Spring MVC facilitates fast and parallel development.
+• Reusable business code - Instead of creating new objects, it allows us to use the existing business objects.
+• Flexible Mapping - It provides the specific annotations that easily redirect the page.
+
+    Spring Boot
+
+Q1. What is Spring Boot and What Are Its Main Features?
+
+Spring Boot is essentially a framework for rapid application development built on top of the Spring Framework. With its auto-configuration and embedded application server support, combined with the extensive documentation and community support it enjoys, Spring Boot is one of the most popular technologies in the Java ecosystem as of date.
+Here are a few salient features:
+• Starters – a set of dependency descriptors to include relevant dependencies at a go
+• Auto-configuration – a way to automatically configure an application based on the dependencies present on the classpath
+• Actuator – to get production-ready features such as monitoring
+• Security
+• Logging
+
+Q2. What Are the Differences Between Spring and Spring Boot?
+
+The Spring Framework provides multiple features that make the development of web applications easier. These features include dependency injection, data binding, aspect-oriented programming, data access, and many more.
+Over the years, Spring has been growing more and more complex, and the amount of configuration such application requires can be intimidating. This is where Spring Boot comes in handy – it makes configuring a Spring application a breeze.
+Essentially, while Spring is unopinionated, Spring Boot takes an opinionated view of the platform and libraries, letting us get started quickly.
+Here are two of the most important benefits Spring Boot brings in:
+• Auto-configure applications based on the artifacts it finds on the classpath
+• Provide non-functional features common to applications in production, such as security or health checks
+
+Q3. What is Spring Initializer?
+
+Spring Initializer is a convenient way to create a Spring Boot project.
+We can go to the Spring Initializer site, choose a dependency management tool (either Maven or Gradle), a language (Java, Kotlin or Groovy), a packaging scheme (Jar or War), version and dependencies, and download the project.
+This creates a skeleton project for us and saves setup time so that we can concentrate on adding business logic.
+Even when we use our IDE's (such as STS or Eclipse with STS plugin) new project wizard to create a Spring Boot project, it uses Spring Initializer under the hood.
+
+Q4. What Spring Boot Starters Are Available out There?
+
+Each starter plays a role as a one-stop-shop for all the Spring technologies we need. Other required dependencies are then transitively pulled in and managed in a consistent way.
+All starters are under the org.springframework.boot group and their names start with spring-boot-starter-. This naming pattern makes it easy to find starters, especially when working with IDEs that support searching dependencies by name.
+At the time of this writing, there are more than 50 starters at our disposal. The most commonly used are:
+• spring-boot-starter: core starter, including auto-configuration support, logging, and YAML
+• spring-boot-starter-aop: starter for aspect-oriented programming with Spring AOP and AspectJ
+• spring-boot-starter-data-jpa: starter for using Spring Data JPA with Hibernate
+• spring-boot-starter-security: starter for using Spring Security
+• spring-boot-starter-test: starter for testing Spring Boot applications
+• spring-boot-starter-web: starter for building web, including RESTful, applications using Spring MVC
+
+Q5. How to Deploy Spring Boot Web Applications as Jar and War Files?
+
+Traditionally, we package a web application as a WAR file, then deploy it into an external server. Doing this allows us to arrange multiple applications on the same server. During the time that CPU and memory were scarce, this was a great way to save resources.
+Spring tackles this problem by providing a plugin, namely spring-boot-maven-plugin, to package a web application as an executable JAR.
+
+Q6. What Are Possible Sources of External Configuration?
+
+We can use properties files, YAML files, environment variables, system properties, and command-line option arguments to specify configuration properties.
+
+Q7. How to Write Integration Tests?
+
+When running integration tests for a Spring application, we must have an ApplicationContext.
+To make our life easier, Spring Boot provides a special annotation for testing – @SpringBootTest. This annotation creates an ApplicationContext from configuration classes indicated by its classes attribute.
+In case the classes attribute isn't set, Spring Boot searches for the primary configuration class. The search starts from the package containing the test up until it finds a class annotated with @SpringBootApplication or @SpringBootConfiguration.
+
+Q8. What Are the Basic Annotations that Spring Boot Offers?
+
+The primary annotations that Spring Boot offers reside in its org.springframework.boot.autoconfigure and its sub-packages. Here are a couple of basic ones:
+• @EnableAutoConfiguration – to make Spring Boot look for auto-configuration beans on its classpath and automatically apply them.
+• @SpringBootApplication – used to denote the main class of a Boot Application. This annotation combines @Configuration, @EnableAutoConfiguration, and @ComponentScan annotations with their default attributes.
+
+Q9. How Can You Change the Default Port in Spring Boot?
+
+We can change the default port of a server embedded in Spring Boot using one of these ways:
+• using a properties file – we can define this in an application.properties (or application.yml) file using the property server.port
+• programmatically – in our main @SpringBootApplication class, we can set the server.port on the SpringApplication instance
+• using the command line – when running the application as a jar file, we can set the server.port as a java command argument:
+
+Q10. Why do we use application.properties?
+
+The file application.properties is used to configure things like database details, log generation, security (username/password), serialization, etc.
+
+    Maven
+
+Q1. What is Maven ?
+
+Maven is a project management and comprehension tool. Maven provides developers a complete build lifecycle framework. The development team is easily able to automate the project’s build infrastructure in almost no time as Maven uses a standard directory layout and a default build lifecycle.
+
+Q2. What are the main features of Maven?
+
+Some of the main features of Maven are:
+• Simple to use: Maven provides easy project settings that are based on genuine practices.
+• Fast: You can receive a fresh project or module that began in fewer seconds in Maven.
+• Easy to learn: Maven usage and commands are pretty easy to learn across all projects. Therefore ramp-up time for new developers coming onto a project is very less.
+• Dependency management: Maven provides superior dependency management including automatic updates and transitive dependencies.
+• Multiple Projects: You can easily work on multiple projects at the same time by using Maven.
+• Huge Library: Maven has a large and growing repository of libraries and metadata to use out of the box.
+
+Q3. What does the build tool?
+
+• Generates source code (if the auto-generated code is used)
+• Generates documentation from source code
+• Compiles source code
+• Packages compiled code into a JAR or ZIP file
+• Installs the packaged code in the local repository, server repository, or central repository
+
+Q4. What is POM?
+
+POM stands for Project Object Model. In Maven, it is a fundamental Unit of Work and it is an XML file. You can find it in the base directory of the project. It consists of information about the project and various configuration details used by Maven to build the project(s).
+
+Q5. What is the Maven Build lifecycle?
+
+A Build Lifecycle can be defined as a well-defined sequence of phases. It clearly defines the order in which the goals are to be executed. Each build phase contains a sequence of goals. If one life cycle is executed, all build phases in that life cycle are executed. If a build phase is executed, all build phases before it in the pre-defined sequence of build phases are executed.
+
+Q6. What would the command mvn clean do?
+
+This command deletes the target directory with all the build data before starting the build process.
+
+Q7. What are the different phases of a Maven Build Lifecycle?
+
+Following are the phases of Maven build lifecycle −
+• validate − validate the project and check if everything is correct and all necessary information is available.
+• compile − this phase compiles the source code of your project.
+• test − tests the compiled source code by using a suitable unit testing framework. These tests should not require the code to be packaged or deployed
+• package − takes the compiled code and packages it in its distributable format.
+• integration-test − processes and deploys the package if possible into an environment where integration tests can be run.
+• verify − runs any checks to verify the package is valid and meets the required quality criteria.
+• install − installation of the package into the local repository. This is done to use it as a dependency in other projects locally.
+• deploy − done in an integration environment or release environment. Here the final package is copied to the remote repository for sharing with other developers and projects.
+
+Q8. What are the uses of Maven Plugins?
+
+Maven Plugins are used to −
+• create jar file.
+• create war file.
+• compile code files.
+• unit testing of code.
+• create project documentation.
+• create project reports.
+
+Q9. What is the dependency scope? Name all the dependency scope.
+
+Dependency scope typically includes dependencies as per the current stage of the build. The various Dependency scopes are −
+• compile − This scope indicates that dependency is available in the classpath of the project. It is the default scope.
+• provided − This indicates that the dependency is to be provided by JDK or web-Server/Container at runtime.
+• runtime − This scope tells that you don't need dependency is for compilation but you need it for for execution.
+• test − This scope states that the dependency is only available for the test compilation and execution phases.
+• system − This scope indicates that you must provide the system path.
+• import − This scope is only used when the dependency is of type pom. This scope tells that the specified POM should be replaced with the dependencies in the POM’s <dependencyManagement> section.
+
+Q10. What are the uses of Maven Plugins?
+
+Maven Plugins are used to −
+• create jar file.
+• create war file.
+• compile code files.
+• unit testing of code.
+• create project documentation.
+• create project reports.
+
+    Thymeleaf
+
+Q1. What is Thymeleaf?
+
+Thymeleaf is a modern server-side Java template engine for both web and non-web environments. It generally works to bring natural templates to your development workflow.
+
+Q2. List major features of Thymeleaf?
+
+The major features of Thymeleaf are:
+• Based on modular feature sets called dialects
+• Several template modes
+• Java template engine for XML, XHTML and HTML5
+• Full (and extensible) internationalization support
+• Works both in web and non-web (offline) environments.
+
+Q3. What is Thymeleaf Template?
+
+Thymeleaf Template is the template files that can be directly opened in browsers and that still display correctly as web pages.
+
+Q4. What is fragment in Thymeleaf?
+
+In Thymeleaf a fragment is a small piece of code such as reusable, small components like the header, footer, navigation menu, etc. that can be included in other templates.
+
+Q5. What is a dialect in Thymeleaf?
+
+There are two types of dialects in Thymeleaf that states:
+• Custom dialects – you can build layouts using the Thymeleaf Standard Layout System
+• Layout Dialect – which uses the decorator pattern for working with the layout files.
+
+Q6. List different kinds of templates can Thymeleaf process?
+
+The different kinds of templates that Thymeleaf process are:
+• HTML (HTML5, XHTML 1.0/1.1, HTML 4)
+• XML
+• TEXT (plain text)
+• JAVASCRIPT (. js files)
+• CSS (. css files)
+
+
+Q7. What is Decoupled Template Logic?
+Decoupled Template Logic allows for the creation of completely logic-less markup templates in the HTML and XML. It introduces the possibility to completely decouple the template's markup from its logic.
+
+Q8. How to print variables in Thymeleaf?
+
+You can use the "th:text=#{variable}" to print a variable in the Thymeleaf.
+
+Q9. What is Template Resolver in Thymeleaf?
+
+In Thymeleaf the Template Resolver is responsible for loading the templates from a specific location.
+
+Q10. What is Decoupled Template Logic?
+
+Thymeleaf allows you to completely decouple the template markup from its logic to allow for the creation of the completely logic-less markup templates in the HTML and XML template modes. The idea with the decoupled template logic is to define a separate file for the template logic with the ".th.xml" extension that lives in the same folder as the main HTML file.
+
+    JUnit
+
+Q1. What is Testing?
+
+Testing is the process of checking the functionality of the application whether it is working as per requirements.
+
+Q2. What is Unit Testing?
+
+Unit testing is the testing of single entity (class or method). Unit testing is very essential to every software company to give a quality product to their customers.
+
+Q3. What is Manual testing?
+
+Executing the test cases manually without any tool support is known as manual testing.
+
+Q4. What is Automated testing?
+
+Taking tool support and executing the test cases by using automation tool is known as automation testing.
+
+Q5. What are the disadvantages of manual testing?
+
+Following are the disadvantages of manual testing −
+• Time consuming and tedious − Since test cases are executed by human resources so it is very slow and tedious.
+• Huge investment in human resources − As test cases need to be executed manually so more testers are required in manual testing.
+• Less reliable − Manual testing is less reliable as tests may not be performed with precision each time because of human errors.
+• Non-programmable − No programming can be done to write sophisticated tests which fetch hidden information.
+
+Q6. What are the advantages of automated testing?
+
+• Following are the advantages of automated testing −
+• Fast − Automation runs test cases significantly faster than human resources.
+• Less investment in human resources − Test cases are executed by using automation tool so less tester are required in automation testing.
+• More reliable − Automation tests perform precisely same operation each time they are run.
+• Programmable − Testers can program sophisticated tests to bring out hidden information.
+
+Q7. What is JUnit?
+
+JUnit is a Regression Testing Framework used by developers to implement unit testing in Java and accelerate programming speed and increase the quality of code.
+
+Q8. What are important features of JUnit?
+
+Following are the important features of JUnit −
+• It is an open source framework.
+• Provides Annotation to identify the test methods.
+• Provides Assertions for testing expected results.
+• Provides Test runners for running tests.
+• JUnit tests can be run automatically and they check their own results and provide immediate feedback.
+• JUnit tests can be organized into test suites containing test cases and even other test suites.
+• JUnit shows test progress in a bar that is green if test is going fine and it turns red when a test fails.
+
+Q9. What is a Unit Test Case?
+
+A Unit Test Case is a part of code which ensures that the another part of code (method) works as expected. To achieve those desired results quickly, test framework is required .JUnit is perfect unit test framework for java programming language.
+
+Q10. What are the best practices to write a Unit Test Case?
+
+A formal written unit test case is characterized by a known input and by an expected output, which is worked out before the test is executed. The known input should test a precondition and the expected output should test a postcondition.
+There must be at least two unit test cases for each requirement: one positive test and one negative test. If a requirement has sub-requirements, each sub-requirement must have at least two test cases as positive and negative.
+
+Q11. When are Unit Tests written in Development Cycle?
+
+Tests are written before the code during development in order to help coders write the best code.
+
+Q12. Why not just use System.out.println() for testing?
+
+Debugging the code using system.out.println() will lead to manual scanning of the whole output every time the program is run to ensure the code is doing the expected operations. Moreover, in the long run, it takes lesser time to code JUnit methods and test them on class files.
+
+Q13. What is the purpose of @Test annotation in JUnit?
+The Test annotation tells JUnit that the public void method to which it is attached can be run as a test case.
+
+Q14. What is the purpose of @Before annotation in JUnit?
+Several tests need similar objects created before they can run. Annotating a public void method with @Before causes that method to be run before each Test method.
+
+Q15. What is the purpose of @After annotation in JUnit?
+If you allocate external resources in a Before method you need to release them after the test runs. Annotating a public void method with @After causes that method to be run after the Test method.
+
+Q16. What is the purpose of @BeforeClass annotation in JUnit?
+Annotating a public static void method with @BeforeClass causes it to be run once before any of the test methods in the class.
+
+Q17. What is the purpose of @AfterClass annotation in JUnit?
+This will perform the method after all tests have finished. This can be used to perform clean-up activities.
+
+Q18. What is @Ignore annotation and how is this useful?
+Following are some of the usefulness of @Ignore annotation −
+You can easily identify all @Ignore annotations in the source code, while unannotated or commented out tests are not so simple to find.
+There are cases when you can't fix a code that is failing, but you still want to method to be around, precisely so that it does not get forgotten. In such cases @Ignore makes sense.
+
+Q19. Explain the execution procedure of the JUnit test API methods?
+
+Following is how the JUnit execution procedure works −
+• First of all method annotated as @BeforeClass execute only once.
+• Lastly, the method annotated as @AfterClass executes only once.
+• Method annotated as @Before executes for each test case but before executing the test case.
+• Method annotated as @After executes for each test case but after the execution of test case.
+• In between method annotated as @Before and method annotated as @After each test case executes.
+
+Q20. What is a Mock Object?
+
+In a unit test, mock objects can simulate the behavior of complex, real (non-mock) objects and are therefore useful when a real object is impractical or impossible to incorporate into a unit test.
+
+Q21. Explain unit testing using Mock Objects.
+
+The common coding style for testing with mock objects is to −
+• Create instances of mock objects.
+• Set state and expectations in the mock objects.
+• Invoke domain code with mock objects as parameters.
+• Verify consistency in the mock objects.
+
+    Logging
+
+Q1. Explain what is Log4j?
+
+Log4j is a fast, flexible and reliable logging framework  written in Java developed in early 1996. It is distributed under the Apache software license and can be used for small to large scale projects.  It has been ported to the languages like C, C++, C#, Python, etc.
+
+Q2. Explain why to use Apache Log4j?
+
+Being open-source its completely free to use.
+You can easily save log information into either files or even databases.
+Can be used for projects of any sizes small or large.
+
+Q3. Mention what are the three principal components of Log4j?
+
+The three principal components of Log4j are
+• Loggers
+• Appenders
+• Layout
+
+Q4. Inside logger component what are the different log levels?
+
+Different log levels inside logger components are
+• All
+• Debug
+• Info
+• Warn
+• Error
+• Fatal
+• Off
+
+Q5. Explain what are Appenders in Log4j?
+
+Appenders are used to deliver LogEvents to their destination. In simple words, it is used to write the logs in the file.
+
+Q6. Mention what are the different types of Appenders?
+
+Some of the Appenders type include
+• ConsoleAppender logs to standard output
+• FileAppender prints logs to some file
+• Rolling file appender to a file with maximum size
+
+Q7. In log4j how can you log into the database?
+
+The log4j API provides the object org.apache.log4j.jdbc. JDBCAppender object can put logging information in a particular database.
+
+Q8. Explain what is package level logging in log4j?
+
+Package level logging is the standard logging of log4j, with this you would determine the package and the associated level.
+
+Q9. Explain what does WARN and TRACE level indicates in log4j?
+
+Log4j level WARN gives a warning about an unpredicted event to the user. The messages coming out of this level may not stop the progress of the system.  The TRACE level provides more detailed information than the DEBUG level, and it will stay on the top of the hierarchy.
+
+Q10. Mention what is the best way to migrate from java.util logging to log4j?
+
+The best way to migrate from java.util  logged to log4j is to use global file search/replace method.  It will replace with “org.apache.log4j.Logger”
