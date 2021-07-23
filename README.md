@@ -31,6 +31,9 @@ java -jar rest-app.jar
 
 ```
 
-
-
 This starts application and serves up your project on [http://localhost:8080](http://localhost:8080) for web-app and [http://localhost:8088](http://localhost:8088) for rest-app.
+
+
+## Swagger
+Swagger json documentation can be accessed at : [http://localhost:8080/v2/api-docs](http://localhost:8080/v2/api-docs) \
+Swagger UI can be accessed at : [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/)
