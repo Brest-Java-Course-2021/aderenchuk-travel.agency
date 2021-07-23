@@ -35,5 +35,5 @@ This starts application and serves up your project on [http://localhost:8080](ht
 
 
 ## Swagger
-Swagger json documentation can be accessed at : [http://localhost:8080/v2/api-docs](http://localhost:8080/v2/api-docs) \
-Swagger UI can be accessed at : [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/)
+Swagger json documentation can be accessed at : [http://localhost:8088/v2/api-docs](http://localhost:8080/v2/api-docs) \
+Swagger UI can be accessed at : [http://localhost:8088/swagger-ui/](http://localhost:8080/swagger-ui/)
