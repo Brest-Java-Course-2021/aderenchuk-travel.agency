@@ -4,7 +4,6 @@ import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.model.Tour;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -26,22 +25,22 @@ public class TourDaoJdbc implements TourDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
 
-    @Value("${tour.select}")
-    private String selectSql;
+    @InjectSql("/sql/tour/findAll.sql")
+    private String findAllSql;
 
-    @Value("${tour.findById}")
+    @InjectSql("/sql/tour/findById.sql")
     private String findByIdSql;
 
-    @Value("${tour.create}")
+    @InjectSql("/sql/tour/create.sql")
     private String createSql;
 
-    @Value("${tour.update}")
+    @InjectSql("/sql/tour/update.sql")
     private String updateSql;
 
-    @Value("${tour.check}")
+    @InjectSql("/sql/tour/check.sql")
     private String checkSql;
 
-    @Value("${tour.delete}")
+    @InjectSql("/sql/tour/delete.sql")
     private String deleteSql;
 
 
@@ -54,7 +53,7 @@ public class TourDaoJdbc implements TourDao {
     @Override
     public List<Tour> findAll() {
         LOGGER.debug("Find all tours");
-        return namedParameterJdbcTemplate.query(selectSql, new TourRowMapper());
+        return namedParameterJdbcTemplate.query(findAllSql, new TourRowMapper());
     }
 
     @Override
@@ -101,7 +100,7 @@ public class TourDaoJdbc implements TourDao {
         LOGGER.debug("Delete tour: {}", tourId);
         SqlParameterSource sqlParameterSource =
                 new MapSqlParameterSource()
-                .addValue("TOUR_ID", tourId);
+                        .addValue("TOUR_ID", tourId);
         return namedParameterJdbcTemplate.update(deleteSql, sqlParameterSource);
     }
 

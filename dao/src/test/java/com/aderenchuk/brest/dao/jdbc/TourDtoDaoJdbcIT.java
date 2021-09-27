@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DataJdbcTest
 @Import({TourDaoJdbc.class})
-@PropertySource({"classpath:dao.properties"})
+@PropertySource({"classpath:/dao.properties"})
 @ContextConfiguration(classes = SpringJdbcConfig.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class TourDtoDaoJdbcIT {
@@ -42,7 +42,5 @@ public class TourDtoDaoJdbcIT {
         assertTrue(dateFrom.compareTo(dateTo)<0);
         List<TourDto> tours = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom,dateTo);
         assertNotNull(tours);
-//        List<TourDto> tourList = tourDtoDao.findAllQuantityClientsAndDateFilter(dateFrom,dateTo);
-//        assertTrue(tourList.size() == 0);
     }
 }

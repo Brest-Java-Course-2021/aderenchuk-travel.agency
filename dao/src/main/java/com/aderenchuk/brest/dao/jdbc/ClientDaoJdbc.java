@@ -27,22 +27,22 @@ public class ClientDaoJdbc implements ClientDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
 
-    @Value("${client.select}")
-    private String selectSql;
+    @InjectSql("/sql/client/findAll.sql")
+    private String findAllSql;
 
-    @Value("${client.findById}")
+    @InjectSql("/sql/client/findById.sql")
     private String findByIdSql;
 
-    @Value("${client.create}")
+    @InjectSql("/sql/client/create.sql")
     private String createSql;
 
-    @Value("${client.update}")
+    @InjectSql("/sql/client/update.sql")
     private String updateSql;
 
-    @Value("${client.check}")
+    @InjectSql("/sql/client/check.sql")
     private String checkSql;
 
-    @Value("${client.delete}")
+    @InjectSql("/sql/client/delete.sql")
     private String deleteSql;
 
 
@@ -55,7 +55,7 @@ public class ClientDaoJdbc implements ClientDao {
     @Override
     public List<Client> findAll() {
         LOGGER.debug("findAll()");
-        return namedParameterJdbcTemplate.query(selectSql, new ClientRowMapper());
+        return namedParameterJdbcTemplate.query(findAllSql, new ClientRowMapper());
     }
 
     @Override
