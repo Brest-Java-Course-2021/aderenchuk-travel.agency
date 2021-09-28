@@ -19,7 +19,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JdbcTest
-@PropertySource({"classpath:dao.properties"})
+@PropertySource({"classpath:/sql"})
 @ContextConfiguration(classes = SpringJdbcConfig.class)
 @Transactional
 public class TourDaoJdbcIT {
