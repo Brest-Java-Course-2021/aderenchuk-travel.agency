@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -51,6 +52,9 @@ public class Tour {
         this.tourId = tourId;
         this.direction = direction;
         this.dateTour = dateTour;
+    }
+
+    public Tour(Integer tourId, String name, Date birthday) {
     }
 
     /**
