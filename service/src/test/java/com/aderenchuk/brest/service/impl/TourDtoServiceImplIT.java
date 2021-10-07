@@ -26,6 +26,7 @@ public class TourDtoServiceImplIT {
     @Autowired
     TourDtoService tourDtoService;
 
+
     @Test
     public void shouldFindAllWithQuantityClients() {
         List<TourDto> tours = tourDtoService.findAllQuantityClients();
