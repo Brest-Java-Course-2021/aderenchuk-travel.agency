@@ -9,7 +9,7 @@ import static com.aderenchuk.brest.model.constants.ClientConstants.FIRST_NAME_SI
 import static com.aderenchuk.brest.model.constants.ClientConstants.LAST_NAME_SIZE;
 
 /**
- *  POJO Client for model.
+ * POJO Client for model.
  */
 public class Client {
 
@@ -47,6 +47,7 @@ public class Client {
 
     /**
      * Constructor without arguments.
+     *
      * @param clientId Client id.
      */
     public Client(Integer clientId) {
@@ -55,9 +56,10 @@ public class Client {
 
     /**
      * Constructor with  FirstName, LastName, Tour id.
+     *
      * @param firstName first name client.
-     * @param lastName last Name client.
-     * @param tourId Tour id.
+     * @param lastName  last Name client.
+     * @param tourId    Tour id.
      */
     public Client(String firstName, String lastName, Integer tourId) {
         this.firstName = firstName;
@@ -65,8 +67,16 @@ public class Client {
         this.tourId = tourId;
     }
 
+    public Client(Integer clientId, String firstName, String lastName, Integer tourId) {
+        this.clientId = clientId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.tourId = tourId;
+    }
+
     /**
      * Return Client id.
+     *
      * @return clientId.
      */
     public Integer getClientId() {
@@ -75,6 +85,7 @@ public class Client {
 
     /**
      * Set Client id.
+     *
      * @param clientId Client id.
      */
     public void setClientId(Integer clientId) {
@@ -83,6 +94,7 @@ public class Client {
 
     /**
      * Return Client firstname.
+     *
      * @return firstname.
      */
     public String getFirstName() {
@@ -91,6 +103,7 @@ public class Client {
 
     /**
      * Set Client firstname.
+     *
      * @param firstName Client firstname.
      */
     public void setFirstName(String firstName) {
@@ -99,6 +112,7 @@ public class Client {
 
     /**
      * Return Client lastname.
+     *
      * @return lastname.
      */
     public String getLastName() {
@@ -107,6 +121,7 @@ public class Client {
 
     /**
      * Set Client lastname.
+     *
      * @param lastName Client lastname.
      */
     public void setLastName(String lastName) {
@@ -115,6 +130,7 @@ public class Client {
 
     /**
      * Return Tour id.
+     *
      * @return tourId.
      */
     public Integer getTourId() {
@@ -123,6 +139,7 @@ public class Client {
 
     /**
      * Set  Tour id.
+     *
      * @param tourId Tour id.
      */
     public void setTourId(Integer tourId) {

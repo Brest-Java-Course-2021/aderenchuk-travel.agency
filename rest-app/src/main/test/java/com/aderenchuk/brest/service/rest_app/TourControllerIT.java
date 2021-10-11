@@ -2,6 +2,7 @@ package com.aderenchuk.brest.service.rest_app;
 
 import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.model.Tour;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -111,5 +112,11 @@ public class TourControllerIT {
         Integer id = tours.get(0).getTourId();
         tourService.delete(id);
     }
+
+//    @Test
+//    public void fakerTour() {
+//        Faker faker = new Faker();
+//
+//    }
 
 }
