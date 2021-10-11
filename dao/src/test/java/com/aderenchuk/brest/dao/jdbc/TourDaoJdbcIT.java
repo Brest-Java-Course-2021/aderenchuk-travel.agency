@@ -4,8 +4,10 @@ import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.model.constants.TourConstants;
 import com.aderenchuk.brest.testdb.SpringJdbcConfig;
+import com.github.javafaker.Faker;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.engine.support.hierarchical.ThrowableCollector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 import org.springframework.context.annotation.PropertySource;
@@ -14,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -120,6 +123,14 @@ public class TourDaoJdbcIT {
         assertNotNull(realTours);
 
         assertTrue(tours.size()-1 == realTours.size());
+    }
+
+    @Test
+    public void fakeTour() {
+        Faker faker = new Faker(Locale.ENGLISH);
+        System.out.println(faker.address().fullAddress());
+        System.out.println(faker.country().name());
+        System.out.println(faker.date().birthday());
     }
 
 }

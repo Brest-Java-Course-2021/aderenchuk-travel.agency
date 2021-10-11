@@ -9,20 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-
-import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.TOUR_NOT_FOUND;
-import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.TOUR_NOT_FOUND_BY_ID;
+import java.util.*;
 
 @RestController
 
 public class TourController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
-
 
     private TourService tourService;
 
