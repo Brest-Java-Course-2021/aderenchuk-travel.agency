@@ -3,9 +3,9 @@ package com.aderenchuk.brest.service.rest_app;
 import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientExportService;
 import com.aderenchuk.brest.service.impl.excelExport.ClientExcelExporter;
+import com.aderenchuk.brest.service.impl.excelImporter.ClientExcelImporter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -17,8 +17,9 @@ public class ClientExportController {
     @Autowired
     private ClientExportService clientExportService;
 
-    @GetMapping("export/excel")
-    public void exportToExcel(HttpServletResponse response) throws IOException {
+    @RequestMapping("export/excel")
+    @ResponseBody
+    public String exportToExcel(HttpServletResponse response) throws IOException {
         response.setContentType("application/octet-stream");
         String headerKey = "Content-Disposition";
         String headerValue = "attachment; filename=Client_info.xlsx";
@@ -27,6 +28,14 @@ public class ClientExportController {
         List<Client> clientList = clientExportService.findAll();
         ClientExcelExporter exp = new ClientExcelExporter(clientList);
         exp.export(response);
+        return "Export Successfully";
     }
 
+    @RequestMapping("import/excel")
+    @ResponseBody
+    public String importFromExcel() {
+        ClientExcelImporter clientExcelImporter = new ClientExcelImporter();
+        List<Client> clientList = clientExcelImporter.excelImport();
+        return "Import Successfully";
+    }
 }
