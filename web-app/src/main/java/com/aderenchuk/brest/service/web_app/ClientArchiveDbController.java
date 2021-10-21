@@ -59,7 +59,7 @@ public class ClientArchiveDbController {
         BufferedReader inputStream = new BufferedReader(new FileReader(
                 "/home/artem/IdeaProjects/aderenchuk-travel.agency/clientParsingDataDb.txt"));
 
-        File file = new File("/home/artem/IdeaProjects/aderenchuk-travel.agency/test-db/src/main/resources/clientData.sql");
+        File file = File.createTempFile("/home/artem/IdeaProjects/aderenchuk-travel.agency/test-db/src/main/resources/clientData", ".tmp");
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(
                 file));
 
