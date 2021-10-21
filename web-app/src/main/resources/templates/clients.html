@@ -41,14 +41,28 @@
             <span class="navbar-brand text-uppercase mr-auto">Clients</span>
             <ul class="navbar-nav float-right">
                 <li class="nav-item">
+                    <a href="clients.html"
+                       th:href="@{/parsing/clientDb}"
+                       class="btn btn-light"
+                       title="Parsing Client Db"
+                       data-toggle="tooltip"
+                       data-placement="bottom">
+                        <span class="d-none d-sm-inline">ExportDB</span></a>
+                    <a href="clients.html"
+                       th:href="@{/rewriting/clientDb}"
+                       class="btn btn-light"
+                       title="Rewriting Client Db"
+                       data-toggle="tooltip"
+                       data-placement="bottom">
+                        <span class="d-none d-sm-inline">RewritingDB</span></a>
                     <a href="client.html"
                        th:href="@{/client}"
                        class="btn btn-light"
                        title="Add client"
                        data-toggle="tooltip"
                        data-placement="bottom">
-                        <i class="bi-plus"></i> <span
-                            class="d-none d-sm-inline">Add</span></a>
+                        <i class="bi-plus"></i>
+                        <span class="d-none d-sm-inline">Add</span></a>
                 </li>
             </ul>
         </div>
