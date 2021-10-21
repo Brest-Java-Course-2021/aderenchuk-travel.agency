@@ -47,7 +47,6 @@ public class ClientArchiveDbController {
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
-                .contentType(MediaType.TEXT_PLAIN)
                 .contentLength(resource.contentLength())
                 .body(resource);
 
@@ -59,7 +58,8 @@ public class ClientArchiveDbController {
         BufferedReader inputStream = new BufferedReader(new FileReader(
                 "/home/artem/IdeaProjects/aderenchuk-travel.agency/clientParsingDataDb.txt"));
 
-        File file = File.createTempFile("/home/artem/IdeaProjects/aderenchuk-travel.agency/test-db/src/main/resources/clientData", ".tmp");
+        String dirPath = System.getProperty("user.dir");
+        File file = File.createTempFile("clientData", ".tmp", new File(dirPath));
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(
                 file));
 
