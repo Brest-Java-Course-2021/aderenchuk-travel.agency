@@ -41,7 +41,7 @@ Fake data for clients can be accessed at : http://localhost:8088/fakerClients
 Import clients data can be accessed at : http://localhost:8088/import/excel
 Export clients data can be accessed at : http://localhost:8088/export/excel
 
-## Run application with docker-compose and mySql database
+## Run application with docker-compose and postgresql database
 From the same directory as your root pom.xml, type:
 
 docker-compose -f docker/docker-compose.yml up
