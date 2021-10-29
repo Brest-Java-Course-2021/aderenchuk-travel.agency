@@ -1,0 +1,40 @@
+version: "3"
+services:
+
+  db:
+    image: postgres
+    ports:
+      - 5433:5432
+    environment:
+     POSTGRES_PASSWORD: 123
+     POSTGRES_DB: travel.agency
+     PGDATA: /var/lib/postgresql
+    restart: always
+    volumes:
+      - ./travelagency_data:/var/lib/postgresql
+
+  rest-app:
+    build: ./rest-app
+    image: docker-rest-app
+    container_name: rest-app
+    ports:
+      - 8088:8088
+    restart: always
+    environment:
+      POSTGRES_HOST: db
+    depends_on:
+     - db
+
+
+
+  web-app:
+     build: ./web-app
+     image: docker-web-app
+     container_name: web-app
+     ports:
+       - 8080:8080
+     restart: always
+     environment:
+       HOST_NAME: rest-app
+     depends_on:
+       - rest-app

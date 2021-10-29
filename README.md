@@ -20,15 +20,11 @@ for start web-app...
 ```
 cd web-app/target
 java -jar web-app.jar
-
-
 ```
 for start rest-app...
 ```
 cd rest-app/target
 java -jar rest-app.jar
-
-
 ```
 
 This starts application and serves up your project on [http://localhost:8080](http://localhost:8080) for web-app and [http://localhost:8088](http://localhost:8088) for rest-app.
@@ -44,3 +40,21 @@ Fake data for clients can be accessed at : http://localhost:8088/fakerClients
 ## Import/Export Excel
 Import clients data can be accessed at : http://localhost:8088/import/excel
 Export clients data can be accessed at : http://localhost:8088/export/excel
+
+## Run application with docker-compose and mySql database
+From the same directory as your root pom.xml, type:
+
+docker-compose -f docker/docker-compose.yml up
+The mySql database can be accessed at: http://localhost:5433
+The rest-app can be accessed at: http://localhost:8088
+The web-app can be accessed at: http://localhost:8080
+
+To start/stop app use:
+```
+docker-compose -f docker/docker-compose.yml start
+docker-compose -f docker/docker-compose.yml stop
+```
+To stop it and remove the container, run:
+```
+docker-compose -f docker/docker-compose.yml down
+```
