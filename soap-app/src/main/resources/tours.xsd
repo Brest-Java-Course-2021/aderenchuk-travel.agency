@@ -1,5 +1,5 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.travel-agency.com/article-ws"
-           targetNamespace="http://www.travel-agency.com/article-ws" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.travel-agency.com/tour-ws"
+           targetNamespace="http://www.travel-agency.com/tour-ws" elementFormDefault="qualified">
 
     <xs:element name="getTourByIdRequest">
         <xs:complexType>
@@ -43,7 +43,7 @@
             <xs:sequence>
                 <xs:element name="tourId" type="xs:int"/>
                 <xs:element name="direction" type="xs:string"/>
-                <xs:element name="dateTour" type="xs:date"/>
+                <xs:element name="dateTour" type="xs:dateTime"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -65,7 +65,7 @@
     <xs:element name="updateTourResponse">
         <xs:complexType>
             <xs:sequence>
-<!--                <xs:element name="serviceStatus" type="tns:serviceStatus"/>-->
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -76,7 +76,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="deleteArticleResponse">
+    <xs:element name="deleteTourResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
