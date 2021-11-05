@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
@@ -35,6 +36,8 @@ public class Tour {
     @NotNull(message = "dateTour is a required field")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateTour;
+
+    private XMLGregorianCalendar dateSoapTour;
 
     /**
      * Constructor without arguments.
@@ -129,6 +132,10 @@ public class Tour {
                 ", direction='" + direction + '\'' +
                 ", dateTour=" + dateTour +
                 '}';
+    }
+
+    public void setDateSoapTour(XMLGregorianCalendar dateTour) {
+        this.dateSoapTour = dateSoapTour;
     }
 }
 
