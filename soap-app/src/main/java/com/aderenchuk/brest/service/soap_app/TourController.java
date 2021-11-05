@@ -53,9 +53,6 @@ public class TourController {
         AddTourResponse response = new AddTourResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
         Tour tour = new Tour();
-        tour.setTourId(request.getTourId());
-        tour.setDirection(request.getDirection());
-        tour.setDateSoapTour(request.getDateTour());
         Integer flag = tourService.create(tour);
         if (flag == 1) {
             serviceStatus.setStatusCode("CONFLICT");
