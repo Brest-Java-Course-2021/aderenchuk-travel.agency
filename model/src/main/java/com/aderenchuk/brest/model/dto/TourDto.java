@@ -4,28 +4,43 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
+
+@Entity
 public class TourDto {
 
     /**
      * Tour Id.
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "tourId")
+    @Min(value = 1, message = "Tour number is a required field")
     private Integer tourId;
 
     /**
      * Tour Direction.
      */
+    @Column(name = "direction")
+    @NotBlank(message = "Direction is a required field")
     private String direction;
 
     /**
      * Date tour.
      */
+    @Column(name = "dateTour")
+    @NotNull(message = "dateTour is a required field")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateTour;
 
     /**
      * Quantity clients of tour.
      */
+    @Min(value = 1, message = "quantityClients is a required field")
     private Integer quantityClients;
 
     /**
