@@ -4,21 +4,15 @@ import com.aderenchuk.brest.service.ClientArchiveDbService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 @Controller
 public class ClientArchiveDbController {
@@ -29,28 +23,31 @@ public class ClientArchiveDbController {
     private ClientArchiveDbService clientArchiveDbService;
 
     @GetMapping(value = "/parsing/clientDb")
-    public ResponseEntity<Resource> archiveDb(HttpServletResponse response) throws IOException {
+    public void archiveDb(HttpServletResponse response) throws IOException {
 
         LOGGER.debug("saveArchiveDb()");
         String clientList = String.valueOf(clientArchiveDbService.saveArchiveDb());
         String fileName = "clientParsingDataDb.txt";
         String fileContent = clientList;
 
-        final String EXPORT_DIRECTORY = "/home/artem/IdeaProjects/aderenchuk-travel.agency";
+            response.setContentType("application/octet-stream");
+            response.setHeader("Content-Disposition", "attachment;filename=ClientDb.zip");
+            response.setStatus(HttpServletResponse.SC_OK);
 
-        Path filePath = Paths.get(EXPORT_DIRECTORY, fileName);
-        Path exportedFilePath = Files.write(filePath, fileContent.getBytes(), StandardOpenOption.CREATE);
+            try (ZipOutputStream zippedOut = new ZipOutputStream(response.getOutputStream())) {
+                if (!fileName.isEmpty()) {
+                    FileSystemResource resource = new FileSystemResource(fileName);
 
-        URI exportedFileUri = exportedFilePath.toUri();
-        Resource resource = new UrlResource(exportedFileUri);
+                    ZipEntry e = new ZipEntry(resource.getFilename());
+                    e.setSize(resource.contentLength());
+                    zippedOut.putNextEntry(e);
+                    StreamUtils.copy(resource.getInputStream(), zippedOut);
+                    zippedOut.closeEntry();
+                }
+                zippedOut.finish();
+            }
+        }
 
-
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
-                .contentLength(resource.contentLength())
-                .body(resource);
-
-    }
 
     @GetMapping(value = "/rewriting/clientDb")
     public String rewritingDb(HttpServletResponse response) throws IOException {
