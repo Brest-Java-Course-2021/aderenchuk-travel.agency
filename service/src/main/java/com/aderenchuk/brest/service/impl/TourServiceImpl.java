@@ -16,7 +16,7 @@ import java.util.Optional;
 @Transactional
 public class TourServiceImpl {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TourServiceImpl.class);
 
     @Autowired
     private final TourDaoJPA tourDaoJPA;

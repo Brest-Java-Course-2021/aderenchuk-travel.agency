@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@ComponentScan("com.aderenchuk")
+@ComponentScan("com.aderenchuk.brest")
 public class SpringJdbcConfig {
 
     @Bean

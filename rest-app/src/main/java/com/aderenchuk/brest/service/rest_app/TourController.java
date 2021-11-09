@@ -69,7 +69,7 @@ public class TourController {
      * Update tour
      * @param tourId
      * @param tourDetails
-     * @return id tour
+     * @return update tour
      */
     @PutMapping(value = "/tours", consumes = {"application/json"}, produces = {"application/json"})
     public ResponseEntity<Boolean> updateTour(@PathVariable Integer tourId, @RequestBody Tour tourDetails) throws NotFoundException {
