@@ -3,6 +3,8 @@ package com.aderenchuk.brest.service.web_app;
 import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientService;
 import com.aderenchuk.brest.service.TourService;
+import com.aderenchuk.brest.service.impl.ClientServiceImpl;
+import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +24,12 @@ public class ClientController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
 
     @Autowired
-    private final ClientService clientService;
+    private final ClientServiceImpl clientService;
 
     @Autowired
-    private final TourService tourService;
+    private final TourServiceImpl tourService;
 
-    public ClientController(ClientService clientService, TourService tourService) {
+    public ClientController(ClientServiceImpl clientService, TourServiceImpl tourService) {
         this.clientService = clientService;
         this.tourService = tourService;
     }
