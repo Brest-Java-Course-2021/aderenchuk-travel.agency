@@ -30,9 +30,19 @@ java -jar rest-app.jar
 
 
 ```
+for start soap-app...
+```
+cd soap-app/target
+java -jar soap-app.jar
 
-This starts application and serves up your project on [http://localhost:8080](http://localhost:8080) for web-app and [http://localhost:8088](http://localhost:8088) for rest-app.
 
+```
+
+This starts application and serves up your project on [http://localhost:8080](http://localhost:8080) for web-app, [http://localhost:8088](http://localhost:8088) for rest-app and
+[http://localhost:8090](http://localhost:8090) for soap-app.
+
+## SOAP-APP 
+Schema at : [http://localhost/ws/tours.xsd](http://localhost/ws/tours.xsd)
 
 ## Swagger
 Swagger json documentation can be accessed at : [http://localhost:8088/v2/api-docs](http://localhost:8080/v2/api-docs) \
