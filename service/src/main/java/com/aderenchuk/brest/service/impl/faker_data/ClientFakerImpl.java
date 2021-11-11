@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.service.impl;
+package com.aderenchuk.brest.service.impl.faker_data;
 
 import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientFakerService;
@@ -14,14 +14,14 @@ import java.util.stream.IntStream;
 
 @Service
 @Transactional
-public class SampleFakerImpl implements ClientFakerService {
+public class ClientFakerImpl implements ClientFakerService{
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SampleFakerImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientFakerImpl.class);
 
 
     private Faker faker;
 
-    public SampleFakerImpl(Faker faker) {
+    public ClientFakerImpl(Faker faker) {
         this.faker = faker;
     }
 

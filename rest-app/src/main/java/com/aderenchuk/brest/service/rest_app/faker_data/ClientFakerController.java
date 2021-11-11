@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.service.rest_app;
+package com.aderenchuk.brest.service.rest_app.faker_data;
 
 import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientFakerService;
@@ -19,7 +19,7 @@ public class ClientFakerController {
     }
 
     @GetMapping()
-    public final Iterable<Client> fakeTours() {
+    public final Iterable<Client> fakeClients() {
         LOGGER.debug("fakeClient()");
 
         return clientFakerService.findAll();

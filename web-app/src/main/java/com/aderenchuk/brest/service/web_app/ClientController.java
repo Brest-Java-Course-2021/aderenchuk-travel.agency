@@ -1,6 +1,7 @@
 package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Client;
+import com.aderenchuk.brest.service.ClientFakerService;
 import com.aderenchuk.brest.service.ClientService;
 import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.service.impl.ClientServiceImpl;
@@ -27,10 +28,14 @@ public class ClientController {
     private final ClientServiceImpl clientService;
 
     @Autowired
+    private final ClientFakerService clientFakerService;
+
+    @Autowired
     private final TourServiceImpl tourService;
 
-    public ClientController(ClientServiceImpl clientService, TourServiceImpl tourService) {
+    public ClientController(ClientServiceImpl clientService, ClientFakerService clientFakerService, TourServiceImpl tourService) {
         this.clientService = clientService;
+        this.clientFakerService = clientFakerService;
         this.tourService = tourService;
     }
 
@@ -43,6 +48,13 @@ public class ClientController {
     public final String clients(Model model) {
         LOGGER.debug("clients()");
         model.addAttribute("clients", clientService.findAll());
+        return "clients";
+    }
+
+    @GetMapping(value = "/clientsFaker")
+    public final String clientsFaker(Model model) {
+        LOGGER.debug("clients()");
+        model.addAttribute("clients", clientFakerService.findAll());
         return "clients";
     }
 
