@@ -7,6 +7,7 @@ import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -43,9 +44,9 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "/clients")
-    public final String clients(Model model) {
+    public final String clients(Model model, Pageable page) {
         LOGGER.debug("clients()");
-        model.addAttribute("clients", clientService.findAll(pageNumber, pageSize));
+        model.addAttribute("clients", clientService.findAll(page));
         return "clients";
     }
 
@@ -62,13 +63,13 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "/client/{id}")
-    public final String gotoEditClientPage(@PathVariable Integer id, Model model) {
+    public final String gotoEditClientPage(@PathVariable Integer id, Model model, Pageable page) {
         LOGGER.debug("gotoEditClientPage({}, {})", id, model);
         Optional<Client> optionalClient = clientService.findById(id);
         if (optionalClient.isPresent()) {
             model.addAttribute("isNew", false);
             model.addAttribute("client", optionalClient.get());
-            model.addAttribute("tours", tourService.findAll());
+            model.addAttribute("tours", tourService.findAll(page));
             return "client";
         } else  {
             return "redirect:clients";
@@ -99,11 +100,11 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "/client")
-    public final String gotoAddClientPage(Model model) {
+    public final String gotoAddClientPage(Model model, Pageable page) {
         LOGGER.debug("gotoAddClientPage({})", model);
         model.addAttribute("isNew", true);
         model.addAttribute("client", new Client(1));
-        model.addAttribute("tours", tourService.findAll());
+        model.addAttribute("tours", tourService.findAll(page));
         return "client";
     }
 
