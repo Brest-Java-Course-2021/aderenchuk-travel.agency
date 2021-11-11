@@ -29,10 +29,10 @@ public class ClientFakerImpl implements ClientFakerService{
     public List<Client> findAll() {
         LOGGER.trace("findAll()");
         List<Client> fakerClients = IntStream.rangeClosed(1, 100).mapToObj(i -> new Client(
-                faker.hashCode(),
+                i,
                 faker.name().firstName(),
                 faker.name().lastName(),
-                faker.hashCode()
+                i
         )).collect(Collectors.toList());
         return fakerClients;
     }

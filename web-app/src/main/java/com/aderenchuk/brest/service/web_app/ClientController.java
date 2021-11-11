@@ -2,8 +2,6 @@ package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Client;
 import com.aderenchuk.brest.service.ClientFakerService;
-import com.aderenchuk.brest.service.ClientService;
-import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.service.impl.ClientServiceImpl;
 import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import org.slf4j.Logger;
@@ -47,7 +45,7 @@ public class ClientController {
     @GetMapping(value = "/clients")
     public final String clients(Model model) {
         LOGGER.debug("clients()");
-        model.addAttribute("clients", clientService.findAll());
+        model.addAttribute("clients", clientService.findAll(pageNumber, pageSize));
         return "clients";
     }
 

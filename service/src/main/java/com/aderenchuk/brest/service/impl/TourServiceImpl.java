@@ -6,6 +6,8 @@ import com.aderenchuk.brest.dao.jdbc.TourDaoJdbc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,9 +29,9 @@ public class TourServiceImpl {
 
 
     @Transactional(readOnly = true)
-    public List<Tour> findAll() {
+    public Page<Tour> findAll(Pageable page) {
         LOGGER.trace("findAll()");
-        return tourDaoJPA.findAll();
+        return tourDaoJPA.findAll(page);
     }
 
 

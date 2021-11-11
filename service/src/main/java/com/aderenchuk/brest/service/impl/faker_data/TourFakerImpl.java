@@ -28,7 +28,7 @@ public class TourFakerImpl implements TourFakerService {
     public List<Tour> findAll() {
         LOGGER.trace("findAll()");
         List<Tour> fakerTours = IntStream.rangeClosed(1, 100).mapToObj(i -> new Tour(
-                faker.hashCode(),
+                i,
                 faker.country().name(),
                 faker.date().birthday()
         )).collect(Collectors.toList());
