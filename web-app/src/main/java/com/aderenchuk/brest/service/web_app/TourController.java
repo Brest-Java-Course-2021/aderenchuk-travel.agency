@@ -4,6 +4,7 @@ import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.model.dto.TourDto;
 import com.aderenchuk.brest.service.TourDtoService;
 import com.aderenchuk.brest.service.TourService;
+import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,9 @@ public class TourController {
     private final TourDtoService tourDtoService;
 
     @Autowired
-    private final TourService tourService;
+    private final TourServiceImpl tourService;
 
-    @Autowired
-    public TourController(TourDtoService tourDtoService, TourService tourService) {
+    public TourController(TourDtoService tourDtoService, TourServiceImpl tourService) {
         this.tourDtoService = tourDtoService;
         this.tourService = tourService;
     }

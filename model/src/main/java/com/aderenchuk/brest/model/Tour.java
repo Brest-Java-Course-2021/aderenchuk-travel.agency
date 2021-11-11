@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -15,28 +16,36 @@ import java.util.Objects;
 /**
  * POJO Tour for model.
  */
+@Entity
+@Table(name = "TOUR")
 public class Tour {
 
     /**
      * Tour id.
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "tourId")
     @Min(value = 1, message = "Tour number is a required field")
-
     private Integer tourId;
 
     /**
      * Name of tour direction .
      */
+
+    @Column(name = "direction")
     @NotBlank(message = "Direction is a required field")
     private String direction;
 
     /**
      * Date of tour.
      */
+    @Column(name = "dateTour")
     @NotNull(message = "dateTour is a required field")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateTour;
 
+    @Transient
     private XMLGregorianCalendar dateSoapTour;
 
     /**

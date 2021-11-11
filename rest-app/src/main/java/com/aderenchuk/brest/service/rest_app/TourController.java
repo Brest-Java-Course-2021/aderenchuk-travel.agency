@@ -1,10 +1,12 @@
 package com.aderenchuk.brest.service.rest_app;
 
 import com.aderenchuk.brest.model.Tour;
-import com.aderenchuk.brest.service.TourService;
+import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import com.aderenchuk.brest.service.rest_app.exception.ErrorResponse;
+import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,14 +14,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-
 public class TourController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
 
-    private TourService tourService;
+    @Autowired
+    private TourServiceImpl tourService;
 
-    public TourController(TourService tourService) {
+    public TourController(TourServiceImpl tourService) {
         this.tourService = tourService;
     }
 
@@ -57,22 +59,29 @@ public class TourController {
      * @return id tour
      */
     @PostMapping(path = "/tours", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Integer> createTour(@RequestBody Tour tour) {
+    public ResponseEntity<Tour> createTour(@RequestBody Tour tour) {
         LOGGER.debug("createTour({})", tour);
-        Integer id = tourService.create(tour);
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        tourService.create(tour);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     /**
      * Update tour
-     * @param tour
-     * @return id tour
+     * @param tourId
+     * @param tourDetails
+     * @return update tour
      */
     @PutMapping(value = "/tours", consumes = {"application/json"}, produces = {"application/json"})
-    public ResponseEntity<Integer> updateTour(@RequestBody Tour tour) {
-        LOGGER.debug("updateTour({})", tour);
-        int result = tourService.update(tour);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public ResponseEntity<Boolean> updateTour(@PathVariable Integer tourId, @RequestBody Tour tourDetails) throws NotFoundException {
+        LOGGER.debug("updateTour({})", tourDetails);
+        Tour tour = tourService.findById(tourId)
+                .orElseThrow(() -> new NotFoundException("Tour not found for this id :: " + tourId));
+
+        tour.setTourId(tourDetails.getTourId());
+        tour.setDirection(tourDetails.getDirection());
+        tour.setDateTour(tourDetails.getDateTour());
+        final boolean updatedTour = tourService.update(tour);
+        return ResponseEntity.ok(updatedTour);
     }
 
     /**
@@ -81,8 +90,12 @@ public class TourController {
      * @return result of delete
      */
     @DeleteMapping(value = "/tours/{id}", produces = {"application/json"})
-    public ResponseEntity<Integer> deleteTour (@PathVariable Integer id) {
-        int result = tourService.delete(id);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public ResponseEntity<Integer> deleteTour (@PathVariable Integer id) throws NotFoundException {
+        Tour tour = tourService.findById(id)
+                .orElseThrow(() -> new NotFoundException("Tour not found for this id :: " + id));
+
+         tourService.delete(id);
+         List<Tour> list = new ArrayList<>();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

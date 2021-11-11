@@ -1,11 +1,11 @@
 package com.aderenchuk.brest.service.impl;
 
+import com.aderenchuk.brest.dao.jpa.TourDaoJPA;
 import com.aderenchuk.brest.model.Tour;
-import com.aderenchuk.brest.service.TourService;
-import com.aderenchuk.brest.dao.TourDao;
 import com.aderenchuk.brest.dao.jdbc.TourDaoJdbc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,45 +14,49 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class TourServiceImpl implements TourService {
+public class TourServiceImpl {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TourDaoJdbc.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TourServiceImpl.class);
 
-    private final TourDao tourDao;
+    @Autowired
+    private final TourDaoJPA tourDaoJPA;
 
-    public TourServiceImpl(TourDao tourDao) {
-        this.tourDao = tourDao;
+    public TourServiceImpl(TourDaoJPA tourDaoJPA) {
+        this.tourDaoJPA = tourDaoJPA;
     }
 
 
-    @Override
     @Transactional(readOnly = true)
     public List<Tour> findAll() {
         LOGGER.trace("findAll()");
-        return tourDao.findAll();
+        return tourDaoJPA.findAll();
     }
 
-    @Override
+
     public Optional<Tour> findById(Integer tourId) {
         LOGGER.debug("findById(tourId:{})", tourId);
-        return tourDao.findById(tourId);
+        return tourDaoJPA.findById(tourId);
     }
 
-    @Override
-    public Integer create(Tour tour) {
+
+    public Tour create(Tour tour) {
         LOGGER.debug("create(tour:{})", tour);
-        return tourDao.create(tour);
+        tourDaoJPA.save(tour);
+        return tour;
     }
 
-    @Override
-    public Integer update(Tour tour) {
+
+    public boolean update(Tour tour) {
         LOGGER.debug("update(tour:{})", tour);
-        return tourDao.update(tour);
+        if (tourDaoJPA.existsById(tour.getTourId())) {
+            tourDaoJPA.save(tour);
+            return true;
+        } else return false;
     }
 
-    @Override
-    public Integer delete(Integer tourId) {
+
+    public void delete(Integer tourId) {
         LOGGER.debug("delete(tourId:{})", tourId);
-        return tourDao.delete(tourId);
+         tourDaoJPA.deleteById(tourId);
     }
 }

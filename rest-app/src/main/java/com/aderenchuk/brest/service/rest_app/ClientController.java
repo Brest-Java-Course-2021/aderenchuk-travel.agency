@@ -1,30 +1,27 @@
 package com.aderenchuk.brest.service.rest_app;
 
-import com.aderenchuk.brest.service.ClientService;
 import com.aderenchuk.brest.model.Client;
+import com.aderenchuk.brest.service.impl.ClientServiceImpl;
 import com.aderenchuk.brest.service.rest_app.exception.ErrorResponse;
+import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-
-import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.CLIENT_NOT_FOUND;
-import static com.aderenchuk.brest.service.rest_app.constants.RestConstants.CLIENT_NOT_FOUND_BY_ID;
+import java.util.*;
 
 @RestController
 public class ClientController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientController.class);
 
-    private ClientService clientService;
+    @Autowired
+    private ClientServiceImpl clientService;
 
-    public ClientController(ClientService clientService) {
+    public ClientController(ClientServiceImpl clientService) {
         this.clientService = clientService;
     }
 
@@ -34,7 +31,7 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "clients")
-    public final Collection<Client> clients() {
+    public final Iterable<Client> clients() {
         LOGGER.debug("clients()");
         return clientService.findAll();
     }
@@ -63,20 +60,28 @@ public class ClientController {
     @PostMapping(path = "/clients", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Integer> createClient(@RequestBody Client client) {
         LOGGER.debug("createClient({})", client);
-        Integer id = clientService.create(client);
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        clientService.create(client);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     /**
      * Update client
-     * @param client
-     * @return id client
+     * @param clientId
+     * @param clientDetails
+     * @return update client
      */
     @PutMapping(value = "/clients", consumes = {"application/json"}, produces = {"application/json"})
-    public ResponseEntity<Integer> updateClient(@RequestBody Client client) {
-        LOGGER.debug("updateClient({})", client);
-        int result = clientService.update(client);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public ResponseEntity<Boolean> updateClient(@PathVariable Integer clientId, @RequestBody Client clientDetails) throws NotFoundException {
+        LOGGER.debug("updateClient({})", clientDetails);
+        Client client = clientService.findById(clientId)
+                .orElseThrow(() -> new NotFoundException("Tour not found for this id :: " + clientId));
+
+        client.setClientId(clientDetails.getClientId());
+        client.setFirstName(clientDetails.getFirstName());
+        client.setLastName(clientDetails.getLastName());
+        client.setTourId(clientDetails.getTourId());
+        final boolean updatedTour = clientService.update(client);
+        return ResponseEntity.ok(updatedTour);
     }
 
     /**
@@ -85,9 +90,13 @@ public class ClientController {
      * @return result of delete
      */
     @DeleteMapping(value = "/clients/{id}", produces = {"application/json"})
-    public ResponseEntity<Integer> deleteClient(@PathVariable Integer id) {
+    public ResponseEntity<Integer> deleteClient(@PathVariable Integer id) throws NotFoundException {
         LOGGER.debug("deleteClient({})", id);
-        int result = clientService.delete(id);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        Client client = clientService.findById(id)
+                .orElseThrow(() -> new NotFoundException("Tour not found for this id :: " + id));
+
+        clientService.delete(id);
+        List<Client> list = new ArrayList<>();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

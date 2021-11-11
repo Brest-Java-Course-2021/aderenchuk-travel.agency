@@ -114,7 +114,7 @@
                     <sources>
                         <source>src/main/resources</source>
                     </sources>
-                    <packageName>com.aderenchuk.brest</packageName>
+                    <packageName>com.aderenchuk.brest.service.soap_app</packageName>
                     <clearOutputDir>false</clearOutputDir>
                 </configuration>
                 <dependencies>

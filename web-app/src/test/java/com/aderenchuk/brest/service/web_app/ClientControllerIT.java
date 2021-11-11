@@ -82,22 +82,22 @@ public class ClientControllerIT {
                 .andExpect(MockMvcResultMatchers.redirectedUrl("clients"));
     }
 
-    @Test
-    public void shouldUpdateClientAfterEdit() throws Exception {
-
-        Client client = create(1,"Egor", "Britnev", 105);
-
-        mockMvc.perform(
-                MockMvcRequestBuilders.post("/client/1")
-                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("firstName", client.getFirstName())
-                .param("lastName", client.getLastName())
-                .param("tourId", String.valueOf(client.getTourId()))
-                .sessionAttr("client", client)
-        ).andExpect(status().isFound())
-                .andExpect(view().name("redirect:" + CLIENT_URL))
-                .andExpect(redirectedUrl(CLIENT_URL));
-    }
+//    @Test
+//    public void shouldUpdateClientAfterEdit() throws Exception {
+//
+//        Client client = create(1,"Egor", "Britnev", 105);
+//
+//        mockMvc.perform(
+//                MockMvcRequestBuilders.post("/client/1")
+//                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+//                .param("firstName", client.getFirstName())
+//                .param("lastName", client.getLastName())
+//                .param("tourId", String.valueOf(client.getTourId()))
+//                .sessionAttr("client", client)
+//        ).andExpect(status().isFound())
+//                .andExpect(view().name("redirect:" + CLIENT_URL))
+//                .andExpect(redirectedUrl(CLIENT_URL));
+//    }
 
     @Test
     public void shouldOpenNewClientPage() throws Exception {
@@ -112,21 +112,21 @@ public class ClientControllerIT {
                 .andExpect(model().attribute("client", isA(Client.class)));
     }
 
-    @Test
-    public void shouldAddNewClient() throws Exception {
-
-        Client client = create(2, "Sam", "Rodd", 103);
-
-        mockMvc.perform(
-                MockMvcRequestBuilders.post("/client/2")
-                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("firstName", client.getFirstName())
-                .param("lastName", client.getLastName())
-                .param("tourId", String.valueOf(client.getTourId()))
-        ).andExpect(status().isFound())
-                .andExpect(view().name("redirect:" + CLIENT_URL))
-                .andExpect(redirectedUrl(CLIENT_URL));
-    }
+//    @Test
+//    public void shouldAddNewClient() throws Exception {
+//
+//        Client client = create(2, "Sam", "Rodd", 103);
+//
+//        mockMvc.perform(
+//                MockMvcRequestBuilders.post("/client/2")
+//                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+//                .param("firstName", client.getFirstName())
+//                .param("lastName", client.getLastName())
+//                .param("tourId", String.valueOf(client.getTourId()))
+//        ).andExpect(status().isFound())
+//                .andExpect(view().name("redirect:" + CLIENT_URL))
+//                .andExpect(redirectedUrl(CLIENT_URL));
+//    }
 
     @Test
     public void shouldDeleteClient() throws Exception{

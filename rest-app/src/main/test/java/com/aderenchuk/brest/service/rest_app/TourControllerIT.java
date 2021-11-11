@@ -2,11 +2,14 @@ package com.aderenchuk.brest.service.rest_app;
 
 import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.model.Tour;
+import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +28,7 @@ public class TourControllerIT {
     private final String TOURS_ENDPOINT = "/tours";
 
     @Autowired
-    private TourService tourService;
+    private TourServiceImpl tourService;
 
     @Test
     public void findAllTours() throws Exception {

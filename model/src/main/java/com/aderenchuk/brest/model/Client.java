@@ -1,5 +1,6 @@
 package com.aderenchuk.brest.model;
 
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -11,16 +12,22 @@ import static com.aderenchuk.brest.model.constants.ClientConstants.LAST_NAME_SIZ
 /**
  * POJO Client for model.
  */
+@Entity
+@Table(name = "CLIENT")
 public class Client {
 
     /**
      * Client id.
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CLIENT_ID")
     private Integer clientId;
 
     /**
      * Client firstname.
      */
+    @Column(name = "FIRSTNAME")
     @NotBlank(message = "First name is a required field")
     @Size(min = 2, max = FIRST_NAME_SIZE, message = "First name should be min 2, max 20 symbols")
     private String firstName;
@@ -28,6 +35,7 @@ public class Client {
     /**
      * Client lastname.
      */
+    @Column(name = "LASTNAME")
     @NotBlank(message = "Last name is a required field")
     @Size(min = 2, max = LAST_NAME_SIZE, message = "Last name should be min 2, max 30 symbols")
     private String lastName;
@@ -35,6 +43,7 @@ public class Client {
     /**
      * Tour id.
      */
+    @Column(name = "TOUR_ID")
     @Min(value = 1, message = "Tour id is a required field")
     private Integer tourId;
 
