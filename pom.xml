@@ -126,6 +126,13 @@
                 <artifactId>postgresql</artifactId>
                 <scope>runtime</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>5.3.12</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

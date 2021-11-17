@@ -3,6 +3,9 @@ package com.aderenchuk.brest.service.rest_app;
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import com.aderenchuk.brest.service.rest_app.exception.ErrorResponse;
+import com.aderenchuk.brest.service.rest_app.websocket.EventType;
+import com.aderenchuk.brest.service.rest_app.websocket.ObjectType;
+import com.aderenchuk.brest.service.rest_app.websocket.WsSender;
 import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.util.function.BiConsumer;
 
 @RestController
 public class TourController {
@@ -21,8 +25,12 @@ public class TourController {
     @Autowired
     private TourServiceImpl tourService;
 
-    public TourController(TourServiceImpl tourService) {
+
+    private BiConsumer<EventType, Tour> wsSender;
+
+    public TourController(TourServiceImpl tourService, WsSender wsSender) {
         this.tourService = tourService;
+        this.wsSender = wsSender.getSender(ObjectType.MESSAGE, Tour.class);
     }
 
     /**
@@ -61,7 +69,8 @@ public class TourController {
     @PostMapping(path = "/tours", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Tour> createTour(@RequestBody Tour tour) {
         LOGGER.debug("createTour({})", tour);
-        tourService.create(tour);
+        Tour updatedTour = tourService.create(tour);
+        wsSender.accept(EventType.CREATE, updatedTour);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -81,6 +90,7 @@ public class TourController {
         tour.setDirection(tourDetails.getDirection());
         tour.setDateTour(tourDetails.getDateTour());
         final boolean updatedTour = tourService.update(tour);
+        wsSender.accept(EventType.UPDATE, tour);
         return ResponseEntity.ok(updatedTour);
     }
 
@@ -95,6 +105,7 @@ public class TourController {
                 .orElseThrow(() -> new NotFoundException("Tour not found for this id :: " + id));
 
          tourService.delete(id);
+         wsSender.accept(EventType.REMOVE, tour);
          List<Tour> list = new ArrayList<>();
         return new ResponseEntity<>(HttpStatus.OK);
     }
