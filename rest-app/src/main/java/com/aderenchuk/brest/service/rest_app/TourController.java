@@ -3,15 +3,19 @@ package com.aderenchuk.brest.service.rest_app;
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import com.aderenchuk.brest.service.rest_app.exception.ErrorResponse;
-import com.aderenchuk.brest.service.rest_app.websocket.EventType;
-import com.aderenchuk.brest.service.rest_app.websocket.ObjectType;
+import com.aderenchuk.brest.model.websocket.EventType;
+import com.aderenchuk.brest.model.websocket.ObjectType;
+import com.aderenchuk.brest.model.websocket.Views;
 import com.aderenchuk.brest.service.rest_app.websocket.WsSender;
+import com.fasterxml.jackson.annotation.JsonView;
 import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -30,7 +34,7 @@ public class TourController {
 
     public TourController(TourServiceImpl tourService, WsSender wsSender) {
         this.tourService = tourService;
-        this.wsSender = wsSender.getSender(ObjectType.MESSAGE, Tour.class);
+        this.wsSender = wsSender.getSender(ObjectType.TOUR, Views.IdName.class);
     }
 
     /**
@@ -39,6 +43,7 @@ public class TourController {
      * @return view name
      */
     @GetMapping(value = "/tours")
+    @JsonView(Views.IdName.class)
     public final Collection<Tour> tours() {
         LOGGER.debug("tours()");
         return tourService.findAll();
@@ -108,5 +113,11 @@ public class TourController {
          wsSender.accept(EventType.REMOVE, tour);
          List<Tour> list = new ArrayList<>();
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @MessageMapping("/changeTours")
+    @SendTo("/topic/activity")
+    public Tour tour(Tour tour) {
+        return tourService.create(tour);
     }
 }

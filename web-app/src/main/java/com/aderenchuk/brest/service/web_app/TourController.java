@@ -2,13 +2,19 @@ package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Tour;
 import com.aderenchuk.brest.model.dto.TourDto;
+import com.aderenchuk.brest.model.websocket.EventType;
+import com.aderenchuk.brest.model.websocket.ObjectType;
+import com.aderenchuk.brest.model.websocket.Views;
 import com.aderenchuk.brest.service.TourDtoService;
 import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.service.impl.TourServiceImpl;
+import com.aderenchuk.brest.service.websocket.WsSender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,8 +22,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiConsumer;
 
 @Controller
 @RequestMapping("/tours")
@@ -31,9 +39,13 @@ public class TourController {
     @Autowired
     private final TourServiceImpl tourService;
 
-    public TourController(TourDtoService tourDtoService, TourServiceImpl tourService) {
+
+    private BiConsumer<EventType, Tour> wsSender;
+
+    public TourController(TourDtoService tourDtoService, TourServiceImpl tourService, WsSender wsSender) {
         this.tourDtoService = tourDtoService;
         this.tourService = tourService;
+        this.wsSender = wsSender.getSender(ObjectType.TOUR, Views.IdName.class);
     }
 
     /**
@@ -92,6 +104,7 @@ public class TourController {
             return "tour";
         } else {
             this.tourService.update(tour);
+            wsSender.accept(EventType.UPDATE, tour);
             return "redirect:/tours";
         }
     }
@@ -121,7 +134,8 @@ public class TourController {
         if (result.hasErrors()) {
             return "tour";
         } else {
-            this.tourService.create(tour);
+            Tour updatedTour = tourService.create(tour);
+            wsSender.accept(EventType.CREATE, updatedTour);
             return "redirect:/tours";
         }
 
@@ -132,10 +146,18 @@ public class TourController {
      *
      * @return view name
      */
-    @GetMapping(value = "/{tourId}/delete")
+    @DeleteMapping(value = "/{tourId}")
     public String deleteTour(@PathVariable Integer tourId, Model model){
         LOGGER.debug("deleteTour({}, {})", tourId, model);
         tourService.delete(tourId);
+        Tour list = (Tour) tourService.findAll();
+        wsSender.accept(EventType.REMOVE, list);
         return "redirect:/tours";
+    }
+
+    @MessageMapping("/changeTours")
+    @SendTo("/topic/activity")
+    public Tour tour(Tour tour) {
+        return tourService.create(tour);
     }
 }

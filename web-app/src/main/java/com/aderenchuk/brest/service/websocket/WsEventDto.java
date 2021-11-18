@@ -1,4 +1,4 @@
-package com.aderenchuk.brest.service.rest_app.websocket;
+package com.aderenchuk.brest.service.websocket;
 
 
 import com.aderenchuk.brest.model.websocket.EventType;

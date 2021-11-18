@@ -1,6 +1,8 @@
 package com.aderenchuk.brest.model;
 
+import com.aderenchuk.brest.model.websocket.Views;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,6 +29,7 @@ public class Tour {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tourId")
     @Min(value = 1, message = "Tour number is a required field")
+    @JsonView(Views.Id.class)
     private Integer tourId;
 
     /**
@@ -35,6 +38,7 @@ public class Tour {
 
     @Column(name = "direction")
     @NotBlank(message = "Direction is a required field")
+    @JsonView(Views.IdName.class)
     private String direction;
 
     /**
@@ -43,6 +47,7 @@ public class Tour {
     @Column(name = "dateTour")
     @NotNull(message = "dateTour is a required field")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @JsonView(Views.FullMessage.class)
     private LocalDate dateTour;
 
     @Transient
