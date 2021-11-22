@@ -6,7 +6,6 @@ import com.aderenchuk.brest.model.websocket.EventType;
 import com.aderenchuk.brest.model.websocket.ObjectType;
 import com.aderenchuk.brest.model.websocket.Views;
 import com.aderenchuk.brest.service.TourDtoService;
-import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.service.impl.TourServiceImpl;
 import com.aderenchuk.brest.service.websocket.WsSender;
 import org.slf4j.Logger;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -146,18 +144,20 @@ public class TourController {
      *
      * @return view name
      */
-    @DeleteMapping(value = "/{tourId}")
-    public String deleteTour(@PathVariable Integer tourId, Model model){
+    @GetMapping(value = "/{tourId}/delete")
+    public String deleteTour(@PathVariable Integer tourId, Model model, Tour tour){
         LOGGER.debug("deleteTour({}, {})", tourId, model);
         tourService.delete(tourId);
-        Tour list = (Tour) tourService.findAll();
-        wsSender.accept(EventType.REMOVE, list);
+        wsSender.accept(EventType.REMOVE, tour);
         return "redirect:/tours";
     }
+
 
     @MessageMapping("/changeTours")
     @SendTo("/topic/activity")
     public Tour tour(Tour tour) {
-        return tourService.create(tour);
+        LOGGER.debug("add({}, {})", tour);
+        tourService.create(tour);
+        return new Tour("New changes, " + tour.toString());
     }
 }

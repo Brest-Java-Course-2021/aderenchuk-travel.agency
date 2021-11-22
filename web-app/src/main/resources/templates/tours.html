@@ -272,6 +272,33 @@ function sendTours(tours) {
     stompClient.send("/app/changeTours", {}, JSON.stringify(tours));
 }
 
+function save() {
+                const tour = {
+                    tourId: this.tourId,
+                    direction: this.direction,
+                    dateTour: this.dateTour
+                }
+                if (this.tourId) {
+                    tourService.update(tour).then(result =>
+                        result.json().then(data => {
+                            const index = this.tours.findIndex(item => item.tourId === data.tourId)
+                            this.tours.splice(index, 1, data)
+                        })
+                    )
+                } else {
+                    tourService.add(tour).then(result =>
+                        result.json().then(data => {
+                            const index = this.tours.findIndex(item => item.tourId === data.tourId)
+                            if (index > -1) {
+                                this.tours.splice(index, 1, data)
+                            } else {
+                                this.tours.push(data)
+                            }
+                        })
+                    )
+                }
+            }
+
 
 
 </script>

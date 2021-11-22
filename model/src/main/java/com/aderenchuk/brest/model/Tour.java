@@ -74,6 +74,10 @@ public class Tour {
     public Tour(Integer tourId, String name, Date birthday) {
     }
 
+    public Tour(String s) {
+
+    }
+
     /**
      * Return Tour id.
      * @return tourId.
