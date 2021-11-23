@@ -240,65 +240,60 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 
-</script>
-<script>
+
 var stompClient = null;
 var handlers = [];
+var socket = new SockJS('/gs-guide-websocket');
 
 window.addEventListener("load", event => {
-var socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, frame => {
         stompClient.subscribe('/topic/activity', tours => {
                      handlers.forEach(handler => handler(JSON.parse(tours.body)));
     });
     console.log("All resources finished loading!");
+    sendTours();
+
   });
 });
 
 function addHandler(handler) {
     handlers.push(handler);
+    console.log("Add handlers");
 }
 
 function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
     }
-    setConnected(false);
     console.log("Disconnected");
 }
 
 function sendTours(tours) {
     stompClient.send("/app/changeTours", {}, JSON.stringify(tours));
+    console.log("sendTours finish");
 }
 
-function save() {
-                const tour = {
-                    tourId: this.tourId,
-                    direction: this.direction,
-                    dateTour: this.dateTour
-                }
-                if (this.tourId) {
-                    tourService.update(tour).then(result =>
-                        result.json().then(data => {
-                            const index = this.tours.findIndex(item => item.tourId === data.tourId)
-                            this.tours.splice(index, 1, data)
-                        })
-                    )
+ function created() {
+            addHandler(data => {
+                let index = getIndex(this.messages, data.id)
+                if (index > -1) {
+                    this.tours.splice(index, 1, data)
                 } else {
-                    tourService.add(tour).then(result =>
-                        result.json().then(data => {
-                            const index = this.tours.findIndex(item => item.tourId === data.tourId)
-                            if (index > -1) {
-                                this.tours.splice(index, 1, data)
-                            } else {
-                                this.tours.push(data)
-                            }
-                        })
-                    )
+                    this.tours.push(data)
                 }
-            }
+            })
+ }
 
+  function getIndex(list, id) {
+    for (var i = 0; i < list.length; i++ ) {
+        if (list[i].id === id) {
+            return i
+        }
+    }
+
+    return -1
+}
 
 
 </script>
