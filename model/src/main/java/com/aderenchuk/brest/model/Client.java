@@ -1,5 +1,8 @@
 package com.aderenchuk.brest.model;
 
+import com.aderenchuk.brest.model.websocket.Views;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -22,6 +25,7 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CLIENT_ID")
+    @JsonView(Views.Id.class)
     private Integer clientId;
 
     /**
@@ -30,6 +34,7 @@ public class Client {
     @Column(name = "FIRSTNAME")
     @NotBlank(message = "First name is a required field")
     @Size(min = 2, max = FIRST_NAME_SIZE, message = "First name should be min 2, max 20 symbols")
+    @JsonView(Views.IdName.class)
     private String firstName;
 
     /**
@@ -38,6 +43,7 @@ public class Client {
     @Column(name = "LASTNAME")
     @NotBlank(message = "Last name is a required field")
     @Size(min = 2, max = LAST_NAME_SIZE, message = "Last name should be min 2, max 30 symbols")
+    @JsonView(Views.IdName.class)
     private String lastName;
 
     /**
@@ -45,6 +51,7 @@ public class Client {
      */
     @Column(name = "TOUR_ID")
     @Min(value = 1, message = "Tour id is a required field")
+    @JsonView(Views.FullMessage.class)
     private Integer tourId;
 
     /**
@@ -81,6 +88,9 @@ public class Client {
         this.firstName = firstName;
         this.lastName = lastName;
         this.tourId = tourId;
+    }
+
+    public Client(String s) {
     }
 
     /**

@@ -1,14 +1,18 @@
 package com.aderenchuk.brest.service.web_app;
 
 import com.aderenchuk.brest.model.Client;
+import com.aderenchuk.brest.model.websocket.EventType;
+import com.aderenchuk.brest.model.websocket.ObjectType;
+import com.aderenchuk.brest.model.websocket.Views;
 import com.aderenchuk.brest.service.ClientFakerService;
-import com.aderenchuk.brest.service.ClientService;
-import com.aderenchuk.brest.service.TourService;
 import com.aderenchuk.brest.service.impl.ClientServiceImpl;
 import com.aderenchuk.brest.service.impl.TourServiceImpl;
+import com.aderenchuk.brest.service.websocket.WsSender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,11 +22,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
 import java.util.Optional;
+import java.util.function.BiConsumer;
 
 @Controller
 public class ClientController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TourController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientController.class);
 
     @Autowired
     private final ClientServiceImpl clientService;
@@ -33,10 +38,13 @@ public class ClientController {
     @Autowired
     private final TourServiceImpl tourService;
 
-    public ClientController(ClientServiceImpl clientService, ClientFakerService clientFakerService, TourServiceImpl tourService) {
+    private BiConsumer<EventType, Client> wsSender;
+
+    public ClientController(ClientServiceImpl clientService, ClientFakerService clientFakerService, TourServiceImpl tourService, WsSender wsSender) {
         this.clientService = clientService;
         this.clientFakerService = clientFakerService;
         this.tourService = tourService;
+        this.wsSender = wsSender.getSender(ObjectType.CLIENT, Views.IdName.class);
     }
 
     /**
@@ -91,6 +99,7 @@ public class ClientController {
             return "tour";
         } else  {
             this.clientService.update(client);
+            wsSender.accept(EventType.UPDATE, client);
             return "redirect:/clients";
         }
     }
@@ -122,7 +131,8 @@ public class ClientController {
         if(result.hasErrors()) {
             return "client";
         } else {
-            this.clientService.create(client);
+            Client updatedClient = clientService.create(client);
+            wsSender.accept(EventType.CREATE, updatedClient);
             return "redirect:/clients";
         }
     }
@@ -133,9 +143,18 @@ public class ClientController {
      * @return view name
      */
     @GetMapping(value = "/client/{clientId}/delete")
-    public final String deleteClientById(@PathVariable Integer clientId, Model model) {
+    public final String deleteClientById(@PathVariable Integer clientId, Model model, Client client) {
         LOGGER.debug("delete({}, {})", clientId, model);
         clientService.delete(clientId);
+        wsSender.accept(EventType.REMOVE, client);
         return "redirect:/clients";
+    }
+
+    @MessageMapping("/changeClients")
+    @SendTo("/topic/activity")
+    public Client tour(Client client) {
+        LOGGER.debug("add({}, {})", client);
+        clientService.create(client);
+        return new Client("New changes, " + client.toString());
     }
 }
