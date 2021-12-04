@@ -66,9 +66,9 @@ public class ClientControllerIT {
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))
                 .andExpect(view().name("client"))
                 .andExpect(model().attribute("isNew", is(false)))
-                .andExpect(model().attribute("client", hasProperty("firstName", is("Griha"))))
-                .andExpect(model().attribute("client", hasProperty("lastName", is("Bogin"))))
-                .andExpect(model().attribute("client", hasProperty("tourId", is(106)
+                .andExpect(model().attribute("client", hasProperty("firstName", is("Ihor"))))
+                .andExpect(model().attribute("client", hasProperty("lastName", is("Dmitriev"))))
+                .andExpect(model().attribute("client", hasProperty("tourId", is(101)
                 )));
     }
 

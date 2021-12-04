@@ -58,7 +58,7 @@ public class TourController {
      * @param tour
      * @return id tour
      */
-    @PostMapping(path = "/tours", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/tours/add", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Tour> createTour(@RequestBody Tour tour) {
         LOGGER.debug("createTour({})", tour);
         tourService.create(tour);
