@@ -20,15 +20,11 @@ for start web-app...
 ```
 cd web-app/target
 java -jar web-app.jar
-
-
 ```
 for start rest-app...
 ```
 cd rest-app/target
 java -jar rest-app.jar
-
-
 ```
 for start soap-app...
 ```
@@ -54,3 +50,26 @@ Fake data for clients can be accessed at : http://localhost:8088/fakerClients
 ## Import/Export Excel
 Import clients data can be accessed at : http://localhost:8088/import/excel
 Export clients data can be accessed at : http://localhost:8088/export/excel
+
+## Run application with docker-compose and postgresql database
+From the same directory as your root pom.xml, type:
+
+```
+docker-compose -f docker-compose.yml up
+```
+
+The PostgreSql database can be accessed at: http://localhost:5432
+
+The rest-app can be accessed at: http://localhost:8088
+
+The web-app can be accessed at: http://localhost:8080
+
+To start/stop app use:
+```
+docker-compose -f docker-compose.yml start
+docker-compose -f docker-compose.yml stop or (Ctrl + C)
+```
+To stop it and remove the container, run:
+```
+docker-compose -f docker-compose.yml down
+```
