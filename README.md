@@ -44,17 +44,22 @@ Export clients data can be accessed at : http://localhost:8088/export/excel
 ## Run application with docker-compose and postgresql database
 From the same directory as your root pom.xml, type:
 
-docker-compose -f docker/docker-compose.yml up
-The mySql database can be accessed at: http://localhost:5433
+```
+docker-compose -f docker-compose.yml up
+```
+
+The PostgreSql database can be accessed at: http://localhost:5432
+
 The rest-app can be accessed at: http://localhost:8088
+
 The web-app can be accessed at: http://localhost:8080
 
 To start/stop app use:
 ```
-docker-compose -f docker/docker-compose.yml start
-docker-compose -f docker/docker-compose.yml stop
+docker-compose -f docker-compose.yml start
+docker-compose -f docker-compose.yml stop or (Ctrl + C)
 ```
 To stop it and remove the container, run:
 ```
-docker-compose -f docker/docker-compose.yml down
+docker-compose -f docker-compose.yml down
 ```
