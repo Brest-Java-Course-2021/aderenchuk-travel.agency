@@ -1,22 +1,31 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Login Customer</title>
+    <title>Login </title>
 </head>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <body>
-<div class="container">
+<div class="text-center">
     <form class="form-signin" method="post" action="/auth/login">
         <h2 class="form-signin-heading">Login</h2>
         <p>
-            <label for="username">Username</label>
             <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
         </p>
         <p>
-            <label for="password">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         </p>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
+    <div class="text-center">
+        <p>Not a member?
+            <a class="nav-item nav-link active"
+               href="registration.html"
+               th:href="@{/auth/registration}">Register</a></p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+        </button>
+    </div>
 </div>
 </body>
 </html>
